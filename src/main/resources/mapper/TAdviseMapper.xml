@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msbkj.mapper.TAdviseMapper" >
+  <resultMap id="BaseResultMap" type="com.msbkj.entity.TAdvise" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="advise_friends" property="adviseFriends" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_advise
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.msbkj.entity.TAdvise" >
+    insert into t_advise (user_id, advise_friends)
+    values (#{userId,jdbcType=INTEGER}, #{adviseFriends,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.msbkj.entity.TAdvise" >
+    update t_advise
+    set advise_friends = #{adviseFriends,jdbcType=VARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select user_id, advise_friends
+    from t_advise
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select user_id, advise_friends
+    from t_advise
+  </select>
+  <delete id="deleteAll" >
+    delete from t_advise
+  </delete>
+</mapper>

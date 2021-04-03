@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msbkj.mapper.TApplyMapper" >
+  <resultMap id="BaseResultMap" type="com.msbkj.entity.TApply" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="user_id1" property="userId1" jdbcType="INTEGER" />
+    <result column="user_id2" property="userId2" jdbcType="INTEGER" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_apply
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.msbkj.entity.TApply" >
+    insert into t_apply (id, user_id1, user_id2, 
+      content)
+    values (#{id,jdbcType=INTEGER}, #{userId1,jdbcType=INTEGER}, #{userId2,jdbcType=INTEGER}, 
+      #{content,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.msbkj.entity.TApply" >
+    update t_apply
+    set user_id1 = #{userId1,jdbcType=INTEGER},
+      user_id2 = #{userId2,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, user_id1, user_id2, content
+    from t_apply
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, user_id1, user_id2, content
+    from t_apply
+  </select>
+</mapper>

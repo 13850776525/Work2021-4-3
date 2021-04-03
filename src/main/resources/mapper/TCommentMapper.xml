@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msbkj.mapper.TCommentMapper" >
+  <resultMap id="BaseResultMap" type="com.msbkj.entity.TComment" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="flag" property="newsId" jdbcType="VARCHAR" />
+    <result column="news_id" property="newsId" jdbcType="INTEGER" />
+    <result column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="times" property="times" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_comment
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.msbkj.entity.TComment" >
+    insert into t_comment (id, flag, news_id, 
+      user_id, content, times
+      )
+    values (#{id,jdbcType=INTEGER}, #{flag,jdbcType=VARCHAR}, #{newsId,jdbcType=INTEGER}, 
+      #{userId,jdbcType=INTEGER}, #{content,jdbcType=VARCHAR}, #{times,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.msbkj.entity.TComment" >
+    update t_comment
+    set flag = #{newsId,jdbcType=VARCHAR},
+      news_id = #{newsId,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      content = #{content,jdbcType=VARCHAR},
+      times = #{times,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, flag, news_id, user_id, content, times
+    from t_comment
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, flag, news_id, user_id, content, times
+    from t_comment
+  </select>
+</mapper>

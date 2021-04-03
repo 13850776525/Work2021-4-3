@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.msbkj.mapper.TFeaturesMapper" >
+  <resultMap id="BaseResultMap" type="com.msbkj.entity.TFeatures" >
+    <id column="user_id" property="userId" jdbcType="INTEGER" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="age" property="age" jdbcType="VARCHAR" />
+    <result column="degree" property="degree" jdbcType="VARCHAR" />
+    <result column="comment_id" property="commentId" jdbcType="INTEGER" />
+    <result column="news_content" property="newsContent" jdbcType="LONGVARCHAR" />
+    <result column="collect_content" property="collectContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_features
+    where user_id = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.msbkj.entity.TFeatures" >
+    insert into t_features (user_id, sex, age, 
+      degree, comment_id, news_content, 
+      collect_content)
+    values (#{userId,jdbcType=INTEGER}, #{sex,jdbcType=VARCHAR}, #{age,jdbcType=VARCHAR}, 
+      #{degree,jdbcType=VARCHAR}, #{commentId,jdbcType=INTEGER}, #{newsContent,jdbcType=LONGVARCHAR}, 
+      #{collectContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.msbkj.entity.TFeatures" >
+    update t_features
+    set sex = #{sex,jdbcType=VARCHAR},
+      age = #{age,jdbcType=VARCHAR},
+      degree = #{degree,jdbcType=VARCHAR},
+      comment_id = #{commentId,jdbcType=INTEGER},
+      news_content = #{newsContent,jdbcType=LONGVARCHAR},
+      collect_content = #{collectContent,jdbcType=LONGVARCHAR}
+    where user_id = #{userId,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select user_id, sex, age, degree, comment_id, news_content, collect_content
+    from t_features
+    where user_id = #{userId,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select user_id, sex, age, degree, comment_id, news_content, collect_content
+    from t_features
+  </select>
+  <select id="selectByConditions" resultMap="BaseResultMap" >
+    select user_id, sex, age, degree, comment_id, news_content, collect_content
+    from t_features
+    where sex = #{sex,jdbcType=VARCHAR}
+    and degree = #{degree, jdbcType=VARCHAR}
+    and age &gt;= #{min, jdbcType=VARCHAR}
+    and age &lt;= #{max, jdbcType=VARCHAR}
+  </select>
+
+  <!--<update id="updateUserPart" parameterType="com.msbkj.entity.TFeatures" >-->
+    <!--update t_features-->
+    <!--set sex = #{sex,jdbcType=VARCHAR},-->
+    <!--age = #{age,jdbcType=VARCHAR},-->
+    <!--degree = #{degree,jdbcType=VARCHAR}-->
+    <!--where user_id = #{userId,jdbcType=INTEGER}-->
+  <!--</update>-->
+
+  <update id="updateByConditions" parameterType="com.msbkj.entity.TFeatures">
+    update t_features
+    <trim prefix="set" suffixOverrides="," suffix=" where user_id = #{userId}">
+      <if test="sex.length() > 0"> sex=#{sex} , </if>
+      <if test="age.length() > 0"> age=#{age} , </if>
+      <if test="degree.length() > 0"> degree=#{degree} , </if>
+      <if test="commentId != -1"> comment_id=#{commentId} , </if>
+      <if test="newsContent.length() > 0"> news_content=#{newsContent} , </if>
+      <if test="collectContent.length() > 0"> collect_content=#{collectContent} , </if>
+    </trim>
+  </update>
+
+</mapper>
