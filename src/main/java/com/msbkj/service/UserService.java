@@ -1,6 +1,7 @@
 package com.msbkj.service;
 
-import com.msbkj.entity.TUser;
+import com.msbkj.entity.*;
+
 import java.util.List;
 
 public interface UserService {
@@ -15,4 +16,14 @@ public interface UserService {
     int updateByPrimaryKey(TUser record);
 
     public List<TUser> getProductInfo(String name,String price,Integer page,Integer limit);
+
+    public List<TAdmin> getAdminInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TNews> getNewInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TCollect> getCollectInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TComment> getCommentInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TAnnouce> getAnnouceInfo(String name, String price, Integer page, Integer limit);
 }

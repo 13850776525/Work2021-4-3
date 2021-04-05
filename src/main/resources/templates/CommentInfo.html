@@ -115,20 +115,15 @@
         table.render({
             elem: '#test'
             , height: 450
-            , url: '/user/getUserInfo' //数据接口
+            , url: '/manger/getCommentInfo' //数据接口
             , cols: [
                 [ //表头
-                // {field: 'state', title: '状态',align: 'center', width: 200,hide:true},
-                //     {field: 'id', title: '序号', align: 'center', width: 100,hide:true},
                     {field: 'id', title: 'ID', align: 'center', width: 150},
-                    {field: 'username', title: '账号', align: 'center', width: 150},
-                    {field: 'sex', title: '性别', align: 'center', width: 150},
-                    {field: 'photo', title: '相片', align: 'center', width: 150},
-                    {field: 'age', title: '年龄', align: 'center', width: 150},
-                    {field: 'height', title: '身高', align: 'center', width: 150},
-                    {field: 'weight', title: '体重', align: 'center', width: 150},
-                    {field: 'degree', title: '学历', align: 'center', width: 150},
-                    {field: 'annouce', title: '信息', align: 'center', width: 150},
+                    {field: 'flag', title: '0为新鲜事，1为照片', align: 'center', width: 150},
+                    {field: 'newsId', title: '新鲜事/照片id', align: 'center', width: 150},
+                    {field: 'userId', title: '评论者id', align: 'center', width: 150},
+                    {field: 'time', title: '评论时间', align: 'center', width: 150},
+                    {field: 'content', title: '评论内容', align: 'center', width: 150},
                     {fixed: 'right', fixed: 'right', title: '操作', width: 200, align: 'center', toolbar: '#barDemo'}
             ]
             ]

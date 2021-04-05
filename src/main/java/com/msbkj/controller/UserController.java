@@ -1,9 +1,7 @@
 package com.msbkj.controller;
 
 import com.google.gson.Gson;
-import com.msbkj.entity.LayuiData;
-import com.msbkj.entity.TFeatures;
-import com.msbkj.entity.TUser;
+import com.msbkj.entity.*;
 import com.msbkj.service.AdviseService;
 import com.msbkj.service.FeaturesService;
 import com.msbkj.service.UserService;
@@ -33,30 +31,30 @@ public class UserController {
 
     @RequestMapping("/add")
     @ResponseBody
-    public R add(TUser user){
+    public String add(TUser user){
         userService.insert(user);
         // 转化degree并构造Features
         TFeatures f = new TFeatures(user.getId(), user.getSex(), user.getAge(), CommonUtil.converDegree(user.getDegree()));
         featuresService.insert(f);
-        return R.ok("新增成功");
+        return new Gson().toJson("新增成功");
     }
 
     @RequestMapping("/delete")
     @ResponseBody
-    public R delete(Integer id){
+    public String delete(Integer id){
         userService.deleteByPrimaryKey(id);
         featuresService.deleteByPrimaryKey(id);
         adviseService.deleteByPrimaryKey(id);
-        return R.ok("删除成功");
+        return new Gson().toJson("删除成功");
     }
 
     @RequestMapping("/update")
     @ResponseBody
-    public R update(TUser user){
+    public String update(TUser user){
         userService.updateByPrimaryKey(user);
         TFeatures f = new TFeatures(user.getId(), user.getSex(), user.getAge(), CommonUtil.converDegree(user.getDegree()));
         featuresService.updateByConditions(f);
-        return R.ok("更新成功");
+        return new Gson().toJson("更新成功");
     }
 
     @RequestMapping("/getAll")
@@ -72,10 +70,8 @@ public class UserController {
     }
 
 
-    @RequestMapping("/info")
+    @RequestMapping("/userinfo")
     public String getProductInfo(HttpServletRequest request, HttpServletResponse response){
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.addObject("userInfo");
         return "userInfo";
     }
 
@@ -87,17 +83,19 @@ public class UserController {
         Integer limit = Integer.parseInt(request.getParameter("limit"));
         Integer page1 = Integer.parseInt(page);
         page1 = (page1 - 1) * limit;
-        String name = request.getParameter("pname");
+        String name = request.getParameter("username");
         String price = request.getParameter("price");
         List<TUser> list=userService.getProductInfo(name,price,page1,limit);
+        List<TUser> lists=userService.getProductInfo(name,price,page1,1000);
 //        Integer count=knowService.findCount(title,scope);
         LayuiData layuiData = new LayuiData();
         layuiData.setMsg("");
         layuiData.setCode(0);
-        layuiData.setCount(list.size());
+        layuiData.setCount(lists.size());
         layuiData.setData(list);
         return new Gson().toJson(layuiData);
     }
+
 
 
 }

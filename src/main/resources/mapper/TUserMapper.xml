@@ -66,8 +66,65 @@
     </if>
     limit #{page},#{limit}
   </select>
+<!--管理员-->
+  <select id="getAdminInfo" resultType="com.msbkj.entity.TAdmin">
+    select * from t_admin where 1=1
+    <if test="name!=null and name!=''">
+      and username like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
+<!--新鲜事-->
+  <select id="getNewInfo" resultType="com.msbkj.entity.TNews">
+    select * from t_news where 1=1
+    <if test="name!=null and name!=''">
+      and content like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
+
+<!--收藏-->
+  <select id="getCollectInfo" resultType="com.msbkj.entity.TCollect">
+    select * from t_collect where 1=1
+    <if test="name!=null and name!=''">
+      and user_id like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
 
 
 
+<!--评论-->
+  <select id="getCommentInfo" resultType="com.msbkj.entity.TComment">
+    select * from t_comment where 1=1
+    <if test="name!=null and name!=''">
+      and content like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
+
+  <!--公告-->
+  <select id="getAnnouceInfo" resultType="com.msbkj.entity.TAnnouce">
+    select * from t_annouce where 1=1
+    <if test="name!=null and name!=''">
+      and content like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
 
 </mapper>
