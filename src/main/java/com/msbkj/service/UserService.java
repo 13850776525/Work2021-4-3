@@ -13,4 +13,6 @@ public interface UserService {
     List<TUser> selectAll();
 
     int updateByPrimaryKey(TUser record);
+
+    public List<TUser> getProductInfo(String name,String price,Integer page,Integer limit);
 }

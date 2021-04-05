@@ -1,5 +1,7 @@
 package com.msbkj.controller;
 
+import com.google.gson.Gson;
+import com.msbkj.entity.LayuiData;
 import com.msbkj.entity.TFeatures;
 import com.msbkj.entity.TUser;
 import com.msbkj.service.AdviseService;
@@ -9,15 +11,17 @@ import com.msbkj.utils.CommonUtil;
 import com.msbkj.utils.R;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created by Elvis on 2021/3/5.
  */
-@RestController
+@Controller
 @RequestMapping(value = "/user")
 public class UserController {
     @Autowired
@@ -28,6 +32,7 @@ public class UserController {
     private AdviseService adviseService;
 
     @RequestMapping("/add")
+    @ResponseBody
     public R add(TUser user){
         userService.insert(user);
         // 转化degree并构造Features
@@ -37,6 +42,7 @@ public class UserController {
     }
 
     @RequestMapping("/delete")
+    @ResponseBody
     public R delete(Integer id){
         userService.deleteByPrimaryKey(id);
         featuresService.deleteByPrimaryKey(id);
@@ -45,6 +51,7 @@ public class UserController {
     }
 
     @RequestMapping("/update")
+    @ResponseBody
     public R update(TUser user){
         userService.updateByPrimaryKey(user);
         TFeatures f = new TFeatures(user.getId(), user.getSex(), user.getAge(), CommonUtil.converDegree(user.getDegree()));
@@ -53,12 +60,44 @@ public class UserController {
     }
 
     @RequestMapping("/getAll")
+    @ResponseBody
     public R getAll(){
         return R.ok().put("data", userService.selectAll());
     }
 
     @RequestMapping("/getOne/{id}")
+    @ResponseBody
     public R getOne(@PathVariable("id") Integer id){
         return R.ok().put("data", userService.selectByPrimaryKey(id));
     }
+
+
+    @RequestMapping("/info")
+    public String getProductInfo(HttpServletRequest request, HttpServletResponse response){
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.addObject("userInfo");
+        return "userInfo";
+    }
+
+
+    @RequestMapping("/getUserInfo")
+    @ResponseBody
+    public String getUserInfo(HttpServletRequest request, HttpServletResponse response){
+        String page = request.getParameter("page");
+        Integer limit = Integer.parseInt(request.getParameter("limit"));
+        Integer page1 = Integer.parseInt(page);
+        page1 = (page1 - 1) * limit;
+        String name = request.getParameter("pname");
+        String price = request.getParameter("price");
+        List<TUser> list=userService.getProductInfo(name,price,page1,limit);
+//        Integer count=knowService.findCount(title,scope);
+        LayuiData layuiData = new LayuiData();
+        layuiData.setMsg("");
+        layuiData.setCode(0);
+        layuiData.setCount(list.size());
+        layuiData.setData(list);
+        return new Gson().toJson(layuiData);
+    }
+
+
 }

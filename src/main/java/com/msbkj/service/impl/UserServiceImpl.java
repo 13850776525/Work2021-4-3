@@ -37,4 +37,9 @@ public class UserServiceImpl implements UserService {
     public int updateByPrimaryKey(TUser record) {
         return userMapper.updateByPrimaryKey(record);
     }
+
+    @Override
+    public List<TUser> getProductInfo(String name,String price,Integer page, Integer limit) {
+        return userMapper.getProductInfo(name,price,page,limit);
+    }
 }

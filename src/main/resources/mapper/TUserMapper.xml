@@ -53,4 +53,21 @@
     annouce
     from t_user
   </select>
+
+
+
+  <select id="getProductInfo" resultType="com.msbkj.entity.TUser">
+    select * from t_user where 1=1
+    <if test="name!=null and name!=''">
+      and username like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
+
+
+
+
 </mapper>
