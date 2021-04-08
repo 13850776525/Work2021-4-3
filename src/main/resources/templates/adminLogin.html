@@ -2,7 +2,7 @@
 <html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>登录页</title>
+    <title>相亲管理系统-登录页</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" th:href="@{/X-admin/lib/layui/css/layui.css}">
     <link rel="stylesheet" th:href="@{/X-admin/lib/layui/css/style.css}">
@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="login-main">
-    <header class="layui-elip">欢迎登录·好物社区</header>
+    <header class="layui-elip">欢迎登录·相亲管理系统</header>
     <form class="layui-form">
         <div class="layui-input-inline">
             <input type="text" name="account" id="account" required lay-verify="required" placeholder="用户名"
@@ -54,7 +54,7 @@
             var pwd = $("#password").val();
             var code = $("#code").val();
             $.ajax({
-                url: '/web/login',
+                url: '/admin/load',
                 data: "account=" + account + "&pwd=" + pwd + "&code=" + code + "&num=" + num,
                 dataType: 'text',
                 type: 'get',
@@ -63,9 +63,9 @@
                         draw(show_num);
                         num = show_num.join("");
                         layer.msg('验证码错误');
-                    } else if (data == '登录成功') {
+                    } else if (data == '登陆成功') {
                         layer.msg('登录成功');
-                                location.href="/web/menu?account="+account;
+                                location.href="/user/menu" ;
                     } else {
                         layer.msg('账号或密码错误');
                         draw(show_num);

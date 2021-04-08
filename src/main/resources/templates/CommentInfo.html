@@ -30,7 +30,7 @@
 <!--                    <div class="demoTable">-->
                     <form class="layui-form layui-col-space5" style="width: 800px">
                         <div class="layui-inline layui-show-xs-block">
-                            账号：
+                            评论内容：
                         </div>
                         <div class="layui-inline layui-show-xs-block">
                             <input type="text" name="title" autocomplete="off" class="layui-input" id="account">
@@ -42,7 +42,7 @@
                             <input type="text" name="title" autocomplete="off" class="layui-input" id="sex">
                         </div>-->
                         <button class="layui-btn" lay-submit="" lay-filter="sreach" id="searchBtn"><i class="layui-icon">&#xe615;</i></button>
-                        <a class="layui-btn" lay-filter="addBtn" id="addBtn">增加用户</a>
+                        <a class="layui-btn" lay-filter="addBtn" id="addBtn">新增评论</a>
                     </form>
 
                 </div>
@@ -65,7 +65,7 @@
         layer.open({
             //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
             type: 1,
-            title: "新增用户",
+            title: "新增评论",
             area: ['50%', '85%'],
             content: $("#addUser")
         });
@@ -76,17 +76,27 @@
 <script>
 
 
-    layui.use(['form','table', 'layer'], function () {
+    layui.use(['form','table', 'layer','laydate'], function () {
         var table = layui.table;
         $ = layui.jquery;
         var form = layui.form,
-        layer = layui.layer;
+        layer = layui.layer,
+
+        laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#times2'
+        });
+        laydate.render({
+            elem: '#times1'
+        });
 
         $("#searchBtn").on('click',function () {
              var account=$("#account").val();
              //var sex=$("#sex").val();
             table.reload('testReload',{
-                url:'/user/getUserInfo',
+                url:'/manger/getCommentInfo' ,
                 where:{
                     "username":account
                 },
@@ -119,11 +129,11 @@
             , cols: [
                 [ //表头
                     {field: 'id', title: 'ID', align: 'center', width: 150},
-                    {field: 'flag', title: '0为新鲜事，1为照片', align: 'center', width: 150},
+                    {field: 'flag', title: '0为新鲜事，1为照片', align: 'center', width: 250},
                     {field: 'newsId', title: '新鲜事/照片id', align: 'center', width: 150},
-                    {field: 'userId', title: '评论者id', align: 'center', width: 150},
-                    {field: 'time', title: '评论时间', align: 'center', width: 150},
-                    {field: 'content', title: '评论内容', align: 'center', width: 150},
+                    {field: 'userId', title: '评论者id', align: 'center', width: 200},
+                    {field: 'times', title: '评论时间', align: 'center', width: 200},
+                    {field: 'content', title: '评论内容', align: 'center', width: 200},
                     {fixed: 'right', fixed: 'right', title: '操作', width: 200, align: 'center', toolbar: '#barDemo'}
             ]
             ]
@@ -134,27 +144,22 @@
                 first: false, // 不显示首页
                 last: false   // 不显示尾页
             },
-            limit: 5,
-            limits: [5, 10, 15, 20, 25]
+            limit: 10,
+            limits: [ 10,  20, 30]
             , id: "testReload"
         });
 
 
 
         form.on('submit(demo13)', function (data) {
-            var account = $("#account1").val();
-            var sex=$("#sex1").val();
-            var pwd=$("#password1").val();
-            var age=$("#age1").val();
-            var height=$("#height1").val();
-            var weight=$("#weight1").val();
-            var degree=$("#degree1").val();
-            var annouce=$("#annouce1").val();
-            var photo=$("#photo1").val();
+            var flag = $("#flag1").val();
+            var newsId=$("#newsId1").val();
+            var userId=$("#userId1").val();
+            var times=$("#times1").val();
+            var content=$("#content1").val();
             $.ajax({
-                url: '/user/add',
-                data:  {"photo":photo,"username": account, "sex": sex, "password": pwd,"age":age,
-                    "height":height,"weight":weight,"degree": degree,"annouce":annouce,"conditions":0},
+                url: '/comment/add',
+                data:  {"flag":flag,"newsId": newsId, "userId": userId, "times": times,"content":content },
                 dataType: 'text',
                 type: 'get',
                 success: function (data) {
@@ -174,21 +179,16 @@
 
         form.on('submit(demo12)', function (data) {
             var id = $("#id2").val();
-            var account = $("#account2").val();
-            var sex=$("#sex2").val();
-            var pwd=$("#password2").val();
-            var age=$("#age2").val();
-            var height=$("#height2").val();
-            var weight=$("#weight2").val();
-            var degree=$("#degree2").val();
-            var annouce=$("#annouce2").val();
-            var photo=$("#photo2").val();
-            var flag=confirm("确定修改用户信息吗？");
+            var flags = $("#flag2").val();
+            var newsId=$("#newsId2").val();
+            var userId=$("#userId2").val();
+            var times=$("#times2").val();
+            var content=$("#content2").val();
+            var flag=confirm("确定修改信息吗？");
             if (flag){
                 $.ajax({
-                    url: '/user/update',
-                    data:  {"photo":photo,"id":id,"username": account, "sex": sex, "password": pwd,"age":age,
-                        "height":height,"weight":weight,"degree": degree,"annouce":annouce,"conditions":0},
+                    url: '/comment/update',
+                    data:  {"flag":flags,"id":id,"newsId": newsId, "userId": userId, "times": times,"content":content },
                     dataType: 'text',
                     type: 'get',
                     success: function (data) {
@@ -218,11 +218,9 @@
             if (layEvent === 'detail') { //查看
 
             } else if (layEvent === 'del') { //删除
-                console.log(obj.data)
-                console.log(obj.data.id)
                 layer.confirm('真的删除行么', function (index) {
                     $.ajax({
-                        url: '/user/delete',
+                        url: '/comment/delete',
                         data: data,
                         dataType: 'text',
                         type: 'get',
@@ -242,20 +240,17 @@
                 });
             } else if (layEvent === 'edit') { //编辑
                 $("#id2").val(data.id);
-                $("#account2").val(data.username);
-                $("#sex2").val(data.sex);
-                $("#password2").val(data.password);
-                $("#age2").val(data.age);
-                $("#height2").val(data.height);
-                $("#weight2").val(data.weight);
-                $("#degree2").val(data.degree);
-                $("#annouce2").val(data.annouce);
-                $("#photo2").val(data.photo);
+                $("#flag2").val(data.flag);
+                $("#newsId2").val(data.newsId);
+                $("#userId2").val(data.userId);
+                $("#times2").val(data.times);
+                $("#content2").val(data.content);
+
                 layer.open({
                     //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
                     type: 1,
                     title: "修改用户信息",
-                    area: ['420px', '700px'],
+                    area: ['420px', '500px'],
                     content: $("#fixKnow"),//引用的弹出层的页面层的方式加载修改界面表单
                     success: function (layero, index) {
                         layui.form.render();
@@ -305,74 +300,44 @@
     <div class="layui-col-md10">
         <form class="layui-form layui-from-pane" action="" style="margin-top:20px">
             <div class="layui-form-item">
-                <label class="layui-form-label">账号：</label>
+                <label class="layui-form-label">类型：</label>
                 <div class="layui-input-block">
                     <input type="hidden" name="id2" autocomplete="off"
                              id="id2" >
-                    <input type="text" name="account2" autocomplete="off"
-                           placeholder="请输入账号" class="layui-input" id="account2" required lay-verify="required">
+                    <input type="text" name="flag2" autocomplete="off"
+                           placeholder="请输入类型" class="layui-input" id="flag2"
+                           required lay-verify="required">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">密码：</label>
+                <label class="layui-form-label">新鲜事ID：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="password2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="password2" placeholder="请输入密码">
+                    <input type="text" name="newsId2" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="newsId2" placeholder="请输入新鲜事ID">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">性别：</label>
+                <label class="layui-form-label">用户ID：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="sex2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="sex2" placeholder="请输入性别">
+                    <input type="text" name="userId2" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="userId2" placeholder="请输入用户ID">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">相片：</label>
+                <label class="layui-form-label">时间：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="photo2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="photo2" placeholder="请输入相片">
+                    <input type="text" name="times2" required lay-verify="date" autocomplete="off"
+                           class="layui-input" id="times2"   placeholder="请输入时间" >
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">年龄：</label>
+                <label class="layui-form-label">评论：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="age2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="age2" placeholder="请输入年龄">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">学历：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="degree2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="degree2" placeholder="请输入学历">
+                    <input type="text" name="content2" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="content2" placeholder="请输入评论">
                 </div>
             </div>
 
-
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">身高：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="height2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="height2" placeholder="请输入身高">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">体重：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="weight2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="weight2" placeholder="请输入体重">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">公告：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="annouce2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="annouce2" placeholder="请输入公告">
-                </div>
-            </div>
             <div class="layui-form-item" style="margin-top:40px">
                 <div class="layui-input-block">
                     <button class="layui-btn  layui-btn-submit " lay-submit="" lay-filter="demo12" id="surefix1">确认修改
@@ -388,72 +353,41 @@
     <div class="layui-col-md10">
         <form class="layui-form layui-from-pane" action="" style="margin-top:20px">
             <div class="layui-form-item">
-                <label class="layui-form-label">账号：</label>
+                <label class="layui-form-label">类型：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="account1" autocomplete="off" placeholder="请输入账号" class="layui-input" id="account1" required lay-verify="required">
+                    <input type="text" name="flag1" autocomplete="off"
+                           placeholder="请输入类型" class="layui-input" id="flag1"
+                           required lay-verify="required">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">密码：</label>
+                <label class="layui-form-label">新鲜事ID：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="password1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="password1" placeholder="请输入密码">
+                    <input type="text" name="newsId1" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="newsId1" placeholder="请输入新鲜事ID">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">性别：</label>
+                <label class="layui-form-label">用户ID：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="sex1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="sex1" placeholder="请输入性别">
+                    <input type="text" name="userId1" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="userId1" placeholder="请输入用户ID">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">年龄：</label>
+                <label class="layui-form-label">时间：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="age1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="age1" placeholder="请输入年龄">
+                    <input type="text" name="times1" required lay-verify="date" autocomplete="off"
+                           class="layui-input" id="times1"   placeholder="请输入时间">
                 </div>
             </div>
             <div class="layui-form-item">
-                <label class="layui-form-label">相片：</label>
+                <label class="layui-form-label">评论：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="photo1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="photo1" placeholder="请输入相片">
+                    <input type="text" name="content1" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="content1" placeholder="请输入评论">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">学历：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="degree1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="degree1" placeholder="请输入学历">
-                </div>
-            </div>
-
-
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">身高：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="height1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="height1" placeholder="请输入身高">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">体重：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="weight1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="weight1" placeholder="请输入体重">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">公告：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="annouce1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="annouce1" placeholder="请输入公告">
-                </div>
-            </div>
-
 
 
             <div class="layui-form-item" style="margin-top:40px">

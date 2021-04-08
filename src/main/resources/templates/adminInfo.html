@@ -42,7 +42,7 @@
                             <input type="text" name="title" autocomplete="off" class="layui-input" id="sex">
                         </div>-->
                         <button class="layui-btn" lay-submit="" lay-filter="sreach" id="searchBtn"><i class="layui-icon">&#xe615;</i></button>
-                        <a class="layui-btn" lay-filter="addBtn" id="addBtn">增加用户</a>
+                        <a class="layui-btn" lay-filter="addBtn" id="addBtn">增加管理员</a>
                     </form>
 
                 </div>
@@ -66,7 +66,7 @@
             //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
             type: 1,
             title: "新增用户",
-            area: ['50%', '85%'],
+            area: ['50%', '50%'],
             content: $("#addUser")
         });
     });
@@ -86,7 +86,7 @@
              var account=$("#account").val();
              //var sex=$("#sex").val();
             table.reload('testReload',{
-                url:'/user/getUserInfo',
+                url:'/manger/getAdminInfo',
                 where:{
                     "username":account
                 },
@@ -97,20 +97,6 @@
             return false;
         })
 
-        // $.ajax({
-        //     url: '/person/addselect',
-        //     // data: data,
-        //     dataType: 'json',
-        //     type: 'get',
-        //     success: function (data) {
-        //         $("#scope").append("<opyion value=''></opyion>")
-        //         $(data).each(function (i,n) {
-        //            $("#scope").append("<option value='"+n.name+"'>"+n.name+"</option>")
-        //         })
-        //         form.render('select')
-        //     }
-        // })
-
         //第一个实例
         table.render({
             elem: '#test'
@@ -120,10 +106,10 @@
                 [ //表头
                 // {field: 'state', title: '状态',align: 'center', width: 200,hide:true},
                 //     {field: 'id', title: '序号', align: 'center', width: 100,hide:true},
-                    {field: 'id', title: 'ID', align: 'center', width: 150},
-                    {field: 'username', title: '账号', align: 'center', width: 150},
-                    {field: 'password', title: '密码', align: 'center', width: 150},
-                    {fixed: 'right', fixed: 'right', title: '操作', width: 200, align: 'center', toolbar: '#barDemo'}
+                    {field: 'id', title: 'ID', align: 'center', width: 300},
+                    {field: 'username', title: '账号', align: 'center', width: 300},
+                    {field: 'password', title: '密码', align: 'center', width: 300},
+                    {fixed: 'right', fixed: 'right', title: '操作', width: 400, align: 'center', toolbar: '#barDemo'}
             ]
             ]
             , page: {
@@ -141,19 +127,11 @@
 
 
         form.on('submit(demo13)', function (data) {
-            var account = $("#account1").val();
-            var sex=$("#sex1").val();
-            var pwd=$("#password1").val();
-            var age=$("#age1").val();
-            var height=$("#height1").val();
-            var weight=$("#weight1").val();
-            var degree=$("#degree1").val();
-            var annouce=$("#annouce1").val();
-            var photo=$("#photo1").val();
+            var username=$("#username1").val();
+            var password=$("#password1").val();
             $.ajax({
-                url: '/user/add',
-                data:  {"photo":photo,"username": account, "sex": sex, "password": pwd,"age":age,
-                    "height":height,"weight":weight,"degree": degree,"annouce":annouce,"conditions":0},
+                url: '/admin/add',
+                data:  {"username": username,"password": password },
                 dataType: 'text',
                 type: 'get',
                 success: function (data) {
@@ -173,21 +151,13 @@
 
         form.on('submit(demo12)', function (data) {
             var id = $("#id2").val();
-            var account = $("#account2").val();
-            var sex=$("#sex2").val();
+            var username = $("#username2").val();
             var pwd=$("#password2").val();
-            var age=$("#age2").val();
-            var height=$("#height2").val();
-            var weight=$("#weight2").val();
-            var degree=$("#degree2").val();
-            var annouce=$("#annouce2").val();
-            var photo=$("#photo2").val();
             var flag=confirm("确定修改用户信息吗？");
             if (flag){
                 $.ajax({
-                    url: '/user/update',
-                    data:  {"photo":photo,"id":id,"username": account, "sex": sex, "password": pwd,"age":age,
-                        "height":height,"weight":weight,"degree": degree,"annouce":annouce,"conditions":0},
+                    url: '/admin/update',
+                    data:  {"id":id,"username": username, "password": pwd},
                     dataType: 'text',
                     type: 'get',
                     success: function (data) {
@@ -221,7 +191,7 @@
                 console.log(obj.data.id)
                 layer.confirm('真的删除行么', function (index) {
                     $.ajax({
-                        url: '/user/delete',
+                        url: '/admin/delete',
                         data: data,
                         dataType: 'text',
                         type: 'get',
@@ -241,20 +211,13 @@
                 });
             } else if (layEvent === 'edit') { //编辑
                 $("#id2").val(data.id);
-                $("#account2").val(data.username);
-                $("#sex2").val(data.sex);
+                $("#username2").val(data.username);
                 $("#password2").val(data.password);
-                $("#age2").val(data.age);
-                $("#height2").val(data.height);
-                $("#weight2").val(data.weight);
-                $("#degree2").val(data.degree);
-                $("#annouce2").val(data.annouce);
-                $("#photo2").val(data.photo);
                 layer.open({
                     //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
                     type: 1,
                     title: "修改用户信息",
-                    area: ['420px', '700px'],
+                    area: ['420px', '420px'],
                     content: $("#fixKnow"),//引用的弹出层的页面层的方式加载修改界面表单
                     success: function (layero, index) {
                         layui.form.render();
@@ -308,8 +271,8 @@
                 <div class="layui-input-block">
                     <input type="hidden" name="id2" autocomplete="off"
                              id="id2" >
-                    <input type="text" name="account2" autocomplete="off"
-                           placeholder="请输入账号" class="layui-input" id="account2" required lay-verify="required">
+                    <input type="text" name="username2" autocomplete="off"
+                           placeholder="请输入用户名" class="layui-input" id="username2" required lay-verify="required">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -319,59 +282,10 @@
                            class="layui-input" id="password2" placeholder="请输入密码">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">性别：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="sex2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="sex2" placeholder="请输入性别">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">相片：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="photo2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="photo2" placeholder="请输入相片">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">年龄：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="age2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="age2" placeholder="请输入年龄">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">学历：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="degree2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="degree2" placeholder="请输入学历">
-                </div>
-            </div>
 
 
 
-            <div class="layui-form-item">
-                <label class="layui-form-label">身高：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="height2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="height2" placeholder="请输入身高">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">体重：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="weight2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="weight2" placeholder="请输入体重">
-                </div>
-            </div>
 
-            <div class="layui-form-item">
-                <label class="layui-form-label">公告：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="annouce2" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="annouce2" placeholder="请输入公告">
-                </div>
-            </div>
             <div class="layui-form-item" style="margin-top:40px">
                 <div class="layui-input-block">
                     <button class="layui-btn  layui-btn-submit " lay-submit="" lay-filter="demo12" id="surefix1">确认修改
@@ -389,7 +303,7 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">账号：</label>
                 <div class="layui-input-block">
-                    <input type="text" name="account1" autocomplete="off" placeholder="请输入账号" class="layui-input" id="account1" required lay-verify="required">
+                    <input type="text" name="username1" autocomplete="off" placeholder="请输入账号" class="layui-input" id="username1" required lay-verify="required">
                 </div>
             </div>
             <div class="layui-form-item">
@@ -399,59 +313,7 @@
                            class="layui-input" id="password1" placeholder="请输入密码">
                 </div>
             </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">性别：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="sex1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="sex1" placeholder="请输入性别">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">年龄：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="age1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="age1" placeholder="请输入年龄">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">相片：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="photo1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="photo1" placeholder="请输入相片">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">学历：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="degree1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="degree1" placeholder="请输入学历">
-                </div>
-            </div>
 
-
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">身高：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="height1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="height1" placeholder="请输入身高">
-                </div>
-            </div>
-            <div class="layui-form-item">
-                <label class="layui-form-label">体重：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="weight1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="weight1" placeholder="请输入体重">
-                </div>
-            </div>
-
-            <div class="layui-form-item">
-                <label class="layui-form-label">公告：</label>
-                <div class="layui-input-block">
-                    <input type="text" name="annouce1" required lay-verify="required" autocomplete="off"
-                           class="layui-input" id="annouce1" placeholder="请输入公告">
-                </div>
-            </div>
 
 
 

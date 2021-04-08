@@ -1,5 +1,6 @@
 package com.msbkj.controller;
 
+import com.google.gson.Gson;
 import com.msbkj.entity.TCollect;
 import com.msbkj.entity.TFeatures;
 import com.msbkj.entity.TNews;
@@ -26,7 +27,7 @@ public class CollectController {
     private NewsService newsService;
 
     @RequestMapping("/add")
-    public R add(TCollect collect){
+    public String add(TCollect collect){
         collectService.insert(collect);
         int id = collect.getNewsId();
         System.out.println(id);
@@ -36,17 +37,17 @@ public class CollectController {
             f.setCollectContent(tNews.getContent());
             featuresService.updateByConditions(f);
         }
-        return R.ok("新增成功");
+        return new Gson().toJson("新增成功");
     }
 
     @RequestMapping("/delete")
-    public R delete(Integer id){
+    public String delete(Integer id){
         collectService.deleteByPrimaryKey(id);
-        return R.ok("删除成功");
+        return new Gson().toJson("删除成功");
     }
 
     @RequestMapping("/update")
-    public R update(TCollect collect){
+    public String update(TCollect collect){
         collectService.updateByPrimaryKey(collect);
         int id = collect.getNewsId();
         TNews tNews = newsService.selectByPrimaryKeyAndFlag(id, "0");
@@ -55,7 +56,7 @@ public class CollectController {
             f.setCollectContent(tNews.getContent());
             featuresService.updateByConditions(f);
         }
-        return R.ok("更新成功");
+        return new Gson().toJson("更新成功");
     }
 
     @RequestMapping("/getAll")

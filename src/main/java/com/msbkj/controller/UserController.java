@@ -75,6 +75,11 @@ public class UserController {
         return "userInfo";
     }
 
+    @RequestMapping("/menu")
+    public String menu(HttpServletRequest request, HttpServletResponse response){
+        return "firmMenu1";
+    }
+
 
     @RequestMapping("/getUserInfo")
     @ResponseBody

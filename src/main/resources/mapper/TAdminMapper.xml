@@ -31,4 +31,8 @@
     select id, username, password
     from t_admin
   </select>
+
+  <select id="login" resultType="com.msbkj.entity.TAdmin" >
+        select * from t_admin where username = #{username} and password=#{password};
+    </select>
 </mapper>

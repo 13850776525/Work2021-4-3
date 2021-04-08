@@ -1,5 +1,6 @@
 package com.msbkj.controller;
 
+import com.google.gson.Gson;
 import com.msbkj.entity.TAnnouce;
 import com.msbkj.service.AnnouceService;
 import com.msbkj.utils.R;
@@ -18,21 +19,21 @@ public class AnnouceController {
     private AnnouceService annouceService;
 
     @RequestMapping("/add")
-    public R add(TAnnouce annouce){
+    public String add(TAnnouce annouce){
         annouceService.insert(annouce);
-        return R.ok("新增成功");
+        return new Gson().toJson("新增成功");
     }
 
     @RequestMapping("/delete")
-    public R delete(Integer id){
+    public String delete(Integer id){
         annouceService.deleteByPrimaryKey(id);
-        return R.ok("删除成功");
+        return new Gson().toJson("删除成功");
     }
 
     @RequestMapping("/update")
-    public R update(TAnnouce annouce){
+    public String update(TAnnouce annouce){
         annouceService.updateByPrimaryKey(annouce);
-        return R.ok("更新成功");
+        return new Gson().toJson("更新成功");
     }
 
     @RequestMapping("/getAll")

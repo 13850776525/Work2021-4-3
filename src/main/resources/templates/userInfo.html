@@ -97,20 +97,6 @@
             return false;
         })
 
-        // $.ajax({
-        //     url: '/person/addselect',
-        //     // data: data,
-        //     dataType: 'json',
-        //     type: 'get',
-        //     success: function (data) {
-        //         $("#scope").append("<opyion value=''></opyion>")
-        //         $(data).each(function (i,n) {
-        //            $("#scope").append("<option value='"+n.name+"'>"+n.name+"</option>")
-        //         })
-        //         form.render('select')
-        //     }
-        // })
-
         //第一个实例
         table.render({
             elem: '#test'
@@ -118,8 +104,6 @@
             , url: '/user/getUserInfo' //数据接口
             , cols: [
                 [ //表头
-                // {field: 'state', title: '状态',align: 'center', width: 200,hide:true},
-                //     {field: 'id', title: '序号', align: 'center', width: 100,hide:true},
                     {field: 'id', title: 'ID', align: 'center', width: 150},
                     {field: 'username', title: '账号', align: 'center', width: 150},
                     {field: 'sex', title: '性别', align: 'center', width: 150},
@@ -139,8 +123,8 @@
                 first: false, // 不显示首页
                 last: false   // 不显示尾页
             },
-            limit: 5,
-            limits: [5, 10, 15, 20, 25]
+            limit: 10,
+            limits: [ 10,  20, 30]
             , id: "testReload"
         });
 

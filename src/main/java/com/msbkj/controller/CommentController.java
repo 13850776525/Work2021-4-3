@@ -1,5 +1,6 @@
 package com.msbkj.controller;
 
+import com.google.gson.Gson;
 import com.msbkj.entity.TComment;
 import com.msbkj.entity.TFeatures;
 import com.msbkj.service.CommentService;
@@ -25,27 +26,27 @@ public class CommentController {
     private FeaturesService featuresService;
 
     @RequestMapping("/add")
-    public R add(TComment comment){
+    public String add(TComment comment){
         commentService.insert(comment);
         TFeatures f = new TFeatures(comment.getUserId());
         f.setCommentId(comment.getNewsId());
         featuresService.updateByConditions(f);
-        return R.ok("新增成功");
+        return new Gson().toJson("新增成功");
     }
 
     @RequestMapping("/delete")
-    public R delete(Integer id){
+    public String delete(Integer id){
         commentService.deleteByPrimaryKey(id);
-        return R.ok("删除成功");
+        return new Gson().toJson("删除成功");
     }
 
     @RequestMapping("/update")
-    public R update(TComment comment){
+    public String update(TComment comment){
         commentService.updateByPrimaryKey(comment);
         TFeatures f = new TFeatures(comment.getUserId());
         f.setCommentId(comment.getNewsId());
         featuresService.updateByConditions(f);
-        return R.ok("更新成功");
+        return new Gson().toJson("更新成功");
     }
 
     @RequestMapping("/getAll")

@@ -1,16 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<%--
+  Created by IntelliJ IDEA.
+  User: Administrator
+  Date: 2020/8/12 0012
+  Time: 15:44
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<html class="x-admin-sm">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>人才生态圈后台管理</title>
-    <link rel="stylesheet" th:href="@{/X-admin/css/font.css}">
-    <link rel="stylesheet" th:href="@{/X-admin/css/xadmin.css}">
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <!--    <link rel="stylesheet" href="../X-admin/layui/css/layui.css"  media="all">-->
-    <script th:src="@{/X-admin/js/jquery-3.5.1.js}"></script>
-    <script th:src="@{/X-admin/lib/layui/layui.js}" charset="utf-8"></script>
-    <script type="text/javascript" th:src="@{/X-admin/js/xadmin.js}"></script>
+    <meta charset="UTF-8">
+    <title>后台登录-X-admin2.2</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/X-admin/css/font.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/X-admin/css/xadmin.css">
+    <script src="${pageContext.request.contextPath}/layui/layui.js" charset="utf-8"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/X-admin/js/xadmin.js"></script>
+
 </head>
 <body class="index">
 <!-- 顶部开始 -->
@@ -23,8 +34,8 @@
 
     <ul class="layui-nav right layui-bg-green">
         <li class="layui-nav-item">
-            <span>账号：</span>
-            <span>等级：管理员</span>
+            <span>账号：${account}</span>&nbsp&nbsp
+            <span>等级：管理员</span>&nbsp&nbsp
         </li>
         <li class="layui-nav-item to-index">
             <a href="/">后台首页</a></li>
@@ -92,7 +103,7 @@
                             <cite>乡村热点</cite>
                             <i class="iconfont nav_right">&#xe697;</i></a>
                     </li>
-                </ul>
+                 </ul>
             </li>
 
         </ul>
@@ -108,9 +119,15 @@
                 <i class="layui-icon">&#xe68e;</i>我的桌面
             </li>
         </ul>
+        <%--        <div class="layui-unselect layui-form-select layui-form-selected" id="tab_right">--%>
+        <%--            <dl>--%>
+        <%--                <dd data-type="this">关闭当前</dd>--%>
+        <%--                <dd data-type="other">关闭其它</dd>--%>
+        <%--                <dd data-type="all">关闭全部</dd></dl>--%>
+        <%--        </div>--%>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='welcome1.jsp' frameborder="0" scrolling="yes"
+                <iframe src='${pageContext.request.contextPath}/jsp/welcome1.jsp' frameborder="0" scrolling="yes"
                         class="x-iframe" id="iframe"></iframe>
             </div>
         </div>
@@ -123,7 +140,5 @@
 <!-- 中部结束 -->
 
 </body>
-<script type="text/javascript" th:src="@{/X-admin/js/jquery-3.5.1.js}"></script>
-<script type="text/javascript" th:src="@{/X-admin/layui/layui.js}"></script>
 
 </html>
