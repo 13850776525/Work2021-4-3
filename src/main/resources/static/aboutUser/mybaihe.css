@@ -1,0 +1,360 @@
+
+#userInfo { width:998px; height:158px; margin:20px auto 0; font:13px/18px "Microsoft Yahei"; border:1px solid #ebf0f0; background:#fff; overflow:hidden; zoom:1; }
+#userInfo .pic { float:left; width:146px; padding:15px 7px 0; overflow:hidden; zoom:1;}
+#userInfo .pic img { display:block; width:100px; height:100px; margin:0 auto; border-radius:50%; }
+#userInfo .pic a.iconT { display:block; float:left; width:64px; height:20px; margin:10px 0 0 6px; font-size:12px; color:#f60; text-align:center; border:1px solid #f60; border-radius:15px;}
+#userInfo .pic a.iconT:hover { background:#f60; color:#fff;}
+#userInfo .data { float:left; width:230px; padding-top:15px;}
+#userInfo .data img { vertical-align:middle; }
+#userInfo .data h3 { font-size:18px; }
+#userInfo .data h3 img { margin-left:5px;}
+#userInfo .data dl { padding-top:3px; line-height:30px; overflow:hidden; zoom:1; }
+#userInfo .data dl dt { float:left; width:60px; height:28px; color:#666; zoom:1;}
+#userInfo .data dl dd { float:left; width:170px; height:28px;}
+#userInfo .data dl dd .num { float:left; width:121px; height:28px; overflow:hidden; zoom:1;}
+#userInfo .data dl p,#userInfo .data dl a,#userInfo .data dl span,#userInfo .data dl img { display:block; float:left; }
+#userInfo .data dl a.iconT { margin-left:5px; padding-right:11px; color:#bdbdbd; background:url(//images9.baihe.com/mybaihe/arrow_01.gif) no-repeat right center;  }
+#userInfo .data dl a.iconT:hover { color:#f60;}
+#userInfo .data dl img { display:inline-block; margin:5px 4px 0 0;}
+#userInfo .data dl span { line-height:30px; margin:0 8px 0 0;}
+#userInfo .speed { float:left; width:91px; height:12px; margin:9px 0 0 0; border-radius:5px; background:#e3e3e3; z-index:2; zoom:1; }
+#userInfo .speed .strip { clear:both; font-size:0; line-height:1px; height:12px; border-radius:5px; _border-radius:0px; background:#fdbf2d; }
+#userInfo .list { float:left; width:360px; padding-top:40px;}
+#userInfo .list ul { overflow:hidden; }
+#userInfo .list ul li { float:left; width:83px; float:left; text-align:center; overflow:hidden; zoom:1;}
+#userInfo .list ul li span { display:block; width:83px; text-align:center; font-size:32px; font-family: Arial, Helvetica, sans-serif; line-height:50px; }
+#userInfo .list ul li a { display:block; width:100%; color:#666;}
+#userInfo .list ul li a:hover { color:#f60;}
+#userInfo .list .link { display:block; margin:15px 0 0 15px; color:#3c96ff; }
+#userInfo .w90 { width:110px;}
+#userInfo .w90 span { width:110px; }
+#userInfo .signIn { position:relative; float:right; width:228px; height:158px; border-left:1px solid #ebf0f0; text-align:center; }
+#userInfo .signIn .icon { display:block; width:141px; height:40px; margin:10px auto; padding-top:51px; font-size:16px; color:#fff; text-align:center; line-height:40px; background:url(//images9.baihe.com/mybaihe/icon_01.gif) no-repeat; overflow:hidden; zoom:1; }
+#userInfo .signIn .new { position:absolute; top:-1px; left:0px; display:block; width:33px; height:33px; background:url(//images9.baihe.com/mybaihe/icon_04.gif) no-repeat;}
+#userInfo .signIn strong { display:block; height:55px; font-size:20px; line-height:53px; color:#ff7e00; }
+#userInfo .signIn .txt { height:50px; padding:0 0 0 55px; color:#666; text-align:left; background:url(//images9.baihe.com/mybaihe/icon_06.gif) no-repeat 13px 3px; overflow:hidden; zoom:1; }
+#userInfo .signIn .orange,#userInfo .signIn .grey { width:200px; height:40px; margin:0 auto; font-size:16px; line-height:38px; border-radius:3px; }
+
+.myBaihe_Left .yjzq .icon,.myBaihe_Right .redBean em { display:block; background:url(//images9.baihe.com/mybaihe/icon_02.gif) no-repeat; overflow:hidden; zoom:1;}
+
+.myBaihe_Left { float:left; width:560px; overflow:hidden; zoom:1;}
+.myBaihe_Left .orange,.myBaihe_Left .grey,.myBaihe_Left .specialty .red,.myBaihe_Left .specialty .blue { height:30px; line-height:28px; margin-top:4px; border-radius:3px;}
+.myBaihe_Left .black { height:23px; background:#000; filter:alpha(opacity=50); -moz-opacity:0.5; opacity: 0.5;}
+.myBaihe_Left h4 { height:33px; margin:35px 0 10px 0; font-size:18px; border-bottom:1px solid #ebf0f0; overflow:hidden; zoom:1;}
+.myBaihe_Left h4 .cbd,.myBaihe_Left .menuTab .cbd,.myBaihe_Right h4 .cbd { float:right; margin-right:5px; font-size:13px; }
+.myBaihe_Left h4 a.cbd:hover,.myBaihe_Left .menuTab .cbd:hover,.myBaihe_Right .cbd:hover { text-decoration:underline; color:#bdbdbd;}
+.myBaihe_Left h4 span { padding-left:10px; font-size:13px;}
+.myBaihe_Left .jdmx { padding:0 8px; overflow:hidden; zoom:1;}
+.myBaihe_Left .jdmx img,.myBaihe_Left .specialty { display:block; }
+.myBaihe_Left .jdmx ul li { position:relative; float:left; width:120px; height:184px; padding:0 8px; overflow:hidden; zoom:1; }
+.myBaihe_Left .jdmx .cont { position:absolute; top:127px; left:8px; font-size:13px; line-height:23px; color:#fff; text-align:center; cursor:pointer; }
+.myBaihe_Left .jdmx .black { position:absolute; top:0px; left:0px; width:120px; z-index:2;}
+.myBaihe_Left .jdmx .txt { position:absolute; top:0px; left:0px; width:120px; height:23px; z-index:4; }
+.myBaihe_Left .specialty,.myBaihe_Left .look,.myBaihe_Left .like { width:580px; overflow:hidden; zoom:1; }
+.myBaihe_Left .specialty ul li { position:relative; float:left; width:192px; height:210px; overflow:hidden; zoom:1; }
+.myBaihe_Left .specialty img { display:block; width:176px; height:176px;}
+.myBaihe_Left .specialty .cont { position:absolute; top:153px; left:0px; font-size:13px; line-height:23px; color:#fff; text-align:center; cursor:pointer; }
+.myBaihe_Left .specialty .black { position:absolute; top:0px; left:0px; width:176px; z-index:2;}
+.myBaihe_Left .specialty .txt { position:absolute; top:0px; left:0px; width:176px; height:23px; z-index:4; }
+.myBaihe_Left .specialty .red,.myBaihe_Left .specialty .blue { float:left; width:86px; margin-right:4px;}
+.myBaihe_Left .specialty .blue { color:#fff; text-align:center; background:#4984d2; }
+.myBaihe_Left .specialty .blue:hover { background:#3871bb; }
+.myBaihe_Left .menuTab { height:32px; margin-bottom:10px; padding-top:35px; background:url(//images7.baihe.com/pic/bj_01.gif) repeat-x left bottom; overflow:hidden; zoom:1; }
+.myBaihe_Left .menuTab a { position:relative; display:block; float:left; width:120px; height:30px; font-size:16px; color:#666; text-align:center;}
+.myBaihe_Left .menuTab a:hover { color:#fe5233;}
+.myBaihe_Left .menuTab a.active { color:#fe5233; border-bottom:2px solid #ff5026; }
+.myBaihe_Left .menuTab a.active em { display:block;}
+.myBaihe_Left .menuTab .cbd {  text-align:right; font-size:13px; color:#bdbdbd; }
+.myBaihe_Left .menuTab em { position:absolute; bottom:0px; left:50%; display:none; width:16px; height:9px; margin-left:-8px; background:url(//images6.baihe.com/icon/icon_look.gif) no-repeat 0 -313px; overflow:hidden; zoom:1; }
+.myBaihe_Left .look ul li { float:left; width:80px; text-align:center; margin-right:16px; overflow:hidden; zoom:1;}
+.myBaihe_Left .look img { display:block; width:80px; height:100px; margin-bottom:5px;}
+.myBaihe_Left .look p { height:125px; font-size:14px; line-height:125px; text-align:center;}
+.myBaihe_Left .look a.qq { display:block; width:78px; height:23px; margin-top:2px; font-size:14px; line-height:22px; text-align:center; color:#ff7f00; border:1px solid #ff7f00; border-radius:2px; overflow:hidden; }
+.myBaihe_Left .likeCont { float:left; width:290px; height:135px; overflow:hidden; zoom:1;}
+.myBaihe_Left .likeCont img { display:block; float:left; width:80px; height:100px;}
+.myBaihe_Left .likeCont .txt { float:left; width:120px; padding:0 0 0 8px; overflow:hidden; zoom:1; }
+.myBaihe_Left .likeCont .flashIcon { float:left; overflow:hidden; zoom:1; }
+.myBaihe_Left .likeCont .flashIcon div { height:75px; overflow:hidden; zoom:1; }
+.myBaihe_Left .likeCont .flashIcon img { display:block; width:60px; height:60px; }
+.myBaihe_Left .likeCont .likeIcon { display:block; width:35px; height:23px; border:1px solid #ff6600; }
+.myBaihe_Left .likeCont .grey { width:59px; height:23px; margin:0px; color:#bdbdbd; line-height:23px; border:1px solid #bdbdbd; border-radius:0px; background:none; }
+.myBaihe_Left .likeCont p { width:110px; white-space:nowrap; word-break:keep-all; text-overflow:ellipsis; overflow:hidden; }
+.myBaihe_Left .likeCont .f16 { font-size:16px; height:54px; line-height:42px; color:#333;}
+.myBaihe_Left .likeCont .c333 { height:30px; line-height:28px;}
+.myBaihe_Left .yjzq { position:relative; width:500px; height:350px; padding:34px 30px 0; background:url(//images9.baihe.com/mybaihe/bj_01.jpg) no-repeat; overflow:hidden; zoom:1; }
+.myBaihe_Left .yjzq .pic { width:180px; height:220px; padding-top:24px; text-align:center; border-bottom:5px solid #fff; background:#fff; }
+.myBaihe_Left .yjzq .pic img { display:block; width:120px; height:150px; margin:0 auto;}
+.myBaihe_Left .yjzq .pic center { font-size:16px; line-height:36px;}
+.myBaihe_Left .yjzq .icon { width:60px; height:32px; margin:20px auto 0; padding-left:37px; font-size:18px; line-height:30px; }
+.myBaihe_Left .yjzq .left { float:left; width:180px;}
+.myBaihe_Left .yjzq .left .pic { border-bottom-color:#41a6fe}
+.myBaihe_Left .yjzq .left .icon { background-position:0 0; color:#41a6fe;}
+.myBaihe_Left .yjzq .left .icon:hover { background-position:0 -32px;}
+.myBaihe_Left .yjzq .right { float:right; width:180px;}
+.myBaihe_Left .yjzq .right .pic { border-bottom-color:#fe63c0;}
+.myBaihe_Left .yjzq .right .icon { background-position:0 -64px; color:#fe63c0;}
+.myBaihe_Left .yjzq .right .icon:hover { background-position:0 -96px;}
+.myBaihe_Left .yjzq .middle { position:absolute; top:300px; left:50%; width:150px; height:80px; margin-left:-75px; text-align:center; overflow:hidden; zoom:1;}
+.myBaihe_Left .yjzq .middle a { padding:0px; margin:0px; font-size:14px; color:#666; line-height:40px; text-decoration:underline; }
+.myBaihe_Left .yjzq .middle a.icon { width:150px; height:40px; text-indent:-99999px; background-position:0 -128px; }
+.myBaihe_Left .yjzq .middle a.icon:hover { background-position:0 -168px; }
+.myBaihe_Left .mOver { background:url(//images9.baihe.com/mybaihe/mOver.jpg) no-repeat; overflow:hidden; zoom:1; }
+.myBaihe_Left .wOver { background:url(//images9.baihe.com/mybaihe/wOver.jpg) no-repeat; overflow:hidden; zoom:1; }
+
+.myBaihe_Right { float:right; width:230px; overflow:hidden; zoom:1; }
+.myBaihe_Right .bor { padding:0 10px;}
+.myBaihe_Right h4 { height:33px; padding:20px 0 10px 0; font-size:18px; overflow:hidden; zoom:1;}
+.myBaihe_Right .myTask { padding:20px 0; overflow:hidden; zoom:1; }
+.myBaihe_Right .myTask p { display:block; width:55px; height:55px; margin:0 auto; text-indent:-99999px; background:url(//images9.baihe.com/mybaihe/levBg.gif) no-repeat; overflow:hidden; zoom:1; }
+.myBaihe_Right .myTask ul { overflow:hidden; zoom:1; }
+.myBaihe_Right .myTask ul li { float:left; width:69px; height:100px; text-align:center; white-space:nowrap; word-break:keep-all; overflow:hidden; text-overflow:ellipsis; overflow:hidden; zoom:1; }
+.myBaihe_Right .myTask ul li a { color:#666; line-height:28px;}
+.myBaihe_Right .myTask ul li p.taskZl{ background-position:-325px -138px;}
+.myBaihe_Right .myTask ul li p.taskXh{ background-position:-130px -138px;}
+.myBaihe_Right .myTask ul li p.taskSm{ background-position:-390px -138px;}
+.myBaihe_Right .myTask ul li p.taskUp{ background-position:-195px -138px;}
+.myBaihe_Right .myTask ul li p.taskZp{ background-position:-65px -203px;}
+.myBaihe_Right .myTask ul li p.taskDl{ background-position:-520px -203px;}
+.myBaihe_Right .myTask ul li p.taskSj{ background-position:-455px -138px;}
+.myBaihe_Right .myTask ul li p.taskXh{ background-position:-130px -138px;}
+.myBaihe_Right .myTask ul li p.icon13{ background-position:-325px -138px;}
+.myBaihe_Right .myTask ul li p.taskAqgh{ background-position:-260px -268px;}
+.myBaihe_Right .myTask ul li p.taskSh{ background-position:-520px -138px;}
+.myBaihe_Right .myTask ul li p.taskHd{ background-position:-455px -203px;}
+.myBaihe_Right .myTask ul li p.taskAq{ background-position:0 -203px;}
+.myBaihe_Right .myTask ul li p.taskYy{ background-position:-65px -138px;}
+.myBaihe_Right .myTask ul li p.taskQa{ background-position:-325px -203px;}
+.myBaihe_Right .myTask ul li p.taskFsx{ background-position:0 -268px;}
+.myBaihe_Right .myTask ul li p.taskYd{ background-position:0 -138px;}
+.myBaihe_Right .myTask ul li p.taskHsx{ background-position:-195px -203px;}
+.myBaihe_Right .myTask ul li p.taskSs{ background-position:-130px -268px;}
+.myBaihe_Right .myTask ul li p.taskMatch{ background-position:-260px -138px;}
+.myBaihe_Right .myTask ul li p.taskSh{ background-position:-520px -138px;}
+.myBaihe_Right .myTask ul li p.taskQd{ background-position:-130px -203px;}
+.myBaihe_Right .myTask ul li p.taskLl{ background-position:-260px -203px;}
+.myBaihe_Right .myTask ul li p.taskGz{ background-position:-390px -203px;}
+.myBaihe_Right .myTask ul li p.taskXa{ background-position:-65px -268px;}
+.myBaihe_Right .myTask ul li p.taskPmyx{ background-position:-195px -268px;}
+.myBaihe_Right .myTask ul li p.taskJdmx{ background-position:-325px -268px;}
+.myBaihe_Right .myTask ul li p.taskGxzb{ background-position:-390px -268px;}
+.myBaihe_Right .myTask ul li p.taskJp { background-position:-325px -338px;}
+.myBaihe_Right .myTask .orange { width:143px; height:40px; margin:0px; padding-left:65px; font-size:16px; line-height:38px; text-align:left; border-radius:3px; background:#ff7f00 url(//images9.baihe.com/mybaihe/icon_02.gif) no-repeat 35px -208px; overflow:hidden; zoom:1;}
+.myBaihe_Right .myTask .orange:hover { background:#f36500 url(//images9.baihe.com/mybaihe/icon_02.gif) no-repeat 35px -248px; }
+.myBaihe_Right .myTask center { line-height:40px;}
+.myBaihe_Right .story { height:192px; margin:0 0 10px 10px; overflow:hidden; zoom:1; }
+.myBaihe_Right .story a { color:#666; }
+.myBaihe_Right .story ul li { width:170px; height:32px; padding-left:20px; line-height:32px; background:url(//images9.baihe.com/mybaihe/icon_03.gif) no-repeat left center; white-space:nowrap; word-break:keep-all; text-overflow:ellipsis; overflow:hidden; zoom:1;}
+.myBaihe_Right .redBean .menuTab { overflow:hidden; zoom:1;}
+.myBaihe_Right .redBean .menuTab a { position:relative; display:block; float:left; width:50%; height:30px; font-size:14px; text-align:center; color:#333; border-bottom:2px solid #ffe4af; overflow:hidden; zoom:1; }
+.myBaihe_Right .redBean em { display:none; position:absolute; bottom:0px; left:50%; width:12px; height:7px; margin-left:-6px; text-indent:-99999px; background-position:-138px 0; }
+.myBaihe_Right .redBean .menuTab .active { border-bottom:2px solid #fbb425; color:#ff8000; }
+.myBaihe_Right .redBean .menuTab .active em { display:block; }
+.myBaihe_Right .redBean .cont { zoom:1;}
+.myBaihe_Right .redBean .cont p { display:block; width:204px; padding:10px 0 0 10px; line-height:26px; zoom:1;}
+.myBaihe_Right .redBean .cont span { float:left;}
+.myBaihe_Right .redBean .cont .error { display:inline-block; margin-left:64px; _margin-left:34px; }
+.myBaihe_Right .redBean .cont .orange { width:128px; height:40px; margin:15px 0; padding-left:80px; font-size:16px; line-height:38px; text-align:left; border-radius:3px; background:#ff7f00 url(//images9.baihe.com/mybaihe/icon_02.gif) no-repeat 50px -288px; overflow:hidden; zoom:1;}
+.myBaihe_Right .redBean .cont .orange:hover { background:#f36500 url(//images9.baihe.com/mybaihe/icon_02.gif) no-repeat 50px -328px; }
+.myBaihe_Right .redBean .cont input { height:23px; width:130px;}
+.myBaihe_Right .redBean .selectWrapper { line-height:24px;}
+.myBaihe_Right .act ul { padding:0 0 10px; overflow:hidden; zoom:1;}
+.myBaihe_Right .act ul a { display:block; width:204px; height:30px; line-height:30px; color:#666; white-space:nowrap; word-break:keep-all; text-overflow:ellipsis; overflow:hidden; zoom:1; }
+.myBaihe_Right .act ul a:hover { text-decoration:underline;}
+
+/*---- VIP实体店入口 ----*/
+.vipBT { padding:0px; height:30px; font-size:18px; }
+.vip { margin-bottom:25px; padding-top:37px; border:1px solid #f4ded0; background:url(//images9.baihe.com/mybaihe/vip_02.gif) repeat-x top left; overflow:hidden; zoom:1; }
+.vip em,.vip a { display:block; background:url(//images9.baihe.com/mybaihe/vip_01.gif) no-repeat; overflow:hidden; zoom:1;}
+.vip ul li { float:left; width:76px; height:93px; font:14px/24px "Microsoft Yahei"; text-align:center; overflow:hidden; zoom:1; }
+.vip ul li em { width:56px; height:56px; margin:0 auto; text-indent:-99999px;}
+.vip .icon01 { background-position:0 0;}
+.vip .icon02 { background-position:0 -56px;}
+.vip .icon03 { background-position:0 -112px;}
+.vip .icon04 { background-position:0 -168px;}
+.vip .icon05 { background-position:0 -224px;}
+.vip .icon06 { background-position:0 -280px;}
+.vip a { width:186px; height:46px; margin:0 auto; font:16px/44px "Microsoft Yahei"; color:#fff; text-align:center; background-position:0 -336px; overflow:hidden; zoom:1;}
+
+/*---- 焦点图 ----*/
+#homeFocus .icon a { display:inline-block; background:url(//images8.baihe.com/home/icon05.png) no-repeat; overflow:hidden; zoom:1;}
+#homeFocus { position:relative; height:95px; overflow:hidden; zoom:1;}
+#homeFocus .focusCont { width:570px; height:95px; z-index:5; overflow:hidden; zoom:1; }
+#homeFocus .focusPic { position:relative; width:570px; height:95px; overflow:hidden; zoom:1;}
+#homeFocus .focusPic .cont li { position: absolute; }
+#homeFocus .focusPic .cont li img { width:570px; height:95px;}
+#homeFocus .focusPic .icon { position:absolute; right:15px; bottom:5px; z-index: 2;}
+#homeFocus .focusPic .icon a { float:left; width:18px; height:18px; margin:0 3px; text-indent:-9999px; background-position:-99px -35px; overflow:hidden; zoom:1; }
+#homeFocus .icon a.active { background-position:-80px -35px; }
+#homeFocus .focusPic ol li{ float:left; width:15px; height:15px; margin:0 0 0 5px; text-indent:-9999px;  overflow:hidden; zoom:1;  display:inline-block; background:url(//images8.baihe.com/mybaihe/round.png) no-repeat 0 -15px; overflow:hidden; zoom:1; cursor:pointer;}
+#homeFocus .focusPic ol li.active{ background-position:0 0; }
+
+
+/*---- 浮悬二维码 ----*/
+.scrollUpf { display:block; position:fixed; _position:absolute; width:114px; text-align:center; bottom:60px; right:24px; overflow:hidden; zoom:1; z-index:100;}
+.scrollUpf .hlsq { width:114px; height:140px; background:url(//images9.baihe.com/home/qrCodeA.png) no-repeat; overflow:hidden; zoom:1; }
+.scrollUpf .td30 { display:block; width:114px; height:165px; text-indent:-99999px; background:url(//static6.baihe.com/mybaihe/left_20170418.gif) no-repeat; overflow:hidden; }
+.scrollUpf-close{position:absolute; top:0; right:0; display:block; width:24px; height:24px;  background:url(//images9.baihe.com/mybaihe/scroll-close.png) no-repeat; overflow:hidden;cursor: pointer;}
+/*---- 广告 ----*/
+.scrollULeft { display:block; position:fixed; _position:absolute; width:114px; text-align:center; bottom:30px; left:1%; overflow:hidden; zoom:1; z-index:100;}
+.scrollULeft a { display:block; width:114px; height:140px;overflow:hidden; }
+.scrollULeft a img{width:114px; height:140px; }
+.scrollULeft .scrollULeft-close{position:absolute; top:0; right:0; display:block; width:24px; height:24px;  background:url(//images9.baihe.com/mybaihe/scroll-close.png) no-repeat; overflow:hidden;cursor: pointer;}
+.scrollULeft{-webkit-animation:2s scrollULeft ease-in-out .1s infinite alternate; -moz-animation:2s scrollULeft ease-in-out .1s infinite alternate; -o-animation:2s scrollULeft ease-in-out .1s infinite alternate; -ms-animation:2s scrollULeft ease-in-out .1s infinite alternate; -khtml-animation:2s scrollULeft ease-in-out .1s infinite alternate; animation:2s scrollULeft ease-in-out .1s infinite alternate; -webkit-animation-fill-mode:forwards; -moz-animation-fill-mode:forwards; -ms-animation-fill-mode:forwards; -o-animation-fill-mode:forwards; -khtml-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+
+@-webkit-keyframes scrollULeft{
+    from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-moz-keyframes scrollULeft{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-ms-keyframes scrollULeft{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-o-keyframes scrollULeft{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-khtml-keyframes scrollULeft{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@keyframes scrollULeft{
+from {bottom:100px;}
+	to {bottom:130px;}
+}
+
+/*---- 广告 ----*/
+.scrollULeftB { display:block; position:fixed; _position:absolute; width:114px; text-align:center; bottom:30px; left:1%; overflow:hidden; zoom:1; z-index:100;}
+.scrollULeftB a { display:block; width:114px; height:140px; text-indent:-9999px; background:url(//static6.baihe.com/mybaihe/left_20180807.jpg) no-repeat; overflow:hidden; }
+
+.scrollULeftB{-webkit-animation:2s scrollULeftB ease-in-out .1s infinite alternate; -moz-animation:2s scrollULeftB ease-in-out .1s infinite alternate; -o-animation:2s scrollULeftB ease-in-out .1s infinite alternate; -ms-animation:2s scrollULeftB ease-in-out .1s infinite alternate; -khtml-animation:2s scrollULeftB ease-in-out .1s infinite alternate; animation:2s scrollULeftB ease-in-out .1s infinite alternate; -webkit-animation-fill-mode:forwards; -moz-animation-fill-mode:forwards; -ms-animation-fill-mode:forwards; -o-animation-fill-mode:forwards; -khtml-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+
+@-webkit-keyframes scrollULeftB{
+    from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-moz-keyframes scrollULeftB{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-ms-keyframes scrollULeftB{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-o-keyframes scrollULeftB{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@-khtml-keyframes scrollULeftB{
+ from {bottom:100px;}
+	to {bottom:130px;}
+}
+@keyframes scrollULeftB{
+from {bottom:100px;}
+	to {bottom:130px;}
+}
+
+/*---- 广告_放大 ----*/
+.scrollULeftA { display:block; position:fixed; _position:absolute; width:212px; height:240px; bottom:30px; left:1%; background:url(//static6.baihe.com/home/left_20160803_01.png) no-repeat; overflow:hidden; zoom:1; z-index:100;}
+.scrollULeftA .scrollPic { position:absolute; top:0px; left:0px; width:212px; height:240px; background:url(//static6.baihe.com/home/left_20160803_02.png) no-repeat; overflow:hidden; }
+.scrollULeftA a { position:absolute; top:0px; left:0px; display:block; width:212px; height:240px; z-index:10 }
+
+.animScale {-webkit-animation:2s animScale ease-in-out .1s infinite alternate; -moz-animation:2s animScale ease-in-out .1s infinite alternate; -o-animation:2s animScale ease-in-out .1s infinite alternate; -ms-animation:2s animScale ease-in-out .1s infinite alternate; -khtml-animation:2s animScale ease-in-out .1s infinite alternate; animation:2s animScale ease-in-out .1s infinite alternate; -webkit-animation-fill-mode:forwards; -moz-animation-fill-mode:forwards; -ms-animation-fill-mode:forwards; -o-animation-fill-mode:forwards; -khtml-animation-fill-mode:forwards; animation-fill-mode:forwards;}
+
+@-webkit-keyframes animScale{
+    0% { 
+		-webkit-transform:scale(1);
+		opacity:1;
+    }
+	50% { 
+		-webkit-transform: scale(1.1); 
+		opacity:1;
+	}
+    100% {
+		-webkit-transform:scale(1);
+		opacity:1;
+    }
+}
+@-moz-keyframes animScale{
+    0% { 
+		-moz-transform:scale(1);
+		opacity:1;
+    }
+	50% { 
+		-moz-transform: scale(1.1); 
+		opacity:1;
+	}
+    100% {
+		-moz-transform:scale(1);
+		opacity:1;
+    }
+}
+@-ms-keyframes animScale{
+    0% { 
+		-ms-transform:scale(1);
+		opacity:1;
+    }
+	50% { 
+		-ms-transform: scale(1.1); 
+		opacity:1;
+	}
+    100% {
+		-ms-transform:scale(1);
+		opacity:1;
+    }
+}
+@-o-keyframes animScale{
+    0% { 
+		-o-transform:scale(1);
+		opacity:1;
+    }
+	50% { 
+		-o-transform: scale(1.1); 
+		opacity:1;
+	}
+    100% {
+		-o-transform:scale(1);
+		opacity:1;
+    }
+}
+@-khtml-keyframes animScale{
+	0% { 
+		-khtml-transform:scale(1);
+		opacity:1;
+    }
+	50% { 
+		-khtml-transform: scale(1.1); 
+		opacity:1;
+	}
+    100% {
+		-khtml-transform:scale(1);
+		opacity:1;
+    }
+}
+@keyframes animScale{
+    0% { 
+		transform:scale(1);
+		opacity:1;
+    }
+	50% { 
+		transform: scale(1.1); 
+		opacity:1;
+	}
+    100% {
+		transform:scale(1);
+		opacity:1;
+    }
+}
+
+
+.safety-rel{ position: relative; }
+.safety-title{ position: absolute;right: 0;top: 15px;width: 354px;font-size: 12px;line-height: 16px;color: #f60;}
+
+
+/* 2019/9/17 tq 添加圆形图案 */
+#userInfo .list ul .unread-avatar{ position: relative; display: block;width: 40px;height: 40px; text-align: center;margin: 5px auto;}
+#userInfo .list ul .unread-avatar img{width: 40px;height: 40px; border-radius: 50%;-webkit-border-radius:50%;}
+#userInfo .list ul li .unread-dot{overflow: hidden;position: absolute;top: 0px;left: 30px;width: 12px;height: 12px;background:url(//images6.baihe.com/icon/new_msgDot.png) no-repeat 0 0;_background:url(//images6.baihe.com/icon/new_msgDot.gif) no-repeat 0 0;}

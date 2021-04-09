@@ -13,6 +13,8 @@ public class TNews {
 
     private String likes;
 
+    private String username;
+
     public Integer getId() {
         return id;
     }
@@ -59,5 +61,13 @@ public class TNews {
 
     public void setLikes(String likes) {
         this.likes = likes == null ? null : likes.trim();
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

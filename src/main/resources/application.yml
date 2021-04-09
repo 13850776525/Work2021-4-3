@@ -6,6 +6,7 @@ spring:
 #公共配置与profiles选择无关
 mybatis:
   typeAliasesPackage: com.msbkj.entity
+  config-location: classpath:mybatis/SqlMapConfig.xml
   mapperLocations: classpath:mapper/*.xml
 
   spring:
@@ -25,7 +26,7 @@ spring:
   profiles: test
 
   datasource:
-    url: jdbc:mysql://localhost:3306/datingsites?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://localhost:3306/datingsites?useSSL=true&useUnicode=true&characterEncoding=utf8
     username: root
-    password: mysql123
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -13,6 +13,20 @@ public class TComment {
 
     private String times;
 
+    private String username;
+
+    public TComment() {
+    }
+
+    public TComment(Integer id, String flag, Integer newsId, Integer userId, String content, String times) {
+        this.id = id;
+        this.flag = flag;
+        this.newsId = newsId;
+        this.userId = userId;
+        this.content = content;
+        this.times = times;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -59,5 +73,13 @@ public class TComment {
 
     public void setTimes(String times) {
         this.times = times == null ? null : times.trim();
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }

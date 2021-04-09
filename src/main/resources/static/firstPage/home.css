@@ -1,0 +1,295 @@
+@charset "utf-8";
+/* CSS Document yz */
+
+/*****顶部下沉*****/
+#TopBig { height:500px; background:#de352c url(//static6.baihe.com/home/spring/pic_bj.jpg) no-repeat center top; overflow:hidden; zoom:1; }
+#TopBig .cont { width:1000px; margin:0 auto; overflow:hidden; zoom:1; }
+#TopBig .cont .top { height:67px; background:url(//static6.baihe.com/home/spring/pic_01.jpg)  no-repeat; overflow:hidden; zoom:1; }
+#TopBig .cont .icon { height:83px; padding-left:458px; background:url(//static6.baihe.com/home/spring/pic_02.jpg)  no-repeat; overflow:hidden; zoom:1; }
+#TopBig .cont .icon a { display:block; width:83px; height:83px; text-indent:-9999px; overflow:hidden; zoom:1; }
+#TopBig .cont .list { height:70px; font:24px/48px 'Microsoft Yahei'; color:#ecec9f; text-align:center; background:url(//static6.baihe.com/home/spring/pic_03.jpg) no-repeat; overflow:hidden; zoom:1; }
+#TopBig .cont .list ul li { height:70px; overflow:hidden; zoom:1; }
+#TopBig .cont dl dt,#TopBig .cont dl dd { height:70px; overflow:hidden; zoom:1; }
+#TopBig .cont dl dd { padding-left:415px; background:url(//static6.baihe.com/home/spring/pic_07.jpg) no-repeat; }
+#TopBig .cont dl dd a { display: block; width:170px; height:58px; text-indent:-9999px; overflow:hidden; zoom:1; }
+#TopSmall{ width:100%; margin:0 auto; text-align:center; background:#d52529; overflow:hidden; zoom:1;}
+#TopSmall{ position:relative;z-index:5; display:none;}
+#TopSmall .close{ position:absolute; top:1px; right:5px; display:block; width:20px; height:20px; background:#fff; opacity:0; filter:alpha(opacity=0); text-indent:-999em; overflow:hidden;}
+
+#topTools{ position:fixed; width:55px; height:168px; *z-index:100; -ie6-position-fixed-delay:200;}
+* html #topTools { *position: expression(function(ele){ele.runtimeStyle.position='absolute';Expressions.style.position.fixed(ele);}(this))}
+#topTools a{ display:block; width:55px; height:51px; margin:0 0 5px 0; background:url(//images6.baihe.com/icon/topIcon.gif) no-repeat; text-indent:-999em; overflow:hidden; zoom:1;}
+#topTools a.topIcon{ background-position:0 0;}
+#topTools a.regIcon{ background-position:0 -51px;}
+#topTools a.loginIcon{ background-position:0 -102px;}
+#topTools a.mobileIcon{ height:76px; background-position:0 -153px;}
+#topTools a.helpIcon{ height:51px; background-position:0 -229px;}
+
+#homeFocus .icon a,.story em { display:inline-block; background:url(//images8.baihe.com/home/icon05.png) no-repeat; overflow:hidden; zoom:1;}
+
+#homeFocus { position:relative; height:415px; font:13px/24px "Microsoft Yahei"; overflow:hidden; zoom:1;}
+#homeFocus .homeFocusBg { height:415px; text-indent:-99999px; width:100%; position: absolute;}
+#homeFocus .focusCont { position:absolute; top:0px; left:50%; width:1000px; height:415px; margin:0 0 0 -500px; z-index:5; overflow:hidden; zoom:1; }
+#homeFocus .focusCont .content { float:left; width:248px; height:415px; background:#fff url(//images6.baihe.com/icon/loadingI.gif) no-repeat center center; overflow:hidden; zoom:1;}
+#homeFocus .focusPic { position:relative; float:left; width:750px; height:415px; overflow:hidden; zoom:1;}
+#homeFocus .focusPic .cont li{position: absolute;z-index:0;opacity:0;-moz-opacity:0;filter:alpha(opacity=0);width:750px;height:415px;}
+#homeFocus .focusPic .cont li a{display:block;width:750px;height:415px;}
+#homeFocus .arrowFocus { position:absolute; top:176px; width:28px; height:62px; z-index:10; overflow:hidden; zoom:1; }
+#homeFocus .arrowFocus a { display:block; width:28px; height:62px; text-indent:-99999px; background:url(//images8.baihe.com/home/icon08.png) no-repeat; overflow:hidden; zoom:1;}
+#homeFocus .arrowFocus a.prev { background-position:0 0;}
+#homeFocus .arrowFocus a.prev:hover { background-position:0 -62px;}
+#homeFocus .arrowFocus a.next { background-position:-28px 0;}
+#homeFocus .arrowFocus a.next:hover { background-position:-28px -62px;}
+#homeFocus .focusPic .icon { position:absolute; left:370px; bottom:20px; z-index: 2;}
+#homeFocus .focusPic .icon a { float:left; width:18px; height:18px; margin:0 3px; text-indent:-9999px; background-position:-99px -35px; overflow:hidden; zoom:1; }
+#homeFocus .icon a.active { background-position:-80px -35px; }
+#homeFocus .persData,#homeFocus .signIn { float:left; width:248px; height:415px; border:1px solid #e7eae1; border-width:0 1px; overflow:hidden; zoom:1; }
+#homeFocus .persData { background:url(//images8.baihe.com/home/bj_03.gif) no-repeat center top; }
+#homeFocus .persData .headPic { display:block; width:100px; height:100px; margin:17px auto 0; border-radius:50%;}
+#homeFocus .persData p { height:37px; _height:24px; _padding-top:9px; text-align:center; font-size:18px; line-height:40px;  }
+#homeFocus .persData p img { position: relative; top:3px; margin-left:5px;}
+#homeFocus .persData center a { color:#bdbdbd;}
+#homeFocus .persData .label { position:absolute; top:20px; left:50%; width:126px; margin-left:-63px; padding:6px 0 0 0; z-index:2; overflow:hidden; zoom:1;}
+#homeFocus .persData .label em { position:absolute; top:0px; left:50%; display:block; width:11px; height:7px; margin-left:-6px; background:url(//images8.baihe.com/home/icon06.gif) no-repeat; overflow:hidden; zoom:1;}
+#homeFocus .persData .label span { display:block; width:124px; height:24px; line-height:23px; font-size:13px; text-align:center; color:#bdbdbd; border:1px solid #bdbdbd; background:#fff; overflow:hidden; zoom:1; }
+#homeFocus .persData .label a { color:#bdbdbd;}
+#homeFocus .persData .label a:hover { text-decoration:underline; }
+#homeFocus .persData .speed { position:relative; width:90px; height:12px; margin:0 auto; color:#fff; border-radius:5px; background:#e3e3e3; z-index:2; zoom:1; }
+#homeFocus .persData .speed .strip { clear:both; font-size:0; line-height:1px; height:12px; border-radius:5px; _border-radius:0px; background:#fdbf2d; }
+#homeFocus .persData .speed .dataIntegrity { position:absolute; top:0px; _top:-10px; display:block; width:100%; height:12px; text-align:center; font:12px/12px Verdana; color:#fff; overflow:hidden; zoom:1; }
+#homeFocus .persData .speed .label { top:14px; z-index:5;}
+#homeFocus .persData .icon { width:130px; height:20px; margin:0 auto; padding-top:10px; }
+#homeFocus .persData .icon ul li { position:relative; float:left; width:20px; padding:0 3px; }
+#homeFocus .persData .list { width:234px; margin:0 auto; padding:35px 0 12px; overflow:hidden; zoom:1;}
+#homeFocus .persData .list ul li { float:left; width:78px; text-align:center; overflow:hidden; zoom:1;}
+#homeFocus .persData .list a { display:block; width:78px; height:74px; padding-top:4px; color:#666; }
+#homeFocus .persData .list a strong { display:block; width:78px; font-size:24px; font-family:Arial; color:#f60; line-height:44px;}
+#homeFocus .persData .list a:hover { background:#efefef;}
+#homeFocus .persData .orange { float:none; width:234px; height:46px; font-size:16px; margin:0 auto; line-height:44px; border:none; border-radius:4px; }
+#homeFocus .persData a.close { position:absolute; right:20px; top:20px; font-size:13px; color:#bdbdbd; text-decoration:none; }
+#homeFocus .persData a.close:hover { text-decoration:underline; }
+#homeFocus .signIn { width:208px; height:400px; padding:15px 20px 0; background:#fff url(//images8.baihe.com/home/bj_04.gif) no-repeat left 20px; }
+#homeFocus .signIn .highlight2{border:1px solid #f00;}
+#homeFocus .signIn .highlight1{ box-shadow:0 0 3px #98b4d1; border-color:#98b4d1; }
+#homeFocus .signIn dl dt { height:60px; overflow:hidden; zoom:1;}
+#homeFocus .signIn dl dt input { float:none; width:180px; height:20px; margin:4px; padding:8px 10px; font-size:16px; font-family:"Microsoft Yahei"; color:#ccc; border:1px solid #bdbdbd; color:#bdbdbd; overflow:hidden; zoom:1;}
+#homeFocus .signIn dl dt input:focus { box-shadow:0 0 3px #98b4d1; border-color:#98b4d1; }
+.vip .reg .verify{display: none;}
+#homeFocus .signIn .error,.vip .reg .error { display:block; height:21px; padding:0 0 0 17px; color:#f00; line-height:20px; background:url(//images8.baihe.com/home/iconError_01.gif) no-repeat left center; clear: both;}
+#homeFocus .signIn dl dt span { margin:-4px 0 0 4px; font-size:12px; display: none;}
+#homeFocus .signIn dl dt img { display:block; float:left; margin:4px 6px 0 6px; width:77px; height:38px;}
+#homeFocus .signIn dl dd { height:25px; padding:0 4px; overflow:hidden; zoom:1;}
+#homeFocus .signIn dl dd label{color:#bdbdbd;}
+#homeFocus .signIn dl dd input { position:relative; top:2px; margin-right:5px; _top:1px; _marign-right:0px;}
+#homeFocus .signIn .refresh { display:block; float:left; width:20px; height:18px; margin-top:15px; background:url(//images6.baihe.com/icon/loading.gif) no-repeat; overflow:hidden; zoom:1; text-indent:-9999px;}
+#homeFocus .signIn dl dd .R { float:right;}
+#homeFocus .signIn dl dd .sel { background:url(//images6.baihe.com/icon/inp_01.gif) no-repeat left center; padding-left:18px; }
+#homeFocus .signIn dl dd .cancel { background:url(//images6.baihe.com/icon/inp_01a.gif) no-repeat left center; padding-left:18px; }
+#homeFocus .signIn .orange { width:208px; height:40px; font-size:16px; line-height:40px; border:none; border-radius:4px; }
+#homeFocus .signIn .txt { height:40px; line-height:43px; padding-left:56px; background:url(//images6.baihe.com/icon/icon_10.gif) no-repeat 34px 14px; overflow:hidden; zoom:1; }
+#homeFocus .signIn .txt a { color:#f60; }
+#homeFocus .signIn .icon { display: none; position:relative; width:180px; height:120px; margin:0 auto;} 
+#homeFocus .signIn .icon p { height:40px; padding-top:10px; text-align:center; line-height:45px;}
+#homeFocus .signIn .icon a { display:inline-block; float:left; width:29px; height:26px; margin:0 20px 10px 0; text-indent:-9999px; background:url(//images8.baihe.com/home/icon07.gif) no-repeat; overflow:hidden; zoom:1; }
+#homeFocus .signIn .icon a.sian { background-position:0 0;}
+#homeFocus .signIn .icon a.qq { background-position:0 -26px;}
+#homeFocus .signIn .icon a.baidu { background-position:0 -52px;}
+#homeFocus .signIn .icon a.rr { background-position:0 -78px; margin-right:0px;}
+#homeFocus .signIn .icon a.sll { background-position:0 -104px;}
+#homeFocus .signIn .icon a.zfb { background-position:0 -130px;}
+#homeFocus .signIn .icon a.ty { background-position:0 -156px;}
+#homeFocus .signIn .icon a.arrow { position:absolute; bottom:10px; left:50%; float:none; width:24px; height:11px; margin:0 0 0 -12px; background-position:0 -182px;}
+
+
+.activeCont { float:left; width:714px; overflow:hidden; zoom:1; }
+.activeCont a.cf60 { color:#f60;}
+.activeCont a.cf60:hover { text-decoration:underline;}
+.activeCont dl { height:35px; background:url(//images8.baihe.com/home/bj_01.gif) repeat-x left top;}
+.activeCont dl dt { float:left; width:316px; height:35px; overflow:hidden; zoom:1;}
+.activeCont dl dt li {overflow: hidden; float: left;}
+.activeCont dl dt a { display:block; float:left; width:158px; height:33px; font-size:18px; color:#666; text-align:center; border-bottom:2px solid #facac0; overflow:hidden; zoom:1;}
+.activeCont dl dt a.active { color:#333; border-bottom:2px solid #fc5135; background:url(//images8.baihe.com/home/icon03.gif) no-repeat center bottom; }
+.activeCont dl dd { float:right; font-size:13px; line-height:33px; color:#cfcfcf; text-align:right; overflow:hidden; zoom:1;}
+.activeCont dl dd span { padding:0 15px;}
+.activeCont dl dd a { color:#f60;}
+.activeCont dl dd a:hover { text-decoration:underline;}
+.activeCont dl dd a.more { margin-left:40px;}
+.activeCont div ul { width:764px; padding:17px 0 0 0; overflow:hidden; zoom:1;}
+.activeCont div ul li { display:inline; float:left; width:80px; height:124px; margin-right:46px; font-size:13px; line-height:24px; text-align:center; background:#f2f2f2; overflow:hidden; zoom:1;}
+.activeCont div ul li.last {background:url(//images8.baihe.com/home/fcwr.gif) no-repeat; margin-top:-5px; padding-top: 92px; height:37px;}
+.activeCont div ul li.blty {background:url(//images8.baihe.com/home/blty.jpg) no-repeat; margin-top:-10px; padding-top: 97px;}
+.activeCont div ul li img { display:block; width:80px; height:100px;}
+.activeCont div ul li.last img {height: 37px;}
+.activeCont div ul a { color:#333; }
+.activeCont div ul a.icon { display:block; height:24px; text-indent:-9999px; background:url(//images8.baihe.com/home/icon04.gif) no-repeat; overflow:hidden; zoom:1; }
+.activeCont div ul a.icon:hover { background-position:0 -24px;}
+
+.service { position:relative; float:right; width:250px; overflow:hidden; zoom:1;}
+.service ul { width:250px; height:144px; margin-top:-10px; border-bottom:1px solid #ddd; background:url(//images8.baihe.com/home/bj_06.gif) no-repeat center center; overflow:hidden; zoom:1; }
+.service ul li { position:relative; float:left; width:125px; height:73px; overflow:hidden; zoom:1; }
+.service em { position:absolute; top:23px; display:block; width:27px; height:26px; text-indent:-99999px; background:url(//images8.baihe.com/home/icon10.gif) no-repeat; overflow:hidden; zoom:1; }
+.service span { font-size:12px; color:#bdbdbd}
+.service a { position:relative; display:block; float:left; padding:0; line-height:20px; font-size:14px; color:#333; overflow:hidden; zoom:1;}
+.service a:hover { background:#fafafa;}
+.service .jzz,.service .jzzqx {  width:94px; height:66px; padding:6px 0 0 31px; }
+.service .jzz em { left:0px;}
+.service .zz,.service .hn,.service .cj,.service .ns,.service .qr,.service .music,.service .xqxx  {  width:84px; margin-left:1px; height:65px; padding:6px 0 0 40px; }
+.service .zz em { left:8px; background-position:0 -26px;}
+.service .sj {  width:94px; height:60px; padding:12px 0 0 31px; }
+.service .sj em { left:0px; background-position:0 -52px;}
+.service .hn em { left:8px; background-position:0 -78px;}
+.service .jzzqx em { left:0px; background-position:0 -130px;}
+.service .cj em { left:8px; background-position:0 -528px;}
+.service .qr em { left:8px; background-position:0 -156px;}
+.service .sx em { left:8px; background-position:0 -208px;}
+.service .zq em { left:8px; background-position:0 -234px;}
+.service .gq em { left:8px; background-position:0 -260px;}
+.service .jqsy { width:94px; height:60px; padding:12px 0 0 31px; color:#fc1e33;}
+.service .jqsy em { left:8px; background-position:0 -286px;}
+.service .s11,.service .gnfc,.service .s12,.service .winter,.service .sd,.service .ny,.service .shj,.service .td,.service .thy,.service .sy,.service .wy,.service .dw,.service .dc,.service .th,.service .dcA,.service .icon { width:94px; height:66px; padding:6px 0 0 31px; color:#fc1e33;}
+.service .s11 em { left:8px; background-position:0 -312px;}
+.service .music em { left:8px; background-position:0 -366px}
+.service .game {  width:85px; height:57px; padding:15px 0 0 40px; }
+.service .game em { left:8px; background-position:0 -339px;}
+.service .gnfc em { left:8px; background-position:0 -393px;}
+.service .s12 em { left:8px; background-position:0 -420px;}
+.service .winter em { left:8px; background-position:0 -447px;}
+.service .sd em { left:8px; background-position:0 -474px;}
+.service .ny em { left:8px; background-position:0 -501px;}
+.service .shj em { left:8px; background-position:0 -555px;}
+.service .td em { left:8px; background-position:0 -582px;}
+.service .thy em { left:8px; background-position:0 -609px;}
+.service .sy em { left:8px; background-position:0 -636px;}
+.service .wy em { left:8px; background-position:0 -663px;}
+.service .dw em { left:8px; background-position:0 -182px;}
+.service .dc em { left:8px; background-position:0 -744px;}
+.service .dcA em { left:8px; background-position:0 -771px;}
+.service .th em { left:8px; background-position:0 -717px;}
+.service .buy em { left:8px; background-position:0 -798px;}
+.service .xqxx em { left:8px;height: 20px; background: url(//images6.baihe.com/icon/icon.png) no-repeat 0 -784px;}
+/*.service .clearB { width:230px; margin:1px auto; clear:both; font-size:0; line-height:1px; height:1px; border-bottom:1px dashed #f0f0f0; overflow:hidden; zoom:1;}
+.service a.iconA { margin-top:-5px; background:#fff url(//images8.baihe.com/home/icon01.gif) no-repeat 0 0; overflow:hidden; zoom:1;}
+.service a.iconA:hover { background:#f2f2f2 url(//images8.baihe.com/home/icon01.gif) no-repeat 0 -68px; overflow:hidden; zoom:1;}
+.service a.iconB { background:#fff url(//images8.baihe.com/home/icon02.gif) no-repeat 0 0; overflow:hidden; zoom:1;}
+.service a.iconB:hover { background:#f2f2f2 url(//images8.baihe.com/home/icon02.gif) no-repeat 0 -68px; overflow:hidden; zoom:1;}
+.service a.iconC { background:#fff url(//images8.baihe.com/home/icon09.gif) no-repeat 0 0; overflow:hidden; zoom:1;}
+.service a.iconC:hover { background:#f2f2f2 url(//images8.baihe.com/home/icon09.gif) no-repeat 0 -68px; overflow:hidden; zoom:1;}
+*/
+.premiumMember{z-index: 11;}
+.search { float:right; width:880px; height:25px; font-size:13px; color:#bdbdbd; line-height:25px;}
+.search .orange { float:right; width:80px;}
+.search ul { position:relative; z-index:99; float:right;}
+.search ul li { position:relative; z-index:80; float:left; height:25px; padding-right:10px;}
+.search select { width:30px;}
+.search .w {width:700px; _width:710px;}
+
+.picList { position:relative; width:1004px; height:500px; margin-bottom:34px; overflow:hidden; zoom:1;}
+.picList dl { float:left; width:500px; overflow:hidden; zoom:1; }
+.picList dl a { position:relative; z-index:3; float:left; display: inline-block;border:1px solid #fff; border-width:0 1px 1px 0;  overflow:hidden; zoom:1; }
+.picList dl img { display:inline; float:left; -o-transition:all ease .3s;  -webkit-transition: all ease .3s; -moz-transition:all ease .3s; -ms-transition:all ease .3s;  transition: all ease .3s}
+.picList dl a:hover img {-o-transform:scale(1.2); -webkit-transform: scale(1.2); -moz-transform:scale(1.2); -ms-transform:scale(1.2); transform: scale(1.2);}
+.picList dl dt { position:relative; float:left; width:249px; height:249px; padding:0 1px 1px 0; overflow:hidden; zoom:1; }
+.picList dl dt a { width:249px; height:249px; background:url(//images6.baihe.com/icon/loadingI.gif) no-repeat center center;}
+.picList dl dt img { width:249px; height:249px;}
+.picList dl dd { float:left; width:250px; height:250px; overflow:hidden; zoom:1;}
+.picList dl dd a { width:124px; height:124px; background:url(//images6.baihe.com/icon/loadingI.gif) no-repeat center center;}
+.picList dl dd img { width:124px; height:124px;}
+.picList .data { position:absolute; left:0px; bottom:-30px; height:30px; font-size:12px; cursor:pointer; overflow:hidden; zoom:1; }
+.picList .data .back { width:100%; height:30px; background:#000; filter:alpha(opacity=50); -moz-opacity:0.5; opacity: 0.5;}
+.picList .data p { position:absolute; top:0px; left:0px; height:30px; padding:0 8px; line-height:30px; color:#fff; z-index:10;}
+.picList .data p span { float:right; }
+.picList dl dt .data { width:249px; }
+.picList dl dt p { width:233px;}
+.picList dl dd .data { width:124px; bottom:-30px; }
+.picList dl dd p { width:107px;}
+.picList .icon { position:absolute; top:0px; right:4px; width:250px; height:125px; overflow:hidden; zoom:1; z-index:10;}
+.picList .icon a { display:block; float:left; width:125px; height:41px; font-size:14px; color:#fff; line-height:41px; text-align:center; background:#f2a95c; overflow:hidden; zoom:1; }
+.picList .icon .icon01 { background:#ec9232;}
+.picList .icon .icon02 { background:#ec9232; height:42px; line-height:42px;}
+.picList .icon .icon03 { height:42px; line-height:42px;}
+.picList .icon a:hover { background:#ef7b00}
+
+.recommend { width:1042px; height:370px; background:url(//images6.baihe.com/icon/loadingI.gif) no-repeat center center; overflow:hidden; zoom:1;}
+.recommend strong { display:block; height:29px; font-size:16px; line-height:26px;}
+.recommend strong a{float: none; color: #333;}
+.recommend span { display:block; height:40px; padding:3px 0;} 
+.recommend p { width:172px; height:50px; color:#bdbdbd;}
+.recommend dl { float:left; width:347px; height:185px; color:#333; overflow:hidden; zoom:1; }
+.recommend dl dt { float:left; width:120px; overflow:hidden; zoom:1; }
+.recommend dl dt img { width:120px; height:150px;}
+.recommend dl dd { float:left; width:184px; padding:0 0 0 15px; overflow:hidden; zoom:1;}
+.recommend dl dd img { position:relative; top:5px; margin-left:7px;}
+.recommend a { float:left; width:80px; margin-right:12px;}
+.recommend .grey { width:78px;}
+#jsNoLoginRecommend { background:#fff; overflow:hidden; zoom:1; }
+
+.story { overflow:hidden; zoom:1;}
+.story em { display:inline-block; width:39px; height:39px; background:url(//images8.baihe.com/home/icon05.png) no-repeat; overflow:hidden; zoom:1;}
+.story a { position:relative; display:block; float:left; overflow:hidden; zoom:1;}
+.story .label { position:absolute; left:0px; width:73px; height:23px; padding-left:8px; color:#fff; line-height:22px; background:url(//images8.baihe.com/home/bj_02.gif) no-repeat; overflow:hidden; zoom:1; }
+.story .data { position:absolute; left:0px; display: inline; color:#333; overflow:hidden; zoom:1; }
+.story .bigPic { position:relative; float:left; width:397px; height:402px; overflow:hidden; zoom:1;}
+.story .bigPic .label { bottom:70px;}
+.story .bigPic .data { bottom:22px;}
+.story .smallPic { float:left; width:603px; overflow:hidden; zoom:1;}
+.story ul { float:left; width:605px; overflow:hidden; zoom:1; }
+.story ul li { position:relative; float:left; padding:0 0 1px 1px; overflow:hidden; zoom:1;}
+.story ul li .label { bottom:48px; left:0px;}
+.story ul li .data { bottom:40px;}
+.story ul li img { width:200px; height:200px;}
+.story .name { width:300px; height:34px; margin-top:6px; padding-left:10px; line-height:34px; background-position: 0 0; }
+/*.story .num { float:left; height:22px; margin:0 5px 0 95px; font-family:Arial; padding-top:17px; text-align:center; color:#696b6a; background-position:0 -34px; }*/
+.story .like { float:left; height:22px; margin:0 5px 0 95px; font-family:Arial; padding-top:17px; text-align:center; color:#696b6a;  background-position:-39px -34px; display: none;   -moz-transform: scale(0);  -ms-transform: scale(0); -webkit-transform: scale(0); transform: scale(0); -moz-transition-property: -moz-transform; -o-transition-property: -o-transform; -webkit-transition-property: -webkit-transform; transition-property: transform; -moz-transition-duration: 0.35s; -o-transition-duration: 0.35s; -webkit-transition-duration: 0.35s; transition-duration: 0.35s;}
+
+.story .active .like{ -moz-transform: scale(1); -ms-transform: scale(1);  -webkit-transform: scale(1); transform: scale(1);}
+
+.story .like a { display:block; width:39px; height:39px; color:#696b6a; text-align:center;}
+.vip { float:left; width:715px; zoom:1;}
+.vip h2  span { padding-left:25px; font-size:13px; font-weight:200; color:#e61e1e; }
+.vip .img { display:block; float:left;}
+
+.vip h2 .tel { position:absolute; left:116px; top:3px; _top:0px; height:18px; }
+.vip .pic { widows:690px; height:237px; padding:0px; overflow:hidden; zoom:1;}
+.vip .vipList { height:84px; border-bottom:1px dashed #dddddd; overflow:hidden; zoom:1;}
+.vip .vipList dl dt { position:relative; float:left; width:70px; height:56px; padding:6px 0 0 0; font:bold 16px/24px 'Microsoft Yahei'; text-align:center; color:#fff; border-radius:5px; background:#ff5a4d; }
+.vip .vipList dl dt em { position:absolute; display:block; top:25px; right:-5px; width:5px; height:12px; background:url(//images8.baihe.com/home/arrow.gif) no-repeat; }
+.vip .vipList dl dd { overflow:hidden; zoom:1; }
+.vip .vipList a { display:inline-block; float:left; width:125px; height:28px; margin:0 0 6px 4px; font:14px/26px 'Microsoft Yahei'; text-align:center; color:#fff; border-radius:5px; background:#c0c0c0; overflow:hidden; zoom:1; }
+.vip .vipList a:hover { background:#ff5a4d; }
+
+.vip .reg { float:left; width:236px; height:263px; padding-top:70px; background:url(//images8.baihe.com/home/bj_05.gif) no-repeat; zoom:1;}
+.vip .reg .inp { width:144px; _width:136px; height:24px; }
+.vip .reg .highlight1 { box-shadow:0 0 3px #98b4d1; border-color:#98b4d1; }
+.vip .reg .orange { width:174px; height:37px; margin:0 auto; line-height:37px; font-size:16px; border-radius:3px;}
+.vip .reg dl { width:200px; height:45px; margin:0 auto; zoom:1; }
+.vip .reg dl dt { float:left; width:40px; line-height:24px; text-align:right;}
+.vip .reg dl dd { position:relative; float:left; width:160px; z-index:2; zoom:1; }
+.vip .reg .error input { border:1px solid #f00; }
+/*
+.vip .reg .active { background:url(//images8.baihe.com/home/radio_02.gif) no-repeat left center; }
+.vip .reg .ok { padding:0 0 0 15px; color:#6ac0e4; background:url(//images8.baihe.com/home/iconOK_01.gif) no-repeat left center; }
+*/
+.vip .reg label { margin:0 10px 0 0px;}
+.vip .city_input { width:143px; _width:136px;}
+.vip .reg p { padding:15px 0 0; text-align:center; color:#bdbdbd; }
+.vip .reg p span { color:#f60; font-weight:bold; font-size:14px;}
+.vip .reg .pic { width:100%; padding:20px 0 40px 0; text-align:center; overflow:hidden; zoom:1; }
+.vip .reg .error { margin-left:0px;}
+
+.indexR { float:right; width:250px; overflow:hidden; zoom:1;}
+.indexR img { display:block; height:110px;}
+.indexR .adv110 { height:110px; padding-bottom:35px; overflow:hidden; zoom:1; }
+.indexR .c333 { line-height:33px;}
+.indexR .carousel { position:relative; width:250px; height:144px; overflow:hidden; zoom:1; }
+.indexR .icon { position:absolute; right:22px; bottom:50px; overflow:hidden; zoom:1;}
+.indexR .icon a { display:block; float:left; width:7px; height:7px; margin-left:4px; text-indent:-9999px; border-radius:4px; background:#999; overflow:hidden; zoom:1; }
+.indexR .icon a:hover,.indexR .icon a.active { background:#fff;}
+.indexR span { font-size:12px; line-height:28px;}
+
+#homeFocus .focusPic ol li{ float:left; width:18px; height:18px; margin:0 3px; text-indent:-9999px;  overflow:hidden; zoom:1;  display:inline-block; background:url(//images8.baihe.com/home/icon05.png) no-repeat; overflow:hidden; zoom:1; background-position:-99px -35px; cursor:pointer;}
+#homeFocus .focusPic ol li.active{ background-position:-80px -35px; }
+.indexR .icon li { display:block; float:left; width:7px; height:7px; margin-left:4px; text-indent:-9999px; border-radius:4px; background:#999; overflow:hidden; zoom:1; cursor:pointer; }
+.indexR .icon li:hover,.indexR .icon li.active { background:#fff;}
+.highlight2{border:1px solid #f00;}
+.highlight1 { box-shadow:0 0 3px #98b4d1; border-color:#98b4d1; }
+.baiheOrder{width: 156px;margin: 0 auto;}

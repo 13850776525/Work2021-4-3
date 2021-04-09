@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document yz */
+
+* { margin:0px; padding:0px; }
+
+.fwsj_layer { position:absolute; top:50%; left:50%; width:630px; height:400px; margin:-250px 0 0 -325px; padding:100px 0 0 20px; background:url(//images9.baihe.com/pop/fwsj/bj.png) no-repeat; overflow:hidden; zoom:1; }
+.fwsj_layer .fwsjClose { position: absolute; top:8px; right:2px; display:block; width:30px; height:30px; text-indent:-99999px; overflow:hidden; zoom:1; }
+.fwsj_layer .fwsjBt { height:82px; font:28px/80px 微软雅黑; color:#f00; text-align:center; overflow:hidden; zoom:1;}
+.fwsj_layer dl { padding:0 25px 30px 5px; overflow:hidden; zoom:1;}
+.fwsj_layer dl dt { float:left; width:100px; height:100px; overflow:hidden; zoom:1;}
+.fwsj_layer dl dt img { width:100px; height:100px; border-radius:50%;}
+.fwsj_layer dl dd { float:right; width:470px; padding-left:20px; font:16px/22px 微软雅黑; color:#333; overflow:hidden; zoom:1; }
+.fwsj_layer dl dd p { padding-bottom:10px;}
+.fwsj_layer .colA { color:#dd6f01}
+.fwsj_layer .colB { color:#0273cc}
+.fwsj_layer .fwsjTxt { width:600px; height:50px; margin-bottom:8px; padding:10px; font:12px/20px 微软雅黑; color:#666; background:#fcefe1; overflow-y:auto; overflow-x:hidden; zoom:1;}
+.fwsj_layer .fwsjTxt strong { color:#333;}
+.fwsj_layer label { font:12px/20px 微软雅黑; color:#666; }
+.fwsj_layer label input { position:relative; top:2px; _top:0px; margin:0 5px 0 10px;}
+.fwsj_layer .fwsjIcon { padding:20px 0 0 130px; overflow:hidden; zoom:1; }
+.fwsj_layer .fwsjIcon a { display:block; float:left; width:153px; height:42px; font:18px/40px 微软雅黑; color:#fff; text-decoration:none; text-align:center; overflow:hidden; zoom:1;}
+.fwsj_layer .fwsjIcon a.iconA { background:url(//images9.baihe.com/pop/fwsj/iconA.gif) no-repeat; }
+.fwsj_layer .fwsjIcon a.iconB {  margin-left:45px; background:url(//images9.baihe.com/pop/fwsj/iconB.gif) no-repeat; }

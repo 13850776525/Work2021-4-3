@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://www.baihe.com/home.shtml -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script id="_1617954430637_2352" th:src="@{/firstPage/detect.json}"></script>
+    <script type="text/javascript" async="" th:src="@{/firstPage/fm.js}"></script>
+    <script th:src="@{/firstPage/hm.js}"></script>
+
+    <title>百合网-婚恋交友_相亲找对象,中国第一家实名制婚恋服务网站</title>
+    <meta name="description" content="百合网--实名婚恋。百合网1亿实名认证会员，打造全国本地化的婚恋交友平台，相亲找对象就上百合网，资深专业红娘一对一贴心服务，婚恋交友更放心！">
+    <meta name="keywords" content="婚恋交友,相亲,找对象,百合网">
+    <link th:href="@{/firstPage/public.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/firstPage/home.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/firstPage/formStyle.css}" rel="stylesheet" type="text/css">
+    <!--link rel="canonical" href="http://www.baihe.com/home.shtml" /-->
+    <script language="javascript" th:src="@{/firstPage/gt.js}"></script>
+
+    <style type="text/css">
+
+
+        /*---- 浮悬春节 hihu ----*/
+        .scrollULeft {
+            display: block;
+            position: fixed;
+            _position: absolute;
+            width: 180px;
+            text-align: center;
+            bottom: 30px;
+            left: 1%;
+            zoom: 1;
+            z-index: 100;
+        }
+
+        .scrollULeft a {
+            width: 180px;
+            height: 250px;
+        }
+
+        .scroll-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: url(//static6.baihe.com/client/scroll-close.png) no-repeat 0 0;
+            cursor: pointer;
+        }
+
+        .scrollULeft-close {
+            position: absolute;
+            right: 24px;
+            top: 0px;
+            width: 24px;
+            height: 24px;
+            background: url(//static6.baihe.com/client/scroll-close.png) no-repeat 0 0;
+            cursor: pointer;
+        }
+
+        .scrollULeft {
+            -webkit-animation: 2s scrollULeft ease-in-out .1s infinite alternate;
+            -moz-animation: 2s scrollULeft ease-in-out .1s infinite alternate;
+            -o-animation: 2s scrollULeft ease-in-out .1s infinite alternate;
+            -ms-animation: 2s scrollULeft ease-in-out .1s infinite alternate;
+            -khtml-animation: 2s scrollULeft ease-in-out .1s infinite alternate;
+            animation: 2s scrollULeft ease-in-out .1s infinite alternate;
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            -ms-animation-fill-mode: forwards;
+            -o-animation-fill-mode: forwards;
+            -khtml-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+        }
+
+        @-webkit-keyframes scrollULeft {
+            from {
+                bottom: 0px;
+            }
+            to {
+                bottom: 30px;
+            }
+        }
+
+        @-moz-keyframes scrollULeft {
+            from {
+                bottom: 0px;
+            }
+            to {
+                bottom: 30px;
+            }
+        }
+
+        @-ms-keyframes scrollULeft {
+            from {
+                bottom: 0px;
+            }
+            to {
+                bottom: 30px;
+            }
+        }
+
+        @-o-keyframes scrollULeft {
+            from {
+                bottom: 0px;
+            }
+            to {
+                bottom: 30px;
+            }
+        }
+
+        @-khtml-keyframes scrollULeft {
+            from {
+                bottom: 0px;
+            }
+            to {
+                bottom: 30px;
+            }
+        }
+
+        @keyframes scrollULeft {
+            from {
+                bottom: 0px;
+            }
+            to {
+                bottom: 20px;
+            }
+        }
+
+        #state {
+            position: relative;
+            width: 750px;
+            margin: 0 auto;
+            padding-right: 250px;
+            text-align: right;
+            height: 28px;
+            font: 13px/28px microsoft yahei;
+            color: #8c0000;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #state .cont {
+            float: right;
+            width: 320px;
+            height: 28px;
+            padding: 0 30px 0 15px;
+            background: url(//images6.baihe.com/icon/icon_14.gif) no-repeat left center;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        #state .cont a {
+            color: #999
+        }
+
+        #state .cont a:hover {
+            text-decoration: underline;
+        }
+
+        #state .close {
+            position: absolute;
+            top: 5px;
+            right: 250px;
+            display: block;
+            width: 18px;
+            height: 18px;
+            text-indent: -99999px;
+            background: url(//images6.baihe.com/icon/close_homeT.gif) no-repeat;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        /*---- 浮悬二维码 ----*/
+        .scrollUpf {
+            display: block;
+            position: fixed;
+            _position: absolute;
+            width: 126px;
+            height: 280px;
+            background: url(//static6.baihe.com/home/qrCode.gif) no-repeat center bottom;
+            text-align: center;
+            bottom: 20px;
+            right: 1%;
+            zoom: 1;
+            z-index: 100;
+        }
+
+        .scrollUpf-close {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background: url(//static6.baihe.com/client/scroll-close.png) no-repeat 0 0;
+            cursor: pointer;
+        }
+
+    </style>
+    <script th:src="@{/firstPage/tongji-1.0.1.min.js}" type="text/javascript"
+            charset="utf-8"></script>
+    <script>baihe.bhtongji.tongji({'event': '0', 'spm': '4.20.104.236.1025'});</script>
+    <script type="text/javascript" th:src="@{/firstPage/jquery-1.8.3.min.js}"
+            charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/firstPage/baihe.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/firstPage/ckadinfo.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/firstPage/homeTop.js}"></script>
+    <script>
+
+        //下沉广告
+        function showBanner() {
+            $("#TopBig").slideUp(1000, function () {
+                $("#TopSmall").slideDown(1000);
+            });
+        }
+
+        function checkDates(begin, end) {
+            var dateBag = new Date();
+            var yearBag = dateBag.getFullYear();
+            var monthBag = dateBag.getMonth() + 1;
+            if (monthBag < 10) {
+                monthBag = "0" + monthBag;
+            }
+            var dayBag = dateBag.getDate();
+            if (dayBag < 10) {
+                dayBag = "0" + dayBag;
+            }
+            var timeBag = (yearBag + "" + monthBag + "" + dayBag) * 1;
+            if (timeBag >= parseInt(begin) && timeBag <= parseInt(end)) {
+                return "yes";
+            }
+            return "no";
+        }
+
+        if ((checkDates(20160128, 20160217) == "yes")) {// *****
+            document.write("<div id='TopBig'><div class='cont'><div class='top'></div><div class='icon'><a href='//ad.baihe.com/xinnian' target='_blank' onclick='baihe.bhtongji.clickTongJi({\"event\":\"3\",\"spm\":\"4.1.1.1710.4276\"});' >领红包</a></div><div class='list' id='Prize'><ul><li>三星笔记本</li><li>拍立得相机</li><li>100元京东卡</li><li>小熊酸奶机</li><li>50元京东卡</li><li>飞科吹风机</li><li>20元京东卡</li></ul></div><dl><dt><img src='//static6.baihe.com/home/spring/pic_04.jpg' alt='' /></dt><dt><img src='//static6.baihe.com/home/spring/pic_05.jpg' alt='' /></dt><dt><img src='//static6.baihe.com/home/spring/pic_06.jpg' alt='' /></dt><dd><a href='//ad.baihe.com/xinnian' target='_blank' onclick='baihe.bhtongji.clickTongJi({\"event\":\"3\",\"spm\":\"4.1.1.1719.4286\"});'>领红包</a></dd></dl></div></div>");
+            document.write("<div id='TopSmall'><!--a class='close' style='cursor:pointer' onclick='javascript:$(\"#TopSmall\").hide();'>关闭</a--><a target='_blank' href='//ad.baihe.com/xinnian' event='3' spm='4.1.1.1718.4285'><img src='//static6.baihe.com/home/spring/top20160128A.jpg' width='1000' height='30' alt='春节活动'/></a></div>");
+            setTimeout("showBanner();", 6000);
+        }
+
+
+        $(function () {
+            $('.close').click(function () {
+                $('#state').slideUp('slow');
+            });
+        })
+
+        /*---- 下沉广告文字渐显 ----*/
+        $(function () {
+
+            var _timer = null;
+            var _i_num = $('#Prize').find('li').length;
+            var _num = 0;
+            var j = 1;
+
+            function opacity() {
+                _num += j;
+                if (_num == _i_num) {
+                    _num = 0;
+                }
+                $('#Prize').find('li').animate({'opacity': 0}, 300, function () {
+                    $(this).hide();
+                });
+                $('#Prize').find('li').eq(_num).animate({'opacity': 1}, 300, function () {
+                    $(this).show();
+                });
+            }
+
+            _timer = setInterval(opacity, 2000);
+        });
+
+    </script>
+<!--    <script type="text/javascript" th:src="@{/firstPage/BHHead.js}" charset="utf-8"></script>-->
+    <link rel="shortcut icon" href="https://images6.baihe.com/favicon.ico">
+    <style type="text/css">     .adTxtImgUpF {
+        display: block;
+        position: fixed;
+        _position: absolute;
+        width: 30px;
+        height: 18px;
+        background: url(//static6.baihe.com/client/adTxtImgUpF.png) no-repeat center bottom;
+        _background: url(//static6.baihe.com/client/adTxtImgUpF.gif) no-repeat center bottom;
+        text-align: center;
+        bottom: 6px;
+        right: 1.4%;
+        overflow: hidden;
+        zoom: 1;
+        z-index: 101;
+    } </style>
+    <link th:href="@{/firstPage/mCustomScrollbar.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/firstPage/msgLayer.css}" rel="stylesheet" type="text/css">
+    <link th:href="@{/firstPage/pop_search.css}" rel="stylesheet" type="text/css">
+    <script type="text/javascript"
+            th:src="@{/firstPage/jquery.mCustomScrollbar.concat.min.js}"></script>
+    <script type="text/javascript" th:src="@{/firstPage/jquery.select-1.3.6.js}"></script>
+    <script type="text/javascript" th:src="@{/firstPage/district.js}"></script>
+    <link th:href="@{/firstPage/formStyle.css}" rel="stylesheet" type="text/css">
+    <script charset="UTF-8" async="" th:src="@{/firstPage/gettype.php}"></script>
+    <script charset="UTF-8" async="" th:src="@{/firstPage/fullpage.9.0.3.js}"></script>
+    <script charset="UTF-8" th:src="@{/firstPage/get.php}"></script>
+    <link th:href="@{/firstPage/style_https.1.5.8.css}" rel="stylesheet">
+</head>
+<div id="night-mask"
+     style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 2147483647;pointer-events: none;mix-blend-mode: multiply;transition: opacity 0.1s ease 0s;opacity:0.3;display:none;background: #000000;"></div>
+<body>
+<div class="adTxtImgUpF"></div>
+<div id="bhHeaderH" style="height: 82px;">
+    <div id="bhHeader">
+        <div class="head"><h1><a
+                href="https://www.baihe.com/index.shtml?channel=baidu&amp;code=ppcbh20210108-2&amp;accessID=2021040512574214390&amp;userID=264824452&amp;rand=1617954442147719283&amp;spm=4.14.42.844.2254&amp;event=3"
+                class="logo">我要婚恋网，实名婚恋网开创者</a></h1>
+            <div class="nav">
+                <ul>
+                    <li>
+                        <a th:href="@{/userHtml/firstPage(username=${user.getUsername()})}">首页</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/userHtml/aboutUser(account=${user.getUsername()})}">我的资料<em class="special"
+                                                                                                   style="right:-20px;">特惠</em></a>
+                    </li>
+                    <li>
+                        <a th:href="@{/userHtml/photoWall(username=${user.getUsername()})}" style="z-index:10">照片墙</a>
+                    </li>
+                    <li><a th:href="@{/userHtml/news(username=${user.getUsername()})}" style="z-index:10"><span
+                            class="zhiboTxt">新鲜事</span><span class="zhiboBg"></span></a></li>
+                    <li>
+                        <a href="http://date.baihe.com/index.php?channel=baidu&amp;code=ppcbh20210108-2&amp;accessID=2021040512574214390&amp;userID=264824452&amp;rand=1617709486156125640&amp;spm=4.14.42.4920.14374&amp;event=3"
+                           target="_blank">服务</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="salePrice" style="display:none;"><a href="https://www.baihe.com/home.shtml"></a></div>
+    </div>
+</div>
+<script language="javascript" th:src="@{/firstPage/COMM_SPM.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{/firstPage/sea.2.3.0.js}" charset="utf-8"></script>
+<!--[if IE 6]>
+<script src="https://static4.baihe.com/3rd-lib/DD_belatedPNG_0.0.8a-min.js" type="text/javascript"
+        charset="utf-8"></script>
+<script type="text/javascript">DD_belatedPNG.fix('.story em,#homeFocus .icon a,#scrollUp,.scrollUpf .hlsq,.scrollULeft-close,.scrollUpf-close');</script>
+<![endif]-->
+<!-- 广告(登录cookie显示) -->
+
+
+<!--悬浮广告开始 yz-->
+<div class="scrollUpf">
+    <div id="right_img_close" class="scrollUpf-close"></div>
+</div>
+<div class="scrollULeft">
+    <div id="left_img_close" class="scrollULeft-close"></div>
+    <div class="scrollPic animScale"></div>
+    <a target="_blank"> <img th:src="@{/firstPage/1608715889438.jpg}"></a></div>
+
+<div id="state" style="display:none;">
+    <a href="javascript:;" class="close"></a>
+    <div class="cont">冒用我要婚恋网名义的非法色情网站终被查处&nbsp;&nbsp;<a target="_blank">查看详情 &gt;</a></div>
+</div>
+
+<div id="BAIHE" numm="0">
+    <div class="activeCont">
+        <dl>
+            <dd>
+                <a target="_blank" class="more" style="margin-left:20px;">更多&gt;</a> <a evnet="3" target="_blank">征爱的女人</a> <span>|</span> <a
+                    target="_blank">我们相爱吧</a></dd>
+        </dl>
+        <div id="idTab8" style="display: block;">
+            <ul>
+                <li style="width:584px;"><a target="_blank"> <img th:src="@{/firstPage/nWrpoag5XYnF75AJWRQR0QE87apmboOrcQtxUWx5.jpeg}"
+                        style="width:584px; height:124px;" alt="《新相亲大会》"> </a></li>
+                <li style="padding:0px;"><a target="_blank"> <img
+                        th:src="@{/firstPage/pikWRPmHpjpwbcZYu41wqVie5p8Lm1k9k4rrn1Wh.png}" alt="《新相亲大会》"> </a> <a href="https://jm.baihe.com/detail/infoPage/8" target="_blank"
+                                               class="icon">我要报名</a></li>
+            </ul>
+        </div>
+        <div id="idTab7" style="display: none;">
+            <ul>
+                <li style="width:584px;"><a target="_blank"> <img
+                        th:src="@{/firstPage/A9kaergeh24aE7P4fbe6Cz2foJFY6v4nI518PEnJ.png}"
+                        style="width:584px; height:124px;" alt="《非诚勿扰》"> </a></li>
+                <li style="padding:0px;"><a target="_blank"> <img
+                        th:src="@{/firstPage/7o74YmiSu0hKgPKnd2mDyXlj8wrAM1VRpdzcCKkh.png}"
+                        alt="《非诚勿扰》"> </a> <a href="https://jm.baihe.com/detail/infoPage/7" target="_blank"
+                                              class="icon">我要报名</a></li>
+            </ul>
+        </div>
+        <div id="idTab9" style="display: none;">
+            <ul>
+                <li style="width:584px;"><a
+                        target="_blank"> <img
+                        th:src="@{/firstPage/mcpqM0l7Ry7bftH5GYiheEKEl7UFCTsgH89C7XL7.jpeg}"
+                        style="width:584px; height:124px;" alt="《中国新相亲》"> </a></li>
+                <li style="padding:0px;"><a
+                        target="_blank"> <img
+                        th:src="@{/firstPage/wZV8akNNGUhQOxanKkTCzqXm1gG4MGFyfgpsRML0.png}"
+                        alt="《中国新相亲》"> </a> <a href="https://jm.baihe.com/detail/infoPage/9" target="_blank"
+                                               class="icon">我要报名</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="service">
+        <h2>
+            <div style="position:absolute; top:0px; right:0px; height:28px;">
+                <iframe width="116" height="28" frameborder="0" th:src="@{/firstPage/adv_app.html}"
+                        scrolling="no" name="app" style="display: none !important;"></iframe>
+            </div>
+            服务推荐
+        </h2>
+        <ul>
+            <li>
+                <a target="_blank" class="icon dc" style="padding-top:12px;">臻选会员专区<br><span style="color:#cf2030;">享全平台免费沟通权益</span><em
+                        style="left:0px;"></em></a>
+            </li>
+            <li>
+                <a target="_blank" class="sj"
+                   onclick="baihe.cookie.setCookie(&#39;orderSource&#39;, &#39;10010602&#39;,&#39;&#39;,&#39;/&#39;,&#39;.baihe.com&#39;)"
+                   style="padding-left:40px;">水晶会员<br><span>尊享 11 项特权</span><em style="left:8px;">水晶会员</em></a>
+            </li>
+            <li>
+                <a target="_blank" class="hn">红娘服务<br><span>人工红娘一对一服务</span><em>红娘服务</em></a>
+            </li>
+            <li>
+                <a target="_blank" class="xqxx"
+                   onclick="baihe.cookie.setCookie(&#39;orderSource&#39;, &#39;10010604&#39;,&#39;&#39;,&#39;/&#39;,&#39;.baihe.com&#39;)">相亲牵线<br><span>专享人工牵线特权</span><em>相亲牵线</em></a>
+            </li>
+        </ul>
+    </div>
+    <div class="clear mb35"></div>
+    <h2 style="z-index:20;">
+        优质会员
+    </h2>
+    <div class="picList">
+        <div class="icon"><a href="javascript:;"
+                             class="icon01" sexattr="0">女强人</a><a href="javascript:;"
+                                                                  sexattr="0">天生丽质</a><a href="javascript:;"
+                                                                                         sexattr="0">清新单纯</a><a
+                href="javascript:;"
+                class="icon01" sexattr="0">妩媚动人</a><a href="javascript:;"
+                                                      class="icon02" sexattr="0">大家闺秀</a><a href="javascript:;"
+                                                                                            class="icon03" sexattr="0">活泼可爱</a>
+        </div>
+        <div id="picListData">
+            <dl>
+                <dt>
+                    <a target="_blank"> <img th:src="@{/firstPage/96399814.jpg}" alt="">
+                        <div class="data" style="bottom: -30px;">
+                            <div class="back"></div>
+                            <p><span>19岁&nbsp;匀称</span>爱人</p></div>
+                    </a></dt>
+                <dd>
+                    <a target="_blank"> <img th:src="@{/firstPage/90902997.jpg}" alt="">
+                        <div class="data">
+                            <div class="back"></div>
+                            <p><span>35岁&nbsp;匀称</span>佛缘</p></div>
+                    </a> <a target="_blank"> <img th:src="@{/firstPage/68775222.jpg}" alt="">
+                    <div class="data">
+                        <div class="back"></div>
+                        <p><span>33岁&nbsp;匀称</span>sara</p></div>
+                </a>
+                    <a target="_blank"> <img th:src="@{/firstPage/66183939.jpg}" alt="">
+                        <div class="data" style="bottom: -30px;">
+                            <div class="back"></div>
+                            <p><span>28岁&nbsp;匀称</span>晶晶</p></div>
+                    </a> <a target="_blank"> <img th:src="@{/firstPage/61938355.jpg}" alt="">
+                    <div class="data" style="bottom: -30px;">
+                        <div class="back"></div>
+                        <p><span>30岁&nbsp;匀称</span>香草拿铁</p></div>
+                </a></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank"> <img th:src="@{/firstPage/117491496.jpg}" alt="">
+                        <div class="data">
+                            <div class="back"></div>
+                            <p><span>24岁&nbsp;苗条</span>夕，</p></div>
+                    </a></dt>
+                <dd style="padding-top:125px; height:125px;"><a target="_blank"> <img th:src="@{/firstPage/111554406.jpg}" alt="">
+                    <div class="data">
+                        <div class="back"></div>
+                        <p><span>26岁&nbsp;匀称</span>一只喵.</p></div>
+                </a>
+                    <a target="_blank"> <img th:src="@{/firstPage/94017438.jpg}" alt="">
+                        <div class="data" style="bottom: -30px;">
+                            <div class="back"></div>
+                            <p><span>34岁&nbsp;匀称</span>霞</p></div>
+                    </a></dd>
+            </dl>
+            <dl>
+                <dd>
+                    <a target="_blank"><img th:src="@{/firstPage/90539700.jpg}" alt="">
+                        <div class="data">
+                            <div class="back"></div>
+                            <p><span>20岁&nbsp;很瘦</span>陈晨</p></div>
+                    </a><a target="_blank"><img th:src="@{/firstPage/117882109.jpg}" alt="">
+                    <div class="data">
+                        <div class="back"></div>
+                        <p><span>30岁&nbsp;高薪</span>刘子娟</p></div>
+                </a><a target="_blank"><img th:src="@{/firstPage/117495951.jpg}" alt="">
+                    <div class="data">
+                        <div class="back"></div>
+                        <p><span>22岁&nbsp;匀称</span>moo…</p></div>
+                </a><a target="_blank"><img th:src="@{/firstPage/109348549.jpg}" alt="">
+                    <div class="data">
+                        <div class="back"></div>
+                        <p><span>26岁&nbsp; 本</span>微笑女神</p></div>
+                </a></dd>
+                <dt>
+                    <a target="_blank"><img th:src="@{/firstPage/74312239.jpg}" alt="">
+                        <div class="data" style="bottom: -30px;">
+                            <div class="back"></div>
+                            <p><span>28岁&nbsp;匀称</span>孙笑笑</p></div>
+                    </a></dt>
+            </dl>
+            <dl>
+                <dd>
+                    <a target="_blank"><img th:src="@{/firstPage/112003568.jpg}" alt="">
+                        <div class="data">
+                            <div class="back"></div>
+                            <p><span>25岁&nbsp;匀称</span>落落</p></div>
+                    </a><a target="_blank"><img th:src="@{/firstPage/116893635.jpg}" alt="">
+                    <div class="data" style="bottom: -30px;">
+                        <div class="back"></div>
+                        <p><span>19岁&nbsp;苗条</span>百合会员</p></div>
+                </a><a target="_blank"><img th:src="@{/firstPage/116911758.jpg}" alt="">
+                    <div class="data" style="bottom: -30px;">
+                        <div class="back"></div>
+                        <p><span>21岁&nbsp;匀称</span>璇璇</p></div>
+                </a><a target="_blank"><img th:src="@{/firstPage/115015951.jpg}" alt="">
+                    <div class="data" style="bottom: -30px;">
+                        <div class="back"></div>
+                        <p><span>22岁&nbsp;匀称</span> Fat</p></div>
+                </a></dd>
+                <dt>
+                    <a target="_blank"><img th:src="@{/firstPage/110711695.jpg}" alt="">
+                        <div class="data" style="bottom: -30px;">
+                            <div class="back"></div>
+                            <p><span>27岁&nbsp;苗条</span>晴儿</p></div>
+                    </a></dt>
+            </dl>
+        </div>
+    </div>
+    <style type="text/css">
+        .advCarousel {
+            position: relative;
+        }
+
+        .advCarousel .icon li {
+            display: block;
+            float: left;
+            width: 7px;
+            height: 7px;
+            margin-left: 4px;
+            text-indent: -9999px;
+            border-radius: 4px;
+            background: #999;
+            overflow: hidden;
+            zoom: 1;
+            cursor: pointer;
+        }
+
+        .advCarousel .icon li:hover, .advCarousel .icon li.active {
+            background: #fff;
+        }
+
+        .advCarousel .icon {
+            position: absolute;
+            right: 10px;
+            bottom: 45px;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .advCarousel .icon a {
+            display: block;
+            float: left;
+            width: 7px;
+            height: 7px;
+            margin-left: 4px;
+            text-indent: -9999px;
+            border-radius: 4px;
+            background: #999;
+            overflow: hidden;
+            zoom: 1;
+        }
+
+        .advCarousel .icon a:hover, .indexR .icon a.active {
+            background: #fff;
+        }
+
+        .advCarousel span {
+            font-size: 12px;
+            line-height: 28px;
+        }
+    </style>
+    <!-- 首页中通轮播 -->
+    <div class="adv90 advCarousel">
+        <div class="carousel">
+            <ul id="zt_lbt">
+                <li style="position: absolute; z-index: 1; opacity: 1;"><a target="_blank"> <img th:src="@{/firstPage/1601013896454.png}"> </a></li>
+            </ul>
+            <ol class="icon" style="z-index:2">
+                <li class="active">1</li>
+            </ol>
+        </div>
+    </div>
+    <h2>
+        <a href="https://search.baihe.com/" target="_blank" class="more">更多&gt;</a>
+        百合推荐
+    </h2>
+    <div class="recommend">
+        <div id="jsNoLoginRecommend">
+            <dl>
+                <dt>
+                    <a target="_blank"><img
+                            th:src="@{/firstPage/201FD49E475C73E034F5F46F4D074676.jpg}" alt=""></a>
+                </dt>
+                <dd><strong><a target="_blank">瑶瑶</a></strong><span>22岁 158cm  中专/职高/技校<br>3张照片</span>
+                    <p>大家好，很高兴来到这里，非常希望认识更多的朋友，...</p><a class="red">发消息</a></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank"><img
+                            th:src="@{/firstPage/FE64B3C36EF85AF2F91DB01714348FC3.jpg}" alt=""></a>
+                </dt>
+                <dd><strong><a target="_blank">时光</a></strong><span>21岁 162cm  高中<br>4张照片</span>
+                    <p>在百合，我希望找到一个真诚，自信，积极，阳光的另...</p><a class="red">发消息</a></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank"><img
+                            th:src="@{/firstPage/6F6081AFDF31C40FE548877D694A2682.jpg}" alt=""></a>
+                </dt>
+                <dd><strong><a target="_blank">杨小妮</a></strong><span>22岁 163cm  中专/职高/技校<br>6张照片</span>
+                    <p>找另一半，永远爱我养我就行。。。。。。。。...</p><a
+                                                      class="red">发消息</a></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank"><img
+                            th:src="@{/firstPage/2D721CAA027423D5A1D8C672C12A8C2C.jpg}" alt=""></a>
+                </dt>
+                <dd><strong><a target="_blank">蛋壳</a></strong><span>22岁 169cm  高中<br>1张照片</span>
+                    <p>本人找到爱情 现退出百合网 谢谢你们的信赖 ...</p><a class="red">发消息</a></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank"><img
+                            th:src="@{/firstPage/71CD7555EAB6F65CDDDEA349337DB7C4.jpg}" alt=""></a>
+                </dt>
+                <dd><strong><a target="_blank">粉红马里</a></strong><span>21岁 160cm  高中<br>1张照片</span>
+                    <p>在百合，我希望找到一个真诚，自信，积极，阳光的另...</p><a class="red">发消息</a></dd>
+            </dl>
+            <dl>
+                <dt>
+                    <a target="_blank"><img
+                            th:src="@{/firstPage/3267F5CDC92A11614A49D0547BA98854.jpg}" alt=""></a>
+                </dt>
+                <dd><strong><a target="_blank">凉凉</a></strong><span>22岁 162cm  本科<br>3张照片</span>
+                    <p>幸福是什么呢？不就是两个人牵手偕老过一辈子吗？我...</p><a class="red">发消息</a></dd>
+            </dl>
+        </div>
+    </div>
+    <h2>
+        <a target="_blank" class="more">谱写自己的幸福&gt;</a>
+        成功故事
+    </h2>
+    <div class="story mb35" id="succedStory">
+        <div class="bigPic">
+            <a  data-id="65739438" target="_blank">
+                <img th:src="@{/firstPage/65739438.jpg}" alt="异地恋">
+                <span class="label">夫妻相</span>
+                <span class="data"><em class="like"><strong id="dataNum65739438">602</strong></em><em class="name"
+                                                                                                      style="color:#fff;">一见钟情</em></span>
+            </a>
+        </div>
+        <div class="smallPic">
+            <ul>
+                <li>
+                    <a  data-id="65560465" target="_blank">
+                        <img th:src="@{/firstPage/65560465.jpg}" alt="兴趣相投">
+                        <span class="label">裸婚</span>
+                        <span class="data"><em class="like"><strong id="dataNum65560465">434</strong></em></span>
+                    </a>
+                </li>
+                <li>
+                    <a  data-id="59385128" target="_blank">
+                        <img th:src="@{/firstPage/59385128.jpg}" alt="兴趣相投">
+                        <span class="label">心有灵犀</span>
+                        <span class="data"><em class="like"><strong id="dataNum59385128">224</strong></em></span>
+                    </a>
+                </li>
+                <li>
+                    <a  data-id="56885286" target="_blank">
+                        <img th:src="@{/firstPage/56885286.jpg}" alt="兴趣相投">
+                        <span class="label">命中注定</span>
+                        <span class="data"><em class="like"><strong id="dataNum56885286">361</strong></em></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://story.baihe.com/space.php?id=70979069" data-id="70979069" target="_blank">
+                        <img th:src="@{/firstPage/70979069.jpg}" alt="一见钟情">
+                        <span class="label">夫妻相</span>
+                        <span class="data"><em class="like"><strong id="dataNum70979069">208</strong></em></span>
+                    </a>
+                </li>
+                <li>
+                    <a  data-id="70950484" target="_blank">
+                        <img th:src="@{/firstPage/70950484.jpg}" alt="兴趣相投">
+                        <span class="label">一见钟情</span>
+                        <span class="data"><em class="like"><strong id="dataNum70950484">324</strong></em></span>
+                    </a>
+                </li>
+                <li>
+                    <a  data-id="6240541" target="_blank">
+                        <img th:src="@{/firstPage/6240541.jpg}" alt="一见钟情">
+                        <span class="label">俊男美女</span>
+                        <span class="data"><em class="like"><strong id="dataNum6240541">326</strong></em></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="vip">
+        <h2>
+            <a target="_blank" class="more">免费体验红娘服务 &gt;</a>
+            红娘服务
+            <div class="tel"><img th:src="@{/firstPage/vip_9.gif}" alt=""></div>
+        </h2>
+        <div class="pic"><a  target="_blank"><img
+                th:src="@{/firstPage/vip_10.jpg}" alt=""></a></div>
+        <div class="vipList">
+            <dl>
+                <dt>热门<br>实体店<em></em></dt>
+                <dd>
+                    <a target="_blank">北京直营店</a>
+                    <a target="_blank">上海静安店</a>
+                    <a target="_blank">南京苏豪店</a>
+                    <a target="_blank">深圳直营店</a>
+                    <a target="_blank">广州国际店</a>
+                    <a target="_blank">杭州国都店</a>
+                    <a target="_blank">苏州永捷店</a>
+                    <a target="_blank">天津小白楼店</a>
+                    <a target="_blank">杭州城西店</a>
+                    <a target="_blank">更多</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="reg" style="display:none;">
+            <!--申请表单-->
+            <div id="formApply">
+                <dl>
+                    <dt>姓名：</dt>
+                    <dd>
+                        <input name="" type="text" value="请填写真实姓名" class="inp" id="realName">
+                        <span class="verify" id="realName_error"></span>
+                    </dd>
+                </dl>
+                <dl id="sexInfo">
+                    <dt>我是：</dt>
+                    <dd>
+                        <span class="radioWrapper"><a href="javascript:void(0);" class="radio" rel="sex"></a><input
+                                type="radio" name="sex" class="jqTransformRadioChecked jqTransformHidden"
+                                value="1"></span>
+                        <label style="width: auto; cursor: pointer;">帅哥</label>
+                        <span class="radioWrapper"><a href="javascript:void(0);" class="radio" rel="sex"></a><input
+                                type="radio" name="sex" value="0" class="jqTransformHidden"></span>
+                        <label style="width: auto; cursor: pointer;">美女</label>
+                        <span class="verify" id="sexInfo_error"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>手机：</dt>
+                    <dd>
+                        <input name="" type="text" value="请填写真实电话" class="inp" id="realTel" maxlength="11">
+                        <span class="verify" id="realTel_error"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>城市：</dt>
+                    <dd>
+                        <div class="selCity">
+                            <input name="" id="verifyCity" autocomplete="off" type="text" value="请选择城市名称"
+                                   class="inp city_input  inputFocus proCityQueryAll proCitySelAll" ov="请选择城市名称">
+                            <span class="verify" id="verifyCity_error"></span>
+                        </div>
+                    </dd>
+                </dl>
+                <a class="orange" id="freeTrial" evnet="3">免费体验</a>
+            </div>
+            <!--申请成功-->
+            <div id="applySuccss" style="display:none;">
+                <div class="pic">
+                    <img th:src="@{/firstPage/pic_06.gif}" alt="">
+                </div>
+                <p>
+                    爱情顾问会联系您，也可拨打：
+                    <br>
+                    <span>400-8191-520</span>
+                    进行咨询。
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="indexR">
+        <h2>
+            <a target="_blank" class="more">更多&gt;</a>
+            百合活动
+        </h2>
+        <div class="carousel">
+            <ul>
+                <!--轮播图内容-->
+                <li style="position: absolute; z-index: 1; opacity: 1;">
+                    <a href="https://event.baihe.com/" target="_blank"><img
+                            th:src="@{/firstPage/20150211hd1.jpg}" alt="百合活动"></a>
+                </li>
+            </ul>
+            <ol class="icon" style="z-index:2">
+                <li class="active">1</li>
+            </ol>
+        </div>
+        <h2>
+            <a target="_blank" class="more">更多&gt;</a>
+            媒体报导
+        </h2>
+        <div class="carousel">
+            <ul>
+                <!--轮播图内容-->
+                <li style="position: absolute; z-index: 1; opacity: 1;">
+                    <a target="_blank" title="百合网婚礼+时尚新娘 百合网与时尚致爱开启战略合作">
+                        <img th:src="@{/firstPage/focus01.jpg}" alt="" width="250" height="110">
+                        <p class="c333"><span>●</span> COSPLAY集体跨界玩转二次元婚礼...</p>
+                    </a>
+                </li>
+            </ul>
+            <ol class="icon" style="z-index:2">
+                <li class="active">1</li>
+            </ol>
+        </div>
+    </div>
+    <div class="clear mb35"></div>
+    <div class="clear"></div>
+
+    <!-- 首页底通轮播 -->
+    <div class="adv90 advCarousel">
+        <div class="carousel">
+            <ul id="dt_lbt">
+                <li style="position: absolute; z-index: 1; opacity: 1;"><a target="_blank"> <img th:src="@{/firstPage/1579079608383.png}"> </a></li>
+            </ul>
+            <ol class="icon" style="z-index:2">
+                <li class="active">1</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/firstPage/tongduntoken.js}" charset="utf-8" type="text/javascript"></script>
+<div id="BHFooter">
+    <div class="cont">
+        <div class="logo"><img th:src="@{/firstPage/logo_footer.gif}" alt="百合网实名婚恋开创者"></div>
+        <ul>
+            <li><span><a  target="_blank" onfocus="this.blur();">关于百合</a> | <a
+                    onfocus="this.blur();">商务合作</a> | <a
+                    onfocus="this.blur();">联系我们</a> | <a
+                    onfocus="this.blur();">诚聘人才</a> | <a  target="_blank"
+                                                         onfocus="this.blur();">帮助中心</a><br><a
+                     target="_blank"
+                    onfocus="this.blur();">服务条款</a> | <a
+                     target="_blank"
+                    onfocus="this.blur();">隐私保护</a> | <a  target="_blank"
+                                                         onfocus="this.blur();">交友安全</a> | <a onfocus="this.blur();">意见反馈</a> | <a
+                    >网站地图</a><br><a
+                     target="_blank"
+                    onfocus="this.blur();">家长监护工程</a> | <a  target="_blank">百合直播</a> | <a
+                     target="_blank">投资者关系</a></span><br>公众号：百合网
+            </li>
+            <li style="width:475px;"><span>北京市朝阳区阜通东大街1号院望京SOHO塔3 B座6层<br>           服务城市：<a target="_blank"
+                                                                                             href="https://vip.baihe.com/?from=baihe&amp;site=foot">北京</a> | 			<a
+                    target="_blank" >上海</a> | 			<a
+                    target="_blank" >广州</a> | 			<a
+                    target="_blank" >深圳</a> | 			<a
+                    target="_blank" >天津</a> | 			<a
+                    target="_blank" >太原</a> | 			<a
+                    target="_blank" >成都</a> | 			<a
+                    target="_blank" >哈尔滨</a> | 			<a
+                    target="_blank" >大连</a> | 			<a
+                    target="_blank" >合肥</a><br>			<a
+                    target="_blank" style="padding-left:60px;"
+                    >杭州</a> | 			<a target="_blank"
+            >济南</a> | 			<a
+                    target="_blank" >南京</a> | 			<a
+                    target="_blank" >青岛</a> | 			<a
+                    target="_blank" >武汉</a> | 			<a
+                    target="_blank" >西安</a> | 			<a
+                    target="_blank" >郑州</a> | 			<a
+                    target="_blank" >石家庄</a> | 			<a
+                    target="_blank" >更多</a>			</span><br>
+                违法和不良信息举报电话：0316-5266032（24小时）<br></li>
+        </ul>
+        <div class="clear"></div>
+        <p style="color:#333; font-family:Arial"><a style="text-decoration: none;"
+                                                    href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">京ICP备10009806-1</a>　　<a
+                style="text-decoration: none;"
+                href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502000655" target="_blank">京公网安备11010502000655号</a>　　<a
+                href="https://images6.baihe.com/home/icpzs20200804.jpg" target="_blank">京ICP证041124号</a>　　<a
+                href="https://images6.baihe.com/home/wlwh20181226.jpg" target="_blank">京网文（2016）6588-901号</a>　　版权所有©
+            2005 - 2021 百合网<br> <a target="_blank" href="https://images6.baihe.com/home/gbdsjm20181226.jpg">广播电视节目制作经营许可证（京）字第01303号</a><a
+                    href="https://images6.baihe.com/home/yyzz20181226.jpg" target="_blank" style="margin-left: 20px;">营业执照</a>
+        </p>
+        <div class="approve"><a target="_blank" class="IconImg"
+                                href="https://v.yunaq.com/certificate/?domain=www.baihe.com"><img
+                style="width: auto;height: 40px;" th:src="@{/firstPage/gwrz.png}"></a> <a
+                target="_blank" class="IconImg"
+                href="http://si.trustutn.org/info?sn=127180903036602271150&amp;certType=1"><img
+                th:src="@{/firstPage/kxwz.jpg}"></a> <a target="_blank" class="Icon1"
+                                                                             href="https://safe.baihe.com/html/1/n-1.html">安全中心<br>交友保障</a>
+            <a target="_blank" class="Icon6" href="http://www.12377.cn/">中国互联网举报中心</a> <a target="_blank" class="Icon9"
+                                                                                          href="http://www.itrust.org.cn/home/index/itrust_certifi/wm/1763521744">网信认证</a>
+            <a target="_blank" class="Icon8" href="https://www.baihe.com/zxjy.html">诚信经营</a> <a target="_blank"
+                                                                                                class="IconImg Icon10"
+                                                                                                href="http://www.12377.cn/"><img
+                    style="width: auto;height: 30px;" th:src="@{/firstPage/yhxx.jpg}"></a></div>
+    </div>
+</div>
+<div style="display:none;">
+    <img th:src="@{/firstPage/B8447763.114477772}" alt="" style="display: none !important;">
+    <img th:src="@{/firstPage/B8447763.114477893}" alt="" style="display: none !important;">
+</div>
+<script type="text/javascript" th:src="@{/firstPage/jquery.select-1.3.6.js}"
+        charset="utf-8"></script>
+<script type="text/javascript" th:src="@{/firstPage/bhValidate.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{/firstPage/city.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{/firstPage/district.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{/firstPage/jquery.foucsFun.js}"></script>
+<script type="text/javascript" th:src="@{/firstPage/jquery.tab.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{/firstPage/linq.js}" charset="utf-8"></script>
+<script type="text/javascript" th:src="@{/firstPage/recommendUserInfo.js}"
+        charset="utf-8"></script>
+<!-- <script type="text/javascript" src="//static4.baihe.com/home/home.js" charset="utf-8"></script> -->
+<script type="text/javascript">
+    function baidu_stat() {
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write("<div id='baidu_stat_id' style='display:none;'>");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5caa30e0c191a1c525d4a6487bf45a9d' type='text/javascript' async %3E%3C/script%3E"));
+        document.write("</div>");
+    }
+
+    baidu_stat();
+    document.getElementById("baidu_stat_id").style.display = "none";
+    baihe.bhtongji.tongji({'event': '0', 'spm': '4.20.104.236.1023'});
+
+    //点击关闭左侧悬浮广告
+    $('#left_img_close').click(function () {
+        $('.scrollULeft').hide();
+    });
+    //点击关闭右侧悬浮广告
+    $('#right_img_close').click(function () {
+        $('.scrollUpf').hide();
+    });
+</script>
+<div id="baidu_stat_id" style="display:none;">
+    <script th:src="@{/firstPage/h.js}" type="text/javascript" async=""></script>
+</div>
+
+<!-- 增加防刷弹层  -->
+<link th:href="@{/firstPage/preventData.css}" rel="stylesheet" type="text/css">
+<script language="javascript" th:src="@{/firstPage/preventV2.js}" charset="utf-8"></script>
+<!--增加防刷弹层-->
+<script th:src="@{/firstPage/message.js}"></script>
+<script th:src="@{/firstPage/greet.js}"></script>
+<script th:src="@{/firstPage/jquery.sinaEmotion.js}"></script>
+<script th:src="@{/firstPage/expression_icon.js}"></script>
+<script th:src="@{/firstPage/jquery.md5.js}"></script>
+<script>
+    //背景图点击事件
+    function openUrl(that) {
+        var url = that.getAttribute('url');
+        if (url) {
+            window.location.href = url;
+        }
+    }
+
+    $(function () {
+        //首焦
+        $.ajax({
+            url: '//u.baihe.com/index/getJYadvs?jsonCallBack=?',
+            dataType: 'jsonp',
+            data: {
+                'bh': 'bh_homebh01_03',
+            },
+            success: function (data) {
+                var arrayData = data.data;
+                var str_bg = "";
+                var str_cont = "";
+                // for(var i in arrayData){
+                //     str_bg+='<li class="homeFocusBg" style="background:url('+ arrayData[i].pic.url +') no-repeat center top; z-index:0; opacity:0;cursor:pointer;" onClick="openUrl(this)" url="'+ arrayData[i].link.url +'">'+ Number(i+1) +'</li>';
+                //     str_cont+='<li class="focus"><a href="'+ arrayData[i].link.url +'" event="3" spm="'+ arrayData[i].baihe_spm.req +'" target="_blank"></a></li>';
+                // }
+                for (var i = 0; i < arrayData.length; i++) {
+                    str_bg += '<li class="homeFocusBg" style="background:url(' + arrayData[i].pic.url + ') no-repeat center top; z-index:0; opacity:0;cursor:pointer;" onClick="openUrl(this)" url="' + arrayData[i].link.url + '">' + Number(i + 1) + '</li>';
+                    str_cont += '<li class="focus"><a href="' + arrayData[i].link.url + '" event="3" spm="' + arrayData[i].baihe_spm.req + '" target="_blank"></a></li>';
+                }
+
+
+                $('#sj_bg').html(str_bg);
+                $('#sj_cont').html(str_cont);
+                loadFocus();
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+
+        function loadFocus() {
+            $("body").append("<script src='//static4.baihe.com/home/home.js' type='text/javascript'><\/script>");
+        }
+
+        //百合中通
+        $.ajax({
+            url: '//u.baihe.com/index/getJYadvs?jsonCallBack=?',
+            dataType: 'jsonp',
+            data: {
+                'bh': 'bh_homebh02_03',
+            },
+            success: function (data) {
+                var arrayData = data.data;
+                var str = "";
+                for (var i in arrayData) {
+                    str += '<li style="position:absolute">';
+                    str += '    <a href="' + arrayData[i].link.url + '" target="_blank">';
+                    str += '        <img src="' + arrayData[i].pic.url + '" />';
+                    str += '    </a>';
+                    str += '</li>';
+                }
+                $('#zt_lbt').html(str);
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+        //百合底通
+        $.ajax({
+            url: '//u.baihe.com/index/getJYadvs?jsonCallBack=?',
+            dataType: 'jsonp',
+            data: {
+                'bh': 'bh_homebh03_03',
+            },
+            success: function (data) {
+                var arrayData = data.data;
+                var str = "";
+                for (var i in arrayData) {
+                    str += '<li style="position:absolute">';
+                    str += '    <a href="' + arrayData[i].link.url + '" target="_blank">';
+                    str += '        <img src="' + arrayData[i].pic.url + '" />';
+                    str += '    </a>';
+                    str += '</li>';
+                }
+                $('#dt_lbt').html(str);
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+        //百合左侧悬浮
+        $.ajax({
+            url: '//u.baihe.com/index/getJYadvs?jsonCallBack=?',
+            dataType: 'jsonp',
+            data: {
+                'bh': 'bh_homebh04_03',
+            },
+            success: function (data) {
+                var arrayData = data.data;
+                var str = "";
+                str += '<a href="' + arrayData[0].link.url + '" target="_blank" event="3" spm="4.1.1.1711.4277">';
+                str += '    <img src="' + arrayData[0].pic.url + '" />';
+                str += '</a>';
+                $('.scrollULeft').append(str);
+            },
+            error: function (error) {
+                console.error(error);
+            }
+        });
+    });
+</script>
+
+
+<div class="geetest_panel geetest_wind" style="display: none;">
+    <div class="geetest_panel_ghost"></div>
+    <div class="geetest_panel_box">
+        <div class="geetest_other_offline geetest_panel_offline"></div>
+        <div class="geetest_panel_loading">
+            <div class="geetest_panel_loading_icon"></div>
+            <div class="geetest_panel_loading_content">智能验证检测中</div>
+        </div>
+        <div class="geetest_panel_success">
+            <div class="geetest_panel_success_box">
+                <div class="geetest_panel_success_show">
+                    <div class="geetest_panel_success_pie"></div>
+                    <div class="geetest_panel_success_filter"></div>
+                    <div class="geetest_panel_success_mask"></div>
+                </div>
+                <div class="geetest_panel_success_correct">
+                    <div class="geetest_panel_success_icon"></div>
+                </div>
+            </div>
+            <div class="geetest_panel_success_title">通过验证</div>
+        </div>
+        <div class="geetest_panel_error">
+            <div class="geetest_panel_error_icon"></div>
+            <div class="geetest_panel_error_title">网络超时</div>
+            <div class="geetest_panel_error_content">请点击此处重试</div>
+            <div class="geetest_panel_error_code">
+                <div class="geetest_panel_error_code_text"></div>
+            </div>
+        </div>
+        <div class="geetest_panel_footer">
+            <div class="geetest_panel_footer_logo"></div>
+            <div class="geetest_panel_footer_copyright">由极验提供技术支持</div>
+        </div>
+        <div class="geetest_panel_next"></div>
+    </div>
+</div>
+</body>
+</html>

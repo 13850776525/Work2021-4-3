@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* CSS Document */
+
+* { margin:0px; padding:0px; }
+
+.signIn_layer .bt a { display:block; background:url(//images8.baihe.com/pop/signIn/signIn_icon.gif) no-repeat; text-indent:-9999px; overflow:hidden; zoom:1; }
+
+.signIn_layer { position:absolute; top:50%; left:50%; width:660px; margin:-250px 0 0 -330px; padding-top:10px; font:14px/20px '宋体'; color:#333; background:#fff; text-align:left; overflow:hidden; zoom:1; }
+.signIn_layer .calendar { width:637px; margin:0 auto; overflow:hidden; zoom:1; }
+.signIn_layer .calendar ul  { display:block; width:637px; margin:0 auto; }
+.signIn_layer .calendar ul li { position:relative; float:left; width:91px; height:31px; font:bold 14px/30px Arial; text-align:center;}
+.signIn_layer .calendar .grayBt { color:#666; font-family:'宋体';}
+.signIn_layer .calendar .gray { color:#ccc; }
+.signIn_layer .calendar .default { background:url(//images8.baihe.com/pop/signIn/signIn_bj01.gif) no-repeat center center; }
+.signIn_layer .calendar .current { background:url(//images8.baihe.com/pop/signIn/signIn_bj02.gif) no-repeat center center; color:#fff; }
+.signIn_layer .bt { position:relative; height:40px; margin-bottom:8px; background:#ff0d51; }
+.signIn_layer .bt div { width:164px; margin:0 auto;}
+.signIn_layer .bt a.close { position:absolute; top:12px; right:12px; width:15px; height:15px; background-position:-24px 0px;}
+.signIn_layer .bt a.prev { float:left; width:12px; height:12px; margin-top:14px; background-position:0 0;}
+.signIn_layer .bt a.next { float:left; width:12px; height:12px; margin-top:14px; background-position:-12px 0;}
+.signIn_layer .bt span { display:block; float:left; width:140px; height:40px; margin:0 auto; font:18px/38px 微软雅黑; color:#fff; text-align:center;  }
+.signIn_layer .prompt { position:absolute; bottom:26px; left:4px; width:87px; height:58px; padding-top:8px; font:14px/20px '宋体'; color:#fff; background:url(//images8.baihe.com/pop/signIn/signIn_bj03.png) no-repeat; overflow:hidden; zoom:1;} 
+.signIn_layer .prompt strong { font-weight:bold; font-family: Arial }
+.signIn_layer .prompt span { font-size:12px; }
+.signIn_layer .signCont { width:620px; height:189px; margin-top:8px; padding:10px 12px 0 28px; background:url(//images8.baihe.com/pop/signIn/signIn_bj04.gif) no-repeat; overflow:hidden; zoom:1;}
+.signIn_layer .signLeft { float:left; width:460px; overflow:hidden; zoom:1; }
+.signIn_layer .signLeft p { height:45px; line-height:40px;}
+.signIn_layer .signLeft span { color:#ff4848; }
+.signIn_layer .signLeft a { color:#0089c9; text-decoration:underline;}
+.signIn_layer .signLeft div { width:454px; height:116px; text-indent:-99999px; background:url(//images8.baihe.com/pop/signIn/signIn_day.gif) no-repeat; overflow:hidden; zoom:1;}
+.signIn_layer .signLeft .day01 { background-position:0 0;}
+.signIn_layer .signLeft .day02 { background-position:0 -116px;}
+.signIn_layer .signLeft .day03 { background-position:0 -232px;}
+.signIn_layer .signLeft .day04 { background-position:0 -348px;}
+.signIn_layer .signLeft .day05_No { background-position:0 -464px;}
+.signIn_layer .signLeft .day05 { background-position:0 -580px;}
+.signIn_layer .signLeft .day06 { background-position:0 -696px;}
+.signIn_layer .signLeft .day07 { background-position:0 -812px;}
+.signIn_layer .signLeft .day08 { background-position:0 -928px;}
+
+.signIn_layer .signRight { float:right; width:150px; height:181px; overflow:hidden; zoom:1;}
+.signIn_layer .signRight a { display:block; width:150px; height:181px; text-indent:-9999px; background:url(//images8.baihe.com/pop/signIn/signIn_pic01.jpg) no-repeat; overflow:hidden; zoom:1;}
+.signIn_layer .signRight a:hover { background-position:0 -181px;}
+.signIn_layer .signInfo { padding-left:15px; font:12px/40px '宋体'; color:#999; overflow:hidden; zoom:1;}

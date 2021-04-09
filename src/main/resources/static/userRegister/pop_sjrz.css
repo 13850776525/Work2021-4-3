@@ -1,0 +1,36 @@
+@charset "utf-8";
+/* CSS Document */
+
+.pop_sjrz{position:absolute; top:50%; left:50%; width:480px; height:370px; margin:-193px 0 0 -240px; text-align:left; background:#fff; border:7px solid #474747; border-radius:10px;}
+.pop_sjrz a.popClose{position:absolute; top:14px; right:20px; width:15px; height:16px; text-indent:-9999px; background:url(//images9.baihe.com/pop/sjrz/pop_close.gif) no-repeat;}
+.pop_sjrz .popTit{height:19px; padding:13px 20px 15px 22px; font:18px/18px "Microsoft Yahei"; color:#333; background:#eee; border-top-left-radius:2px; border-top-right-radius:2px; overflow:hidden; zoom:1;}
+.pop_sjrz label { float:left;}
+.pop_sjrz .pop_sjCont {padding:14px 0 0;}
+.pop_sjrz .pop_sjCont dt{width:343px; height:62px; margin:0 auto 32px; padding:12px 0 0 55px; font:16px/25px "Microsoft Yahei"; color:#69a7bc; background:#ebf2f8; overflow:hidden;}
+.pop_sjrz .pop_sjCont dt img{position:relative; top:5px; float:left; margin-right:21px;}
+.pop_sjrz .pop_sjCont dd { position:relative; padding-left:85px; font:14px/30px "Microsoft Yahei"; color:#333; overflow:hidden; zoom:1;}
+.pop_sjrz .pop_sjCont dd input { display:block; float:left; width:123px; height:28px; margin-right:5px; padding:0 10px; font-size:13px; font-family: "Microsoft Yahei"; color:#333; border:1px solid #ddd;}
+.pop_sjrz .pop_sjCont dd .inp{width:92px; margin:0; padding:0; text-align:center; color:#333;}
+.pop_sjrz .pop_sjCont01 { padding:60px 0 20px 130px; font:14px/36px "Microsoft Yahei"; color:#333; background:url(//images9.baihe.com/pop/sjrz/pop_info01.gif) no-repeat 84px 60px; overflow:hidden; zoom:1;}
+.pop_sjrz .pop_sjCont01 strong { font-size:24px; color:#3399cc; }
+
+.pop_sjrz .pop_done{padding:71px 0 10px 89px;}
+.pop_sjrz .pop_done dt{float:left; width:72px;}
+.pop_sjrz .pop_done dt img{position:relative; top:8px;}
+.pop_sjrz .pop_done dd{ font:18px/32px "Microsoft Yahei"; color:#333; overflow:hidden; zoom:1;}
+.pop_sjrz .pop_done dd img{position:relative; top:3px; padding:0 5px;}
+.pop_sjrz .pop_done dd.tip{padding-left:74px; font:13px/48px "Microsoft Yahei"; color:#bdbdbd;}
+
+.pop_sjrz .btn_gray{display:inline-block; float:none; padding:0px; width:100px; height:30px; font:13px/30px "Microsoft Yahei"; color:#fff; text-align:center; text-decoration:none; background:#bdbdbd; border-radius:2px;}
+.pop_sjrz .btn_blue{display:inline-block; float:none; padding:0px; width:100px; height:30px; font:13px/30px "Microsoft Yahei"; color:#fff; text-align:center; text-decoration:none; background:#39c; border-radius:2px;}
+.pop_sjrz .btn_green{display:inline-block; float:none; padding:0px; width:100px; height:30px; font:13px/30px "Microsoft Yahei"; color:#fff; text-align:center; text-decoration:none; background:#3da03a; border-radius:2px;}
+.pop_sjrz .msg_wrong{display:block; padding:5px 0 8px 58px; font:13px/18px "Microsoft Yahei"; color:#ff2626;}
+.pop_sjrz .msg_wrong img{position:relative; top:4px; margin-right:4px;}
+.pop_sjrz .msg_ok { position:absolute; top:0px; right:340px; width:18px; height:18px; margin:6px -138px; *margin:13px -138px; _margin:13px -138px; background:url(//images9.baihe.com/pop/sjrz/pop_right.gif) no-repeat;}
+.pop_sjrz .msg{display:block; width:111px; height:23px; margin:3px 0 3px 56px; padding-left:32px; font:13px/23px Simsun; color:#f63; background:#ffffe3; border:1px solid #fdc25e;}
+.pop_sjrz .msg2{display:block; padding:5px 0 8px 58px; font:13px/18px "Microsoft Yahei"; color:#bdbdbd;}
+.pop_sjrz .noMsg{display:block; height:15px; padding:5px 0 8px 58px; _padding:0 0 0 58px; text-indent:-9999px;}
+.pop_sjrz .pop_sjBtn{text-align:center;}
+.pop_sjrz .pop_sjBtn a{margin:35px 10px;}
+.pop_sjrz .orange{display:inline-block; width:120px; height:40px; font:16px/40px "Microsoft Yahei"; color:#fff; text-align:center; text-decoration:none; background:#ff7f00; border-radius:2px;}
+.pop_sjrz .grey{display:inline-block; width:120px; height:40px; font:16px/40px "Microsoft Yahei"; color:#fff; text-align:center; text-decoration:none; background:#ccc; border-radius:2px;}

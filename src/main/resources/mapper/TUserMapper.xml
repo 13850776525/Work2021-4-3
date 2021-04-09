@@ -67,7 +67,63 @@
     limit #{page},#{limit}
   </select>
 
+  <select id="checkUserExit" resultType="com.msbkj.entity.TUser">
+     select * from t_user where username = #{account}
+  </select>
 
+  <insert id="addUser">
+    insert into t_user (username,password,sex,age,degree) values (#{account},#{pwd},#{sex},#{age},#{degree})
+  </insert>
 
+  <select id="login" resultType="com.msbkj.entity.TUser">
+    select * from t_user where username=#{account} and password=#{pwd}
+  </select>
 
+  <select id="userLogin" resultType="com.msbkj.entity.TUser">
+    select * from t_user where username=#{account}
+  </select>
+
+  <update id="updateUserInfo">
+    update t_user set height=#{height},weight=#{weight},degree=#{degree} where username=#{username}
+  </update>
+
+  <select id="getAnotherSex" resultType="com.msbkj.entity.TUser">
+    select * from t_user where sex = #{sex}
+  </select>
+
+  <select id="isFriend" resultType="com.msbkj.entity.TFriends">
+    select * from t_friends where user_id1=#{userId} and user_id2=#{id}
+  </select>
+
+  <insert id="joinFriend">
+    insert  into t_friends (user_id1,user_id2) values (#{userId},#{id})
+  </insert>
+
+  <select id="selectIdByUsername" resultType="java.lang.String">
+    select id from t_user where username = #{username}
+  </select>
+
+  <select id="getNews" resultType="com.msbkj.entity.TNews">
+    select tu.username,tn.* from t_news tn,t_user tu where tn.user_id=tu.id
+  </select>
+
+  <update id="dianZanNew">
+    update t_news set likes=likes+1 where id=#{id}
+  </update>
+
+  <select id="getComment" resultType="com.msbkj.entity.TComment">
+    select tu.username,tc.* from t_comment tc,t_user tu where tc.user_id=tu.id
+  </select>
+
+  <insert id="addUserComment">
+    insert into t_comment (flag,news_id,user_id,content,times) values (0,#{newsId},#{userId},#{content},now())
+  </insert>
+
+  <insert id="shoucangnew">
+    insert into t_collect (user_id,news_id) values (#{userId},#{newsId})
+  </insert>
+
+  <select id="checkCollect" resultType="com.msbkj.entity.TCollect">
+    select * from t_collect where user_id = #{userId} and news_id = #{newsId}
+  </select>
 </mapper>

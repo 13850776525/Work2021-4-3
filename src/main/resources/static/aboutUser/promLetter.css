@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+.promLetter { position:absolute; top:50%; left:50%; width:830px; height:490px; margin:-260px 0 0 -415px; padding-top:30px; font:14px/24px "Microsoft Yahei"; color:#333; text-align:center; overflow:hidden; zoom:1; }
+.promLetter a.close { position:absolute; top:40px; right:10px; display:block; width:16px; height:16px; text-indent:-99999px; background:url(//images9.baihe.com/pop/promLetter/close.gif) no-repeat; overflow:hidden; zoom:1; z-index:10;}
+.promLetter .picHead { position:absolute; top:0px; left:30px; width:100px; height:140px; text-align:center; overflow:hidden; zoom:1; }
+.promLetter .picHead img { display:block; width:100px; height:100px; margin-bottom:10px; border-radius:4px; }
+.promLetter .man { width:830px; height:490px; background:url(//images9.baihe.com/pop/promLetter/Bj_man.png) no-repeat; }
+.promLetter .woman { width:830px; height:490px; background:url(//images9.baihe.com/pop/promLetter/Bj_woman.png) no-repeat; }
+.promLetter .txt { position:relative; height:60px; padding:60px 110px 0 160px; color:#666; text-align:left; overflow:hidden; zoom:1;}
+.promLetter .txt a { position:absolute; top:60px; right:20px; color:#207ad3; font-size:12px; text-decoration:none; }
+.promLetter .picList { height:320px; overflow:hidden; zoom:1; }
+.promLetter .picList ul li { position:relative; float:left; width:80px; height:160px; padding-left:34px; font-size:12px; color:#333; line-height:20px; overflow:hidden; zoom:1; }
+.promLetter .picList a { color:#333;}
+.promLetter .picList .pic { display:block; width:80px; height:100px; margin-bottom:5px;}
+.promLetter .picList a.state { position:absolute; top:86px; right:0px; display:block; width:14px; height:14px; background:#ddd; text-indent:-99999px; overflow:hidden; zoom:1;}
+.promLetter .picList span { display:block; width:14px; height:14px; text-indent:-99999px; cursor: pointer; overflow:hidden; zoom:1; }
+.promLetter .picList .ok { background:url(//images9.baihe.com/pop/promLetter/icon.gif) no-repeat;}
+.promLetter .icon { padding-left:350px; text-align:left; overflow:hidden; zoom:1; }
+.promLetter .icon a.link { display:block; float:left; width:136px; height:36px; margin-right:30px; text-align:center; color:#fff; font:14px/34px "宋体"; background:#ff546a; overflow:hidden; zoom:1; }
+.promLetter .icon a.linkT { color:#207ad3; line-height:36px; }

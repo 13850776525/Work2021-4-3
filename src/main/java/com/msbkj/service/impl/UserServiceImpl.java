@@ -1,7 +1,7 @@
 package com.msbkj.service.impl;
 
 
-import com.msbkj.entity.TUser;
+import com.msbkj.entity.*;
 import com.msbkj.mapper.TUserMapper;
 import com.msbkj.service.UserService;
 import java.util.List;
@@ -41,5 +41,80 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<TUser> getProductInfo(String name,String price,Integer page, Integer limit) {
         return userMapper.getProductInfo(name,price,page,limit);
+    }
+
+    @Override
+    public List<TUser> checkUserExit(String account) {
+        return userMapper.checkUserExit(account);
+    }
+
+    @Override
+    public void addUser(String account, String sex, String pwd, String age, String degree) {
+        userMapper.addUser(account,sex,pwd,age,degree);
+    }
+
+    @Override
+    public TUser login(String account, String pwd) {
+        return userMapper.login(account,pwd);
+    }
+
+    @Override
+    public TUser userLogin(String account) {
+        return userMapper.userLogin(account);
+    }
+
+    @Override
+    public void updateUserInfo(String username, String degree, String height, String weight) {
+        userMapper.updateUserInfo(username,degree,height,weight);
+    }
+
+    @Override
+    public List<TUser> getAnotherSex(String sex) {
+        return userMapper.getAnotherSex(sex);
+    }
+
+    @Override
+    public TFriends isFriend(String userId, String id) {
+        return userMapper.isFriend(userId,id);
+    }
+
+    @Override
+    public void joinFriend(String userId, String id) {
+        userMapper.joinFriend(userId,id);
+    }
+
+    @Override
+    public String selectIdByUsername(String username) {
+        return userMapper.selectIdByUsername(username);
+    }
+
+    @Override
+    public List<TNews> getNews() {
+        return userMapper.getNews();
+    }
+
+    @Override
+    public void dianZanNew(String id) {
+        userMapper.dianZanNew(id);
+    }
+
+    @Override
+    public List<TComment> getComment() {
+        return userMapper.getComment();
+    }
+
+    @Override
+    public void addUserComment(String userId, String newsId, String content) {
+        userMapper.addUserComment(userId,newsId,content);
+    }
+
+    @Override
+    public void shoucangnew(String userId, String newsId) {
+        userMapper.shoucangnew(userId,newsId);
+    }
+
+    @Override
+    public TCollect checkCollect(String userId, String newsId) {
+        return userMapper.checkCollect(userId,newsId);
     }
 }
