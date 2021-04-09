@@ -10,7 +10,7 @@ public class DefaultView extends WebMvcConfigurerAdapter {
 
     @Override
     public void addViewControllers(ViewControllerRegistry reg) {
-        reg.addViewController("/").setViewName("firmMenu.html");//默认访问页面
+        reg.addViewController("/").setViewName("adminLogin.html");//默认访问页面
         reg.setOrder(Ordered.HIGHEST_PRECEDENCE);//最先执行过滤
         super.addViewControllers(reg);
     }

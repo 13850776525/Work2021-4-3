@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎页面-X-admin2.2</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" th:href="@{/X-admin/css/font.css}">
+    <link rel="stylesheet" th:href="@{/X-admin/css/xadmin.css}">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<!--    <link rel="stylesheet" href="../X-admin/layui/css/layui.css"  media="all">-->
+  <!--  <script th:src="@{/X-admin/js/jquery-3.5.1.js}"></script>-->
+    <script th:src="@{/X-admin/lib/layui/layui.js}" charset="utf-8"></script>
+    <script type="text/javascript" th:src="@{/X-admin/js/xadmin.js}"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+<!--                    <div class="demoTable">-->
+                    <form class="layui-form layui-col-space5" style="width: 800px">
+                        <div class="layui-inline layui-show-xs-block">
+                            账号：
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <input type="text" name="title" autocomplete="off" class="layui-input" id="account">
+                        </div>
+                      <!--  <div class="layui-inline layui-show-xs-block">
+                            性别：
+                        </div>-->
+                      <!--  <div class="layui-inline layui-show-xs-block">
+                            <input type="text" name="title" autocomplete="off" class="layui-input" id="sex">
+                        </div>-->
+                        <button class="layui-btn" lay-submit="" lay-filter="sreach" id="searchBtn"><i class="layui-icon">&#xe615;</i></button>
+                        <a class="layui-btn" lay-filter="addBtn" id="addBtn">增加管理员</a>
+                    </form>
+
+                </div>
+                <!--<div class="layui-card-header">-->
+                    <!--<button class="layui-btn" lay-submit="" lay-filter="sreach" id="addBtn">新增知识库</button>-->
+                <!--</div>-->
+                <div class="layui-card-body layui-table-body layui-table-main">
+                     <table class="layui-hide" id="test" lay-filter="test"></table>
+                </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+</body>
+
+<script>
+    $("#addBtn").on("click", function () {
+        layer.open({
+            //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
+            type: 1,
+            title: "新增用户",
+            area: ['50%', '50%'],
+            content: $("#addUser")
+        });
+    });
+</script>
+
+
+<script>
+
+
+    layui.use(['form','table', 'layer'], function () {
+        var table = layui.table;
+        $ = layui.jquery;
+        var form = layui.form,
+        layer = layui.layer;
+
+        $("#searchBtn").on('click',function () {
+             var account=$("#account").val();
+             //var sex=$("#sex").val();
+            table.reload('testReload',{
+                url:'/manger/getAdminInfo',
+                where:{
+                    "username":account
+                },
+                page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+            })
+            return false;
+        })
+
+        //第一个实例
+        table.render({
+            elem: '#test'
+            , height: 450
+            , url: '/manger/getAdminInfo' //数据接口
+            , cols: [
+                [ //表头
+                // {field: 'state', title: '状态',align: 'center', width: 200,hide:true},
+                //     {field: 'id', title: '序号', align: 'center', width: 100,hide:true},
+                    {field: 'id', title: 'ID', align: 'center', width: 300},
+                    {field: 'username', title: '账号', align: 'center', width: 300},
+                    {field: 'password', title: '密码', align: 'center', width: 300},
+                    {fixed: 'right', fixed: 'right', title: '操作', width: 400, align: 'center', toolbar: '#barDemo'}
+            ]
+            ]
+            , page: {
+                layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'],     // 自定义分页布局
+                curr: 1,      // 设置默认起始页1
+                groups: 5,   //只显示10个连续页码,就是说显示10个可见页其他的省略
+                first: false, // 不显示首页
+                last: false   // 不显示尾页
+            },
+            limit: 5,
+            limits: [5, 10, 15, 20, 25]
+            , id: "testReload"
+        });
+
+
+
+        form.on('submit(demo13)', function (data) {
+            var username=$("#username1").val();
+            var password=$("#password1").val();
+            $.ajax({
+                url: '/admin/add',
+                data:  {"username": username,"password": password },
+                dataType: 'text',
+                type: 'get',
+                success: function (data) {
+                    var d = $.parseJSON(data);
+                    layer.msg(d);
+                    if (d == '新增成功') {
+                        setTimeout(function(){
+                            layer.closeAll();
+                            $("#searchBtn").click()
+                        }, 1000);
+                    }
+                }
+            })
+            return false;
+
+        })
+
+        form.on('submit(demo12)', function (data) {
+            var id = $("#id2").val();
+            var username = $("#username2").val();
+            var pwd=$("#password2").val();
+            var flag=confirm("确定修改用户信息吗？");
+            if (flag){
+                $.ajax({
+                    url: '/admin/update',
+                    data:  {"id":id,"username": username, "password": pwd},
+                    dataType: 'text',
+                    type: 'get',
+                    success: function (data) {
+                        var d = $.parseJSON(data);
+                        layer.msg(d);
+                        if (d == '更新成功') {
+                            setTimeout(function(){
+                                layer.closeAll();
+                                $("#searchBtn").click()
+                            }, 1000);
+                        }
+                    }
+                })
+            }
+            return false;
+
+        })
+
+
+
+
+        table.on('tool(test)', function (obj) { //注：tool 是工具条事件名，test 是 table 原始容器的属性 lay-filter="对应的值"
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event; //获得 lay-event 对应的值（也可以是表头的 event 参数对应的值）
+            var tr = obj.tr; //获得当前行 tr 的 DOM 对象（如果有的话）
+
+            if (layEvent === 'detail') { //查看
+
+            } else if (layEvent === 'del') { //删除
+                console.log(obj.data)
+                console.log(obj.data.id)
+                layer.confirm('真的删除行么', function (index) {
+                    $.ajax({
+                        url: '/admin/delete',
+                        data: data,
+                        dataType: 'text',
+                        type: 'get',
+                        success: function (data) {
+                            var d = $.parseJSON(data);
+                            layer.msg(d);
+                            if (d == '删除成功') {
+                                setTimeout(function(){
+                                    layer.closeAll();
+                                    $("#searchBtn").click()
+                                }, 1000);
+                            }
+                        }
+                    })
+
+                    //向服务端发送删除指令
+                });
+            } else if (layEvent === 'edit') { //编辑
+                $("#id2").val(data.id);
+                $("#username2").val(data.username);
+                $("#password2").val(data.password);
+                layer.open({
+                    //layer提供了5种层类型。可传入的值有：0（信息框，默认）1（页面层）2（iframe层）3（加载层）4（tips层）
+                    type: 1,
+                    title: "修改用户信息",
+                    area: ['420px', '420px'],
+                    content: $("#fixKnow"),//引用的弹出层的页面层的方式加载修改界面表单
+                    success: function (layero, index) {
+                        layui.form.render();
+                    }
+                });
+
+
+            } else if (layEvent === 'LAYTABLE_TIPS') {
+                layer.alert('Hi，头部工具栏扩展的右侧图标。');
+            }
+        });
+    });
+    // layui.use(['form', 'layer', 'jquery'], function () {
+    //
+    //     // 操作对象
+    //     var form = layui.form;
+    //      $ = layui.jquery;
+    //      layer = layui.layer;
+    //
+    //
+    //
+    //
+    // });
+
+</script>
+<script>var _hmt = _hmt || []; (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();</script>
+
+
+<script type="text/jsp" id="barDemo">
+    <div class="layui-btn-container">
+
+        <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
+
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+
+    </div>
+</script>
+
+
+<!--修改界面-->
+<div class="layui-row" id="fixKnow" style="display:none;">
+    <div class="layui-col-md10">
+        <form class="layui-form layui-from-pane" action="" style="margin-top:20px">
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号：</label>
+                <div class="layui-input-block">
+                    <input type="hidden" name="id2" autocomplete="off"
+                             id="id2" >
+                    <input type="text" name="username2" autocomplete="off"
+                           placeholder="请输入用户名" class="layui-input" id="username2" required lay-verify="required">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="password2" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="password2" placeholder="请输入密码">
+                </div>
+            </div>
+
+
+
+
+            <div class="layui-form-item" style="margin-top:40px">
+                <div class="layui-input-block">
+                    <button class="layui-btn  layui-btn-submit " lay-submit="" lay-filter="demo12" id="surefix1">确认修改
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--新增界面-->
+<div class="layui-row" id="addUser" style="display:none;">
+    <div class="layui-col-md10">
+        <form class="layui-form layui-from-pane" action="" style="margin-top:20px">
+            <div class="layui-form-item">
+                <label class="layui-form-label">账号：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="username1" autocomplete="off" placeholder="请输入账号" class="layui-input" id="username1" required lay-verify="required">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">密码：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="password1" required lay-verify="required" autocomplete="off"
+                           class="layui-input" id="password1" placeholder="请输入密码">
+                </div>
+            </div>
+
+
+
+
+            <div class="layui-form-item" style="margin-top:40px">
+                <div class="layui-input-block">
+                    <button class="layui-btn  layui-btn-submit " lay-submit="" lay-filter="demo13" id="surefix2">确认新增
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</html>

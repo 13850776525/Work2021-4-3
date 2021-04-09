@@ -16,6 +16,15 @@ public class AdminServiceImpl implements AdminService{
     private TAdminMapper adminMapper;
 
     @Override
+    public TAdmin login(String account, String pwd) {
+        TAdmin admin = new TAdmin();
+        admin.setUsername(account);
+        admin.setPassword(pwd);
+        admin = adminMapper.login(admin);
+        return admin;
+    }
+
+    @Override
     public int deleteByPrimaryKey(Integer id) {
         return adminMapper.deleteByPrimaryKey(id);
     }

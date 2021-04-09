@@ -13,4 +13,7 @@ public interface TAdminMapper {
     List<TAdmin> selectAll();
 
     int updateByPrimaryKey(TAdmin record);
+
+    public TAdmin login(TAdmin admin);
+
 }

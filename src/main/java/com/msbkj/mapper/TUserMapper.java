@@ -1,6 +1,6 @@
 package com.msbkj.mapper;
 
-import com.msbkj.entity.*;
+import com.msbkj.entity.TUser;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -47,4 +47,16 @@ public interface TUserMapper {
     void shoucangnew(@Param("userId") String userId,@Param("newsId") String newsId);
 
     TCollect checkCollect(@Param("userId") String userId,@Param("newsId") String newsId);
+
+    public List<TAdmin> getAdminInfo(@Param("name") String name, @Param("sex") String price, @Param("page") Integer page, @Param("limit") Integer limit);
+
+    public List<TNews> getNewInfo(@Param("name") String name, @Param("sex") String price, @Param("page") Integer page, @Param("limit") Integer limit);
+
+    public List<TCollect> getCollectInfo(@Param("name") String name, @Param("sex") String price, @Param("page") Integer page, @Param("limit") Integer limit);
+
+    public List<TComment> getCommentInfo(@Param("name") String name, @Param("sex") String price, @Param("page") Integer page, @Param("limit") Integer limit);
+
+    public List<TAnnouce> getAnnouceInfo(@Param("name") String name, @Param("sex") String price, @Param("page") Integer page, @Param("limit") Integer limit);
+
+
 }

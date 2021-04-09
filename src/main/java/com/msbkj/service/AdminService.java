@@ -1,6 +1,8 @@
 package com.msbkj.service;
 
 import com.msbkj.entity.TAdmin;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
+
 import java.util.List;
 
 /**
@@ -16,4 +18,6 @@ public interface AdminService {
     List<TAdmin> selectAll();
 
     int updateByPrimaryKey(TAdmin record);
+
+    public TAdmin login(String account, String pwd);
 }

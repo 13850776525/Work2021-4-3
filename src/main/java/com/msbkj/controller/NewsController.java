@@ -1,5 +1,6 @@
 package com.msbkj.controller;
 
+import com.google.gson.Gson;
 import com.msbkj.entity.TFeatures;
 import com.msbkj.entity.TNews;
 import com.msbkj.service.FeaturesService;
@@ -10,6 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Created by Elvis on 2021/3/5.
@@ -23,27 +27,31 @@ public class NewsController {
     private FeaturesService featuresService;
 
     @RequestMapping("/add")
-    public R add(TNews news){
+    public String add(TNews news){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateString = formatter.format(new Date());
+        news.setTimes(dateString);
+        news.setLikes("0");
         newsService.insert(news);
         TFeatures f = new TFeatures(news.getUserId());
         f.setNewsContent(news.getContent());
         featuresService.updateByConditions(f);
-        return R.ok("新增成功");
+        return new Gson().toJson("新增成功");
     }
 
     @RequestMapping("/delete")
-    public R delete(Integer id){
+    public String delete(Integer id){
         newsService.deleteByPrimaryKey(id);
-        return R.ok("删除成功");
+        return new Gson().toJson("删除成功");
     }
 
     @RequestMapping("/update")
-    public R update(TNews news){
+    public String update(TNews news){
         newsService.updateByPrimaryKey(news);
         TFeatures f = new TFeatures(news.getUserId());
         f.setNewsContent(news.getContent());
         featuresService.updateByConditions(f);
-        return R.ok("更新成功");
+        return new Gson().toJson("更新成功");
     }
 
     @RequestMapping("/getAll")

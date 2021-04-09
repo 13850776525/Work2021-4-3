@@ -8,6 +8,8 @@ mybatis:
   typeAliasesPackage: com.msbkj.entity
   config-location: classpath:mybatis/SqlMapConfig.xml
   mapperLocations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 
   spring:
     thymeleaf:

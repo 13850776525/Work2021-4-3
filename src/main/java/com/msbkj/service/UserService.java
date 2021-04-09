@@ -3,6 +3,8 @@ package com.msbkj.service;
 import com.msbkj.entity.*;
 import org.apache.ibatis.annotations.Param;
 
+import com.msbkj.entity.*;
+
 import java.util.List;
 
 public interface UserService {
@@ -47,4 +49,14 @@ public interface UserService {
     void shoucangnew(String userId,String newsId);
 
     TCollect checkCollect(String userId, String newsId);
+
+    public List<TAdmin> getAdminInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TNews> getNewInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TCollect> getCollectInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TComment> getCommentInfo(String name, String price, Integer page, Integer limit);
+
+    public List<TAnnouce> getAnnouceInfo(String name, String price, Integer page, Integer limit);
 }

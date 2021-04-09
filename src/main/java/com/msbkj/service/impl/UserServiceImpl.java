@@ -117,4 +117,30 @@ public class UserServiceImpl implements UserService {
     public TCollect checkCollect(String userId, String newsId) {
         return userMapper.checkCollect(userId,newsId);
     }
+
+    @Override
+    public List<TAdmin> getAdminInfo(String name, String price, Integer page, Integer limit) {
+        return userMapper.getAdminInfo(name,price,page,limit);
+    }
+
+    @Override
+    public List<TNews> getNewInfo(String name, String price, Integer page, Integer limit) {
+        return userMapper.getNewInfo(name,price,page,limit);
+    }
+
+    @Override
+    public List<TCollect> getCollectInfo(String name, String price, Integer page, Integer limit) {
+        return userMapper.getCollectInfo(name,price,page,limit);
+    }
+
+    @Override
+    public List<TComment> getCommentInfo(String name, String price, Integer page, Integer limit) {
+        return userMapper.getCommentInfo(name,price,page,limit);
+    }
+
+    @Override
+    public List<TAnnouce> getAnnouceInfo(String name, String price, Integer page, Integer limit) {
+        return userMapper.getAnnouceInfo(name,price,page,limit);
+    }
+
 }
