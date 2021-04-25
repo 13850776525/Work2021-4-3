@@ -1,11 +1,23 @@
 package com.msbkj.entity;
 
+import java.util.Date;
+
 public class TAnnouce {
     private Integer id;
 
     private String content;
 
     private Integer adminId;
+
+    private Date time;
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
 
     public Integer getId() {
         return id;

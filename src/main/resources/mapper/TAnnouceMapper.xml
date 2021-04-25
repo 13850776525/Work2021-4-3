@@ -28,7 +28,7 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
-    select id, content, admin_id
+    select id, content, admin_id,time
     from t_annouce
   </select>
 </mapper>

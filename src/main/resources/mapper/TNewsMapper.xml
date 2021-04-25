@@ -31,19 +31,25 @@
     where id = #{id,jdbcType=INTEGER}
   </update>
   <!--<select selectByPrimaryKeyAndFlagyKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >-->
-    <!--select id, flag, user_id, content, times, likes-->
-    <!--from t_news-->
-    <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--select id, flag, user_id, content, times, likes-->
+  <!--from t_news-->
+  <!--where id = #{id,jdbcType=INTEGER}-->
   <!--</select>-->
   <!--<select id="selectAll" resultMap="BaseResultMap" >-->
-    <!--select id, flag, user_id, content, times, likes-->
-    <!--from t_news-->
+  <!--select id, flag, user_id, content, times, likes-->
+  <!--from t_news-->
+  <!--</select>-->
+  <!--<select id="selectByPrimaryKeyAndFlag" resultMap="BaseResultMap" >-->
+  <!--select id, flag, user_id, content, times, likes-->
+  <!--from t_news-->
+  <!--where id = #{id,jdbcType=INTEGER}-->
+  <!--and flag = #{flag,jdbcType=VARCHAR}-->
   <!--</select>-->
   <select id="selectByPrimaryKeyAndFlag" resultMap="BaseResultMap" >
     select id, flag, user_id, content, times, likes
     from t_news
-    where id = #{id,jdbcType=INTEGER}
-    and flag = #{flag,jdbcType=VARCHAR}
+    where id = #{arg0}
+    and flag = #{arg1}
   </select>
   <select id="selectAll" resultMap="BaseResultMap" >
     select id, flag, user_id, content, times, likes

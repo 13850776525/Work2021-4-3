@@ -139,12 +139,17 @@
                     <li>
                         <a th:href="@{/userHtml/aboutUser(account=${user.getUsername()})}">我的资料<em class="special" style="right:-20px;">特惠</em></a></li>
                     <li>
-                        <a th:href="@{/userHtml/photoWall(username=${user.getUsername()})}" style="z-index:10">照片墙</a></li>
+                        <a th:href="@{/userHtml/photoWall(username=${user.getUsername()})}" style="z-index:10">照片墙</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/userHtml/myPhoto(username=${user.getUsername()})}" style="z-index:10">我的相册</a>
+                    </li>
                     <li><a th:href="@{/userHtml/news(username=${user.getUsername()})}" style="z-index:10"><span
                             class="zhiboTxt">新鲜事</span><span class="zhiboBg"></span></a></li>
                     <li>
-                        <a href="http://date.baihe.com/index.php?channel=baidu&amp;code=ppcbh20210108-2&amp;accessID=2021040512574214390&amp;userID=264824452&amp;rand=1617709486156125640&amp;spm=4.14.42.4920.14374&amp;event=3"
-                           target="_blank">服务</a></li>
+                        <a th:href="@{/userHtml/annouce(username=${user.getUsername()})}" style="z-index:10"><span
+                                class="zhiboTxt">网站公告</span><span class="zhiboBg"></span></a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -14,6 +14,11 @@
     <result column="conditions" property="conditions" jdbcType="VARCHAR" />
     <result column="annouce" property="annouce" jdbcType="VARCHAR" />
   </resultMap>
+
+
+
+
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_user
     where id = #{id,jdbcType=INTEGER}
@@ -66,7 +71,7 @@
     </if>
     limit #{page},#{limit}
   </select>
-<!--管理员-->
+  <!--管理员-->
   <select id="getAdminInfo" resultType="com.msbkj.entity.TAdmin">
     select * from t_admin where 1=1
     <if test="name!=null and name!=''">
@@ -77,7 +82,7 @@
     </if>
     limit #{page},#{limit}
   </select>
-<!--新鲜事-->
+  <!--新鲜事-->
   <select id="getNewInfo" resultType="com.msbkj.entity.TNews">
     select * from t_news where 1=1
     <if test="name!=null and name!=''">
@@ -89,7 +94,7 @@
     limit #{page},#{limit}
   </select>
 
-<!--收藏-->
+  <!--收藏-->
   <select id="getCollectInfo" resultType="com.msbkj.entity.TCollect">
     select * from t_collect where 1=1
     <if test="name!=null and name!=''">
@@ -101,12 +106,46 @@
     limit #{page},#{limit}
   </select>
 
+
+  <!--公告-->
+  <select id="getAnnouceInfo" resultType="com.msbkj.entity.TAnnouce">
+    select * from t_annouce where 1=1
+    <if test="name!=null and name!=''">
+      and content like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
+
+
+  <!--评论-->
+  <select id="getCommentInfo" resultType="com.msbkj.entity.TComment">
+    select * from t_comment where 1=1
+    <if test="name!=null and name!=''">
+      and content like concat('%',#{name},'%')
+    </if>
+    <if test="sex!=null and sex!=''">
+      and sex=#{sex}
+    </if>
+    limit #{page},#{limit}
+  </select>
+
+
+
+
+
+
+
+
+
   <select id="checkUserExit" resultType="com.msbkj.entity.TUser">
      select * from t_user where username = #{account}
   </select>
 
   <insert id="addUser">
-    insert into t_user (username,password,sex,age,degree) values (#{account},#{pwd},#{sex},#{age},#{degree})
+    insert into t_user (username,password,sex,age,degree,photo) values (#{account},#{pwd},#{sex},#{age},#{degree},#{photo})
   </insert>
 
   <select id="login" resultType="com.msbkj.entity.TUser">
@@ -121,6 +160,71 @@
     update t_user set height=#{height},weight=#{weight},degree=#{degree} where username=#{username}
   </update>
 
+  <select id="getAnotherSex" resultType="com.msbkj.entity.TUser">
+    select * from t_user where sex = #{sex}
+  </select>
 
+  <select id="isFriend" resultType="com.msbkj.entity.TFriends">
+    select * from t_friends where user_id1=#{userId} and user_id2=#{id}
+  </select>
+
+  <insert id="joinFriend">
+    insert  into t_friends (user_id1,user_id2) values (#{userId},#{id})
+  </insert>
+
+  <select id="selectIdByUsername" resultType="java.lang.String">
+    select id from t_user where username = #{username}
+  </select>
+
+  <select id="getNews" resultType="com.msbkj.entity.TNews">
+    select tu.username,tn.* from t_news tn,t_user tu where tn.user_id=tu.id
+  </select>
+
+  <update id="dianZanNew">
+    update t_news set likes=likes+1 where id=#{id}
+  </update>
+
+  <select id="getComment" resultType="com.msbkj.entity.TComment">
+    select tu.username,tc.* from t_comment tc,t_user tu where tc.user_id=tu.id
+  </select>
+
+  <insert id="addUserComment">
+    insert into t_comment (flag,news_id,user_id,content,times) values (0,#{newsId},#{userId},#{content},now())
+  </insert>
+
+  <insert id="shoucangnew">
+    insert into t_collect (user_id,news_id) values (#{userId},#{newsId})
+  </insert>
+
+  <select id="checkCollect" resultType="com.msbkj.entity.TCollect">
+    select * from t_collect where user_id = #{userId} and news_id = #{newsId}
+  </select>
+
+  <select id="maxUserId" resultType="java.lang.Integer">
+    select max(id)
+    from t_user
+  </select>
+
+  <select id="getIdByUserName" resultType="java.lang.Integer">
+    select id
+    from t_user
+    where username = #{username,jdbcType=VARCHAR}
+  </select>
+
+  <update id="updateUserImg">
+    update t_user set photo=#{url} where id=#{id}
+  </update>
+
+  <select id="getLikesOne" resultType="com.msbkj.entity.Likes">
+    select * from t_likes where user_id = #{userId} and news_id = #{newsId}
+  </select>
+
+  <insert id="addLikes">
+    insert into t_likes (user_id,news_id) value (#{userId},#{newsId})
+  </insert>
+
+  <insert id="fabuNews">
+    insert into t_news (flag,user_id,content,times,likes) VALUE(0,#{userId},#{content},NOW(),0)
+  </insert>
 
 </mapper>

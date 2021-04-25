@@ -49,8 +49,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void addUser(String account, String sex, String pwd, String age, String degree) {
-        userMapper.addUser(account,sex,pwd,age,degree);
+    public void addUser(String account, String sex, String pwd, String age, String degree,String photo) {
+        userMapper.addUser(account,sex,pwd,age,degree,photo);
     }
 
     @Override
@@ -143,4 +143,35 @@ public class UserServiceImpl implements UserService {
         return userMapper.getAnnouceInfo(name,price,page,limit);
     }
 
+    @Override
+    public int maxUserId() {
+        return userMapper.maxUserId();
+    };
+
+    @Override
+    public int getIdByUserName(String username) {
+        return userMapper.getIdByUserName(username);
+    }
+
+    @Override
+    public void updateUserImg(String img, String id) {
+        userMapper.updateUserImg(img,id);
+    }
+
+    @Override
+    public Likes getLikesOne(String userId, String newsId) {
+        return userMapper.getLikesOne(userId,newsId);
+    }
+
+    @Override
+    public void addLikes(String userId, String newsId) {
+        userMapper.addLikes(userId,newsId);
+    }
+
+    @Override
+    public void fabuNews(String userId, String content) {
+        userMapper.fabuNews(userId,content);
+    }
+
+    ;
 }

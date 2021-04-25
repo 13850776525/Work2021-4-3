@@ -2,14 +2,13 @@
 spring:
   profiles:
     active: test
-
 #公共配置与profiles选择无关
 mybatis:
   typeAliasesPackage: com.msbkj.entity
   config-location: classpath:mybatis/SqlMapConfig.xml
   mapperLocations: classpath:mapper/*.xml
-  configuration:
-    map-underscore-to-camel-case: true
+#  configuration:
+#    map-underscore-to-camel-case: true
 
   spring:
     thymeleaf:
@@ -20,7 +19,8 @@ mybatis:
 logging:
   level:
     com.msbkj.mapper: debug
-
+server:
+  port: 8088
 ---
 
 #开发配置
@@ -28,7 +28,8 @@ spring:
   profiles: test
 
   datasource:
-    url: jdbc:mysql://localhost:3306/datingsites?useSSL=true&useUnicode=true&characterEncoding=utf8
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/datingsites?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver

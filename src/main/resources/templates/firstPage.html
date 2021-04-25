@@ -7,7 +7,7 @@
     <script type="text/javascript" async="" th:src="@{/firstPage/fm.js}"></script>
     <script th:src="@{/firstPage/hm.js}"></script>
 
-    <title>百合网-婚恋交友_相亲找对象,中国第一家实名制婚恋服务网站</title>
+    <title>我要婚恋网</title>
     <meta name="description" content="百合网--实名婚恋。百合网1亿实名认证会员，打造全国本地化的婚恋交友平台，相亲找对象就上百合网，资深专业红娘一对一贴心服务，婚恋交友更放心！">
     <meta name="keywords" content="婚恋交友,相亲,找对象,百合网">
     <link th:href="@{/firstPage/public.css}" rel="stylesheet" type="text/css">
@@ -305,9 +305,9 @@
 <div class="adTxtImgUpF"></div>
 <div id="bhHeaderH" style="height: 82px;">
     <div id="bhHeader">
-        <div class="head"><h1><a
-                href="https://www.baihe.com/index.shtml?channel=baidu&amp;code=ppcbh20210108-2&amp;accessID=2021040512574214390&amp;userID=264824452&amp;rand=1617954442147719283&amp;spm=4.14.42.844.2254&amp;event=3"
-                class="logo">我要婚恋网，实名婚恋网开创者</a></h1>
+        <div class="head">
+<!--            <h1><a href="https://www.baihe.com/index.shtml?channel=baidu&amp;code=ppcbh20210108-2&amp;accessID=2021040512574214390&amp;userID=264824452&amp;rand=1617954442147719283&amp;spm=4.14.42.844.2254&amp;event=3"-->
+<!--                class="logo">我要婚恋网，实名婚恋网开创者</a></h1>-->
             <div class="nav">
                 <ul>
                     <li>
@@ -320,11 +320,15 @@
                     <li>
                         <a th:href="@{/userHtml/photoWall(username=${user.getUsername()})}" style="z-index:10">照片墙</a>
                     </li>
+                    <li>
+                        <a th:href="@{/userHtml/myPhoto(username=${user.getUsername()})}" style="z-index:10">我的相册</a>
+                    </li>
                     <li><a th:href="@{/userHtml/news(username=${user.getUsername()})}" style="z-index:10"><span
                             class="zhiboTxt">新鲜事</span><span class="zhiboBg"></span></a></li>
                     <li>
-                        <a href="http://date.baihe.com/index.php?channel=baidu&amp;code=ppcbh20210108-2&amp;accessID=2021040512574214390&amp;userID=264824452&amp;rand=1617709486156125640&amp;spm=4.14.42.4920.14374&amp;event=3"
-                           target="_blank">服务</a></li>
+                        <a th:href="@{/userHtml/annouce(username=${user.getUsername()})}" style="z-index:10"><span
+                                class="zhiboTxt">网站公告</span><span class="zhiboBg"></span></a>
+                    </li>
                 </ul>
             </div>
         </div>

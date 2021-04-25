@@ -20,19 +20,19 @@ public interface TUserMapper {
 
     List<TUser> checkUserExit(@Param("account") String account);
 
-    void addUser(@Param("account") String account, @Param("sex") String sex,@Param("pwd") String pwd,@Param("age") String age,@Param("degree") String degree);
+    void addUser(@Param("account") String account, @Param("sex") String sex, @Param("pwd") String pwd, @Param("age") String age, @Param("degree") String degree, @Param("photo") String photo);
 
-    TUser login(@Param("account") String account,@Param("pwd") String pwd);
+    TUser login(@Param("account") String account, @Param("pwd") String pwd);
 
     TUser userLogin(@Param("account") String account);
 
-    void updateUserInfo(@Param("username") String username,@Param("degree") String degree,@Param("height") String height,@Param("weight") String weight);
+    void updateUserInfo(@Param("username") String username, @Param("degree") String degree, @Param("height") String height, @Param("weight") String weight);
 
     List<TUser> getAnotherSex(@Param("sex") String sex);
 
     TFriends isFriend(@Param("userId") String userId, @Param("id") String id);
 
-    void joinFriend(@Param("userId") String userId,@Param("id") String id);
+    void joinFriend(@Param("userId") String userId, @Param("id") String id);
 
     String selectIdByUsername(@Param("username") String username);
 
@@ -42,9 +42,9 @@ public interface TUserMapper {
 
     List<TComment> getComment();
 
-    void addUserComment(@Param("userId") String userId,@Param("newsId") String newsId,@Param("content") String content);
+    void addUserComment(@Param("userId") String userId, @Param("newsId") String newsId, @Param("content") String content);
 
-    void shoucangnew(@Param("userId") String userId,@Param("newsId") String newsId);
+    void shoucangnew(@Param("userId") String userId, @Param("newsId") String newsId);
 
     TCollect checkCollect(@Param("userId") String userId, @Param("newsId") String newsId);
 
@@ -58,5 +58,15 @@ public interface TUserMapper {
 
     public List<TAnnouce> getAnnouceInfo(@Param("name") String name, @Param("sex") String price, @Param("page") Integer page, @Param("limit") Integer limit);
 
+    public int maxUserId();
 
+    public int getIdByUserName(String username);
+
+    void updateUserImg(@Param("url") String img,@Param("id") String id);
+
+    Likes getLikesOne(@Param("userId")String userId,@Param("newsId")String newsId);
+
+    void addLikes(@Param("userId")String userId,@Param("newsId")String newsId);
+
+    void fabuNews(@Param("userId")String userId,@Param("content")String content);
 }

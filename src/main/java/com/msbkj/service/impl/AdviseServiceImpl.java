@@ -9,7 +9,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
-@Service(value = "adviseService")
+@Service
 public class AdviseServiceImpl implements AdviseService {
     @Resource
     private TAdviseMapper adviseMapper;
