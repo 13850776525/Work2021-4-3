@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by Elvis on 2021/3/3.
  */
-@Service(value = "adminService")
+@Service
 public class AdminServiceImpl implements AdminService{
     @Resource
     private TAdminMapper adminMapper;

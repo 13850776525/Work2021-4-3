@@ -143,4 +143,23 @@ public class UserServiceImpl implements UserService {
         return userMapper.getAnnouceInfo(name,price,page,limit);
     }
 
+    @Override
+    public int maxUserId() {
+        return userMapper.maxUserId();
+    };
+
+    @Override
+    public int getIdByUserName(String username) {
+        return userMapper.getIdByUserName(username);
+    };
+
+    @Override
+    public List<talk> getTalk(String heid,String meid) {
+        return userMapper.getTalk(heid,meid);
+    };
+
+    @Override
+    public void addTalk(String talkid, String heid, String meid,String concent) {
+        userMapper.addTalk(talkid,heid,meid,concent);
+    }
 }

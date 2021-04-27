@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by Elvis on 2021/3/3.
  */
+
 public interface AdminService {
     int deleteByPrimaryKey(Integer id);
 
