@@ -1,40 +1,23 @@
 package com.msbkj.controller;
 
 import com.msbkj.entity.*;
-import com.msbkj.service.AdviseService;
-import com.msbkj.service.AnnouceService;
-import com.msbkj.service.FeaturesService;
-import com.msbkj.service.NewsService;
 import com.msbkj.service.UserService;
-import com.msbkj.utils.CommonUtil;
-import com.msbkj.utils.R;
-import com.msbkj.utils.SimilarityUtil;
-
-import java.util.*;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "/userHtml")
 public class UserHtmlController {
     @Autowired
     UserService userService;
-    @Autowired
-    private FeaturesService featuresService;
-    @Autowired
-    private NewsService newsService;
-    @Autowired
-    private AdviseService adviseService;
 
     @RequestMapping("/userRegister")
     public String userRegister(HttpServletRequest request, HttpServletResponse response){
@@ -49,14 +32,15 @@ public class UserHtmlController {
         String age = request.getParameter("age");
         String degree = request.getParameter("degree");
         String sex = request.getParameter("sex");
+        String photo="/qualification/pic.jpg";//新注册用户设置默认头像
         List<TUser> list = userService.checkUserExit(account);
         if (null != list && list.size()>0){
             return "fail";
         }else {
-            userService.addUser(account,sex,pwd,age,degree);
+            userService.addUser(account,sex,pwd,age,degree,photo);
             // 转化degree并构造Features
             int uuid = userService.maxUserId();
-            System.out.println(uuid);
+
             TFeatures f = new TFeatures(uuid, sex, age, CommonUtil.converDegree(degree));
             featuresService.insert(f);
             // 注册完计算一次
@@ -98,18 +82,6 @@ public class UserHtmlController {
         if (null != user){
             model.addAttribute("user",user);
         }
-        TAdvise like =  adviseService.selectByPrimaryKey(user.getId());
-        List<TUser> userLike = new ArrayList<TUser>();
-        if (like!=null){
-            String listLike[] = like.getAdviseFriends().split(";");
-            if (listLike!=null){
-                for (String s : listLike) {
-                    TUser users = userService.selectByPrimaryKey(Integer.parseInt(s));
-                    userLike.add(users);
-                }
-            }
-        }
-        model.addAttribute("userLike",userLike);
         return "aboutUser";
     }
 
@@ -191,8 +163,16 @@ public class UserHtmlController {
     @ResponseBody
     public String dianZanNew(HttpServletRequest request, HttpServletResponse response){
         String id = request.getParameter("id");
-        userService.dianZanNew(id);
-        return "success";
+        String username = request.getParameter("username");
+        String userId = userService.selectIdByUsername(username);
+        Likes likes = userService.getLikesOne(userId,id);
+        if (null == likes){
+            userService.dianZanNew(id);
+            userService.addLikes(userId,id);
+            return "success";
+        }else {
+            return "already";
+        }
     }
 
     @RequestMapping("/pinglunnew")
@@ -237,24 +217,6 @@ public class UserHtmlController {
         if (null != user){
             model.addAttribute("user",user);
         }
-
-        //String userId = request.getParameter("userId");
-        /*TAdvise like =  adviseService.selectByPrimaryKey(user.getId());
-        List<TUser> userLike = new ArrayList<TUser>();
-        if (like!=null){
-            String listLike[] = like.getAdviseFriends().split(";");
-            if (listLike!=null){
-                for (String s : listLike) {
-                    TUser users = userService.selectByPrimaryKey(Integer.parseInt(s));
-                    userLike.add(users);
-                }
-            }
-        }
-        model.addAttribute("userLike",userLike);*/
-
-
-
-
         return "firstPage";
     }
 
@@ -296,6 +258,7 @@ public class UserHtmlController {
         // 先清除advise表中的内容
         adviseService.deleteAll();
         for (TFeatures t1: features) {
+            N = 8;
             String friends = "";
             // 用于对推荐值排序
             sortMap = new TreeMap<>((a, b) -> (int)(b * 10000 - a * 10000));
@@ -321,13 +284,31 @@ public class UserHtmlController {
                     // 最终的推荐数值，初始值设置非0，避免被map吞掉
                     double value = 0.1;
 
+                    // 避免新鲜事和收藏内容为空，导致相似度为NaN，因此随机加入字符
+                    String content1 = t1.getNewsContent();
+                    String content2 = t2.getNewsContent();
+                    String collect1 = t1.getCollectContent();
+                    String collect2 = t2.getCollectContent();
+                    if (content1.isEmpty() || content1 == null || content1.trim().length() == 0) {
+                        content1 = getRandomString(10);
+                    }
+                    if (content2.isEmpty() || content2 == null || content2.trim().length() == 0) {
+                        content2 = getRandomString(10);
+                    }
+                    if (collect1.isEmpty() || collect1 == null || collect1.trim().length() == 0) {
+                        collect1 = getRandomString(10);
+                    }
+                    if (collect2.isEmpty() || collect2 == null || collect2.trim().length() == 0) {
+                        collect2 = getRandomString(10);
+                    }
                     // 关注的新鲜事相似度
-                    v1 = SimilarityUtil.getSimilarity(t1.getNewsContent(), t2.getNewsContent());
+                    v1 = SimilarityUtil.getSimilarity(content1, content2);
                     // 收藏内容的相似度
-                    v2 = SimilarityUtil.getSimilarity(t1.getCollectContent(), t2.getCollectContent());
+                    v2 = SimilarityUtil.getSimilarity(collect1, collect2);
                     // 最近评论id是否相同
                     v3 = t1.getCommentId().equals(t2.getCommentId()) ? 1.0 : 0;
 
+                    // 计算最终的权重
                     value += w1 * v1 + w2 * v2 + w3 * v3;
                     System.out.println("v1:" + v1 + " v2:" + v2 + " v3:" + v3 + " value:" + value);
                     sortMap.put(value, t2.getUserId());
@@ -341,6 +322,7 @@ public class UserHtmlController {
             while (it.hasNext() && N > 0) {
                 double tmp = it.next();
                 friends += sortMap.get(tmp) + ";";
+                System.out.println("---------" + friends + "000000" + N);
                 N--;
             }
 
@@ -352,6 +334,18 @@ public class UserHtmlController {
         }
         return R.ok();
     }
+
+    public static String getRandomString(int length){
+        String str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random random=new Random();
+        StringBuffer sb=new StringBuffer();
+        for(int i=0;i<length;i++){
+            int number=random.nextInt(62);
+            sb.append(str.charAt(number));
+        }
+        return sb.toString();
+    }
+
 
     @RequestMapping("/like")
     public void like(HttpServletRequest request, HttpServletResponse response,Model model){
@@ -375,7 +369,59 @@ public class UserHtmlController {
         //return "annouce";
     }
 
+    @RequestMapping(value = "/upload", produces = "text/plain;charset=utf-8")
+    @ResponseBody
+    public Object upload(HttpServletRequest request, HttpServletResponse response, MultipartFile file) {
+        String username = request.getParameter("username");
+        String userId = userService.selectIdByUsername(username);
+        try {
+            //获取文件名
+            String originalName = file.getOriginalFilename();
+            //扩展名
+            String prefix = originalName.substring(originalName.lastIndexOf(".") + 1);
+            System.out.println("prefix" + prefix);
+            //使用UUID+后缀名保存文件名，防止中文乱码问题
+            String uuid = UUID.randomUUID() + "";
+            File file1 = new File("");
+            String filePath = file1.getCanonicalPath() +
+                    File.separator + "src" + File.separator + "main" + File.separator + "resources"
+                    + File.separator + "static" + File.separator  + "qualification";
+            System.out.println("projectPath==" + filePath);
+            String projectPath = filePath + File.separator + uuid + "." + prefix;
+            System.out.println(projectPath);
+            File files = new File(projectPath);
+            file.transferTo(files); // 将接收的文件保存到指定文件中
+            String url = "\\qualification" + File.separator + uuid + "." + prefix;
+            userService.updateUserImg(url,userId);
+            LayuiData layuiData = new LayuiData();
+            layuiData.setCode(0);
+            layuiData.setMsg(url);
+            return JSON.toJSONString(layuiData);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
+    @RequestMapping("/fabuNews")
+    @ResponseBody
+    public String fabuNews(HttpServletRequest request, HttpServletResponse response){
+        String content = request.getParameter("content");
+        String username = request.getParameter("username");
+        String userId = userService.selectIdByUsername(username);
+        userService.fabuNews(userId,content);
+        return "success";
+    }
+
+    @RequestMapping("/myPhoto")
+    public String myPhoto(HttpServletRequest request, HttpServletResponse response,Model model){
+        String username = request.getParameter("username");
+        TUser user = userService.userLogin(username);
+        if (null != user){
+            model.addAttribute("user",user);
+        }
+        return "myPhoto";
+    }
     @RequestMapping("/talkFriend")
     @ResponseBody
     public String talkFriend(HttpServletRequest request, HttpServletResponse response){

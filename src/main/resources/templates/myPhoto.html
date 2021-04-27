@@ -10,7 +10,7 @@
     <meta name="description" content="我要婚恋网。免费通信，谈情说爱不再为钱所困。9000万实名认证会员，给你9000万的爱情火种。心理学专业恋爱类型测试帮你找到“对”的TA。">
     <meta name="keywords"
           content="我要婚恋网,免费沟通,免费交友,免费征婚,爱情,婚介网,婚介所,北京征婚,上海征婚,广州征婚,深圳征婚,上海交友,北京交友,广东交友,深圳交友,金百合,百合婚恋,北京婚介,上海婚介,广州婚介,深圳婚介,杭州婚介,大连婚介,南京婚介">
-    <title>我要婚恋网·照片墙</title>
+    <title>我要婚恋网·我的相册</title>
     <link th:href="@{/photoWall/public.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/photoWall/formStyle.css}" rel="stylesheet" type="text/css">
     <link th:href="@{/photoWall/search.css}" rel="stylesheet" type="text/css">
@@ -22,7 +22,15 @@
     <script type="text/javascript" th:src="@{/photoWall/jquery.select-1.3.6.js}" charset="utf-8"></script>
     <script type="text/javascript" th:src="@{/photoWall/district.js}" charset="utf-8"></script>
     <script type="text/javascript" th:src="@{/photoWall/city.js}" charset="utf-8"></script>
+    <script>
 
+        var userID = '264824452';
+        var matchIncomeStart = '';
+        var matchIncomeEnd = '';
+        var matchEducationStart = '';
+        var matchEducationEnd = '';
+        var matchCity = '863304';
+    </script>
     <script type="text/javascript" th:src="@{/photoWall/search.js}" charset="utf-8"></script>
     <script th:src="@{/photoWall/greet.js}" type="text/javascript" charset="utf-8"></script>
     <script th:src="@{/photoWall/message.js}" type="text/javascript" charset="utf-8"></script>
@@ -36,15 +44,6 @@
     <script th:src="@{/photoWall/jquery.sinaEmotion.js}" type="text/javascript" charset="utf-8"></script>
     <script th:src="@{/photoWall/expression_icon.js}" type="text/javascript" charset="utf-8"></script>
     <link rel="shortcut icon" href="https://images6.baihe.com/favicon.ico">
-    <script>
-
-        var userID = '264824452';
-        var matchIncomeStart = '';
-        var matchIncomeEnd = '';
-        var matchEducationStart = '';
-        var matchEducationEnd = '';
-        var matchCity = '863304';
-    </script>
 </head>
 <div id="night-mask"
      style="position: fixed;top: 0;left: 0;width: 100%;height: 100%;z-index: 2147483647;pointer-events: none;mix-blend-mode: multiply;transition: opacity 0.1s ease 0s;opacity:0.3;display:none;background: #000000;"></div>
@@ -201,15 +200,6 @@
 
         </div>
 
-        <!------ 基本搜索 ------>
-
-
-        <!------高级搜索 ------>
-
-
-        <!------ 昵称搜索 ------>
-
-
     </div>
 
 
@@ -230,9 +220,6 @@
                             <span th:text="${arr.getAge()}+岁"></span><span>|</span><span th:text="${arr.getHeight()}+cm"></span><span>|</span><span th:text="${arr.getDegree()}"></span></div>
                         <div class="icon"><a href="javascript:;" class="send" style="width: 100%"
                                              th:onclick="'javascript: dianji('+${arr.getId()}+')' ">加好友</a>
-                        </div>
-                        <div class="icon"><a href="javascript:;" class="send" style="width: 100%"
-                                             th:onclick="'javascript: talk('+${arr.getId()}+')' ">私聊她</a>
                         </div>
                     </div>
                 </li>
@@ -273,32 +260,6 @@
                error:function (error) {
 
                }
-       });
-   }
-   function talk(msg) {
-       var id = msg;
-       var username = $("#nickName2").text();
-       $.ajax({
-           async: true,
-           url: '/userHtml/joinFriend',
-           type: 'get',
-           dataType: 'text',
-           data: "id="+id+"&username="+username,
-           success: function (msg) {
-               if (msg == "already") {
-                   window.location.href="/userHtml/talks?id="+id+"&username="+username;
-                   return true;
-               } else{
-                   baihe.block({
-                       title: '提示',
-                       text: "对方还不是您的好友",
-                   });
-                   return true;
-               }
-           },
-           error:function (error) {
-
-           }
        });
    }
 

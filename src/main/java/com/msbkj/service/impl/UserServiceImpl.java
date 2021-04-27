@@ -146,17 +146,44 @@ public class UserServiceImpl implements UserService {
     @Override
     public int maxUserId() {
         return userMapper.maxUserId();
-    };
+    }
 
     @Override
     public int getIdByUserName(String username) {
         return userMapper.getIdByUserName(username);
-    };
+    }
+
+    @Override
+    public void updateUserImg(String img, String id) {
+        userMapper.updateUserImg(img,id);
+    }
+
+    @Override
+    public Likes getLikesOne(String userId, String newsId) {
+        return userMapper.getLikesOne(userId,newsId);
+    }
+
+    @Override
+    public void addLikes(String userId, String newsId) {
+        userMapper.addLikes(userId,newsId);
+    }
+
+    @Override
+    public void fabuNews(String userId, String content) {
+        userMapper.fabuNews(userId,content);
+    }
+
+
+
+    @Override
+    public int getIdByUserName(String username) {
+        return userMapper.getIdByUserName(username);
+    }
 
     @Override
     public List<talk> getTalk(String heid,String meid) {
         return userMapper.getTalk(heid,meid);
-    };
+    }
 
     @Override
     public void addTalk(String talkid, String heid, String meid,String concent) {
